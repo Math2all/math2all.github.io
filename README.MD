@@ -1,3 +1,6 @@
-### 看这里
+### 原来你也在这里
+    So you're here, too.
 -------------
-1.新增首页
+>
+1.Add index file.
+2.Add page contents
