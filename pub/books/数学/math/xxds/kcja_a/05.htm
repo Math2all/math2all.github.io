@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+        <link rel="Edit-Time-Data" href="./05.files/editdata.mso">
+        <link rel="OLE-Object-Data" href="./05.files/oledata.mso">
+        <title>行列式的定义与性质</title>
+    </head>
+    <body bgcolor="#FFFFFF" class="Normal" lang="ZH-CN">
+<table align="center" cellpadding="0" cellspacing="0" width="750">
+    <tr>
+        <td>
+            <h4><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">&sect;</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">行列式的定义与性质</font></span></h4>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">在这一节里，要研究数域</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">上</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵的集合到</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的一个映射</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">det:
+            <img width="88" height="27" src="05.files/image002.gif" align="absmiddle" v:shapes="_x0000_i1025">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，它把每个</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵阿</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">对应到一个数</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">det(A)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，通称</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">它为矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的行列式，也记为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="21" height="27" src="05.files/image004.gif" align="absmiddle" v:shapes="_x0000_i1026">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">考虑二元一次方程组</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="235" height="44" src="05.files/image006.jpg" align="absmiddle" v:shapes="_x0000_i1027">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">它可以写成矩阵方程</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">AX=</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">β，分别用</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="23" height="24" src="05.files/image008.gif" align="absmiddle" v:shapes="_x0000_i1028">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">和</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="05.files/image010.gif" align="absmiddle" v:shapes="_x0000_i1029">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">去乘方程组的式（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">和式（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，再把所得的两式相减，有</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="241" height="21" src="05.files/image012.jpg" align="absmiddle" v:shapes="_x0000_i1039">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">如果定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image013.gif" align="absmiddle" v:shapes="_x0000_i1040">
+             =
+            <img width="63" height="51" src="05.files/image015.gif" align="absmiddle" v:shapes="_x0000_i1041">
+             =
+            <img width="88" height="24" src="05.files/image017.gif" align="absmiddle" v:shapes="_x0000_i1042">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            (5-2)</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">为</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的行列式，那么，当</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image018.gif" align="absmiddle" v:shapes="_x0000_i1043">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≠</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">时，可得</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="24" src="05.files/image020.gif" align="absmiddle" v:shapes="_x0000_i1044">
+             =
+            <img width="65" height="96" src="05.files/image022.gif" align="absmiddle" v:shapes="_x0000_i1045">
+             =
+            <img width="29" height="53" src="05.files/image024.gif" align="absmiddle" v:shapes="_x0000_i1046">
+             &nbsp; , &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">类似的</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            <img width="17" height="24" src="05.files/image026.gif" align="absmiddle" v:shapes="_x0000_i1047">
+             =
+            <img width="65" height="96" src="05.files/image028.gif" align="absmiddle" v:shapes="_x0000_i1048">
+             =
+            <img width="29" height="53" src="05.files/image030.gif" align="absmiddle" v:shapes="_x0000_i1049">
+             &nbsp; ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">其中</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="17" height="24" src="05.files/image032.gif" align="absmiddle" v:shapes="_x0000_i1050">
+             =
+            <img width="68" height="51" src="05.files/image034.gif" align="absmiddle" v:shapes="_x0000_i1051">
+             ,
+            <img width="20" height="24" src="05.files/image036.gif" align="absmiddle" v:shapes="_x0000_i1052">
+             =
+            <img width="67" height="51" src="05.files/image038.gif" align="absmiddle" v:shapes="_x0000_i1053">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">分别是式</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">中的常数向量β来代替系数矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">列和第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">列后得到的矩阵。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">容易看出，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image039.gif" align="absmiddle" v:shapes="_x0000_i1054">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是所有取自不同行不同列的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个元素的乘积的代数和并且这样的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang="EN-US" style='font-size: 14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">元乘积有</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2!
+            =2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">项。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">对于三元一次方程组，如果定义</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image040.gif" align="absmiddle" v:shapes="_x0000_i1055">
+             &nbsp;=&nbsp;&nbsp;
+            <img width="96" height="75" src="05.files/image042.gif" align="absmiddle" v:shapes="_x0000_i1056">
+             &nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="65" height="29" src="05.files/image044.gif" align="absmiddle" v:shapes="_x0000_i1057">
+             <img width="63" height="51" src="05.files/image046.gif" align="absmiddle" v:shapes="_x0000_i1058">
+             &nbsp;+
+            <img width="67" height="29" src="05.files/image048.gif" align="absmiddle" v:shapes="_x0000_i1059">
+             <img width="63" height="51" src="05.files/image050.gif" align="absmiddle" v:shapes="_x0000_i1060">
+             &nbsp;&nbsp;&nbsp;+&nbsp;
+            <img width="67" height="29" src="05.files/image052.gif" align="absmiddle" v:shapes="_x0000_i1061">
+             <img width="63" height="51" src="05.files/image054.gif" align="absmiddle" v:shapes="_x0000_i1062">
+             &nbsp;=
+            <img width="56" height="24" src="05.files/image056.gif" align="absmiddle" v:shapes="_x0000_i1063">
+             +
+            <img width="56" height="24" src="05.files/image058.gif" align="absmiddle" v:shapes="_x0000_i1064">
+             +
+            <img width="56" height="24" src="05.files/image060.gif" align="absmiddle" v:shapes="_x0000_i1065">
+             -&nbsp;
+            <img width="56" height="24" src="05.files/image062.gif" align="absmiddle" v:shapes="_x0000_i1066">
+             -
+            <img width="56" height="24" src="05.files/image064.gif" align="absmiddle" v:shapes="_x0000_i1067">
+             -
+            <img width="56" height="24" src="05.files/image066.gif" align="absmiddle" v:shapes="_x0000_i1068">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">那么，当系数矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的行列式</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="21" height="27" src="05.files/image067.gif" align="absmiddle" v:shapes="_x0000_i1069">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≠</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">时有完全类似的求解</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">公式：</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="24" src="05.files/image069.gif" align="absmiddle" v:shapes="_x0000_i1070">
+             =
+            <img width="29" height="53" src="05.files/image071.gif" align="absmiddle" v:shapes="_x0000_i1071">
+             ,i=1,2,3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">其中，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="17" height="24" src="05.files/image073.gif" align="absmiddle" v:shapes="_x0000_i1072">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是三元一次方程组常数列向量β来代替系数矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">列后得到的矩阵。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="21" height="27" src="05.files/image074.gif" align="absmiddle" v:shapes="_x0000_i1073">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是所有取自不同行不同列的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个元素的乘积的代数和并且这样的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">元乘积有</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">3 !
+            =6</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">项。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            <img width="101" height="75" src="05.files/image076.gif" align="absmiddle" v:shapes="_x0000_i1074">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">是一个</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵，划去</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">行和第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">j</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">列后得到一个</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A&nbsp;
+            <img width="40" height="27" src="05.files/image078.gif" align="absmiddle" v:shapes="_x0000_i1075">
+             &nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="247" height="147" src="05.files/image080.gif" align="absmiddle" v:shapes="_x0000_i1076">
+             ,</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">称它为</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的一个</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶子矩阵，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            <img width="25" height="25" src="05.files/image082.gif" align="absmiddle" v:shapes="_x0000_i1077">
+             &nbsp;=
+            <img width="57" height="29" src="05.files/image084.gif" align="absmiddle" v:shapes="_x0000_i1078">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为元素</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="19" height="25" src="05.files/image086.gif" align="absmiddle" v:shapes="_x0000_i1079">
+             &nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的余子式，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="20" height="25" src="05.files/image088.gif" align="absmiddle" v:shapes="_x0000_i1080">
+             &nbsp; =
+            <img width="47" height="29" src="05.files/image090.gif" align="absmiddle" v:shapes="_x0000_i1081">
+             <img width="25" height="25" src="05.files/image091.gif" align="absmiddle" v:shapes="_x0000_i1082">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为元素</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="19" height="25" src="05.files/image092.gif" align="absmiddle" v:shapes="_x0000_i1083">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的代数余子式。类似的，当</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="244" height="25" src="05.files/image094.gif" align="absmiddle" v:shapes="_x0000_i1084">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">时，划去</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的第</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="12" height="24" src="05.files/image096.gif" align="absmiddle" v:shapes="_x0000_i1085">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">行，…第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="13" height="35" src="05.files/image098.gif" align="absmiddle" v:shapes="_x0000_i1086">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">行和第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="16" height="24" src="05.files/image100.gif" align="absmiddle" v:shapes="_x0000_i1087">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">列，…第</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="17" height="24" src="05.files/image102.gif" align="absmiddle" v:shapes="_x0000_i1088">
+             &nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">列后得到一个</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-k</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵称为</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的一个</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-k</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶子矩阵。如果记</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="75" height="27" src="05.files/image104.gif" align="absmiddle" v:shapes="_x0000_i1089">
+             =&nbsp;&nbsp;
+            <img width="144" height="40" src="05.files/image106.gif" align="absmiddle" v:shapes="_x0000_i1090">
+             =&nbsp;
+            <img width="61" height="37" src="05.files/image108.gif" align="absmiddle" v:shapes="_x0000_i1091">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="75" height="27" src="05.files/image110.gif" align="absmiddle" v:shapes="_x0000_i1092">
+             =&nbsp;&nbsp;
+            <img width="141" height="39" src="05.files/image112.gif" align="absmiddle" v:shapes="_x0000_i1093">
+             =&nbsp;
+            <img width="59" height="36" src="05.files/image114.gif" align="absmiddle" v:shapes="_x0000_i1094">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">那么，可以这样归纳的定义</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的行列式：</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n=1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">时，即</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A=</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">a</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）时，规定</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image115.gif" align="absmiddle" v:shapes="_x0000_i1095">
+             &nbsp;&nbsp;&nbsp;&nbsp;=
+            <img width="71" height="27" src="05.files/image117.gif" align="absmiddle" v:shapes="_x0000_i1096">
+             =
+            <img width="72" height="27" src="05.files/image119.gif" align="absmiddle" v:shapes="_x0000_i1097">
+             = a;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">＞</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">时，规定</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="21" height="27" src="05.files/image120.gif" align="absmiddle" v:shapes="_x0000_i1098">
+             &nbsp;&nbsp;=
+            <img width="72" height="27" src="05.files/image122.gif" align="absmiddle" v:shapes="_x0000_i1099">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.1&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="72" height="27" src="05.files/image124.gif" align="absmiddle" v:shapes="_x0000_i1100">
+             =
+            <img width="75" height="27" src="05.files/image126.gif" align="absmiddle" v:shapes="_x0000_i1101">
+             =
+            <img width="21" height="27" src="05.files/image127.gif" align="absmiddle" v:shapes="_x0000_i1102">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。这时，把</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="72" height="27" src="05.files/image128.gif" align="absmiddle" v:shapes="_x0000_i1103">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">和</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="75" height="27" src="05.files/image129.gif" align="absmiddle" v:shapes="_x0000_i1104">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">分别称为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="21" height="27" src="05.files/image130.gif" align="absmiddle" v:shapes="_x0000_i1105">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">按第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">行展开式和按第</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">j</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">列展开式。根据归纳法可知，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image131.gif" align="absmiddle" v:shapes="_x0000_i1106">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是所有取自不同行不同列的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个元素的乘积的代数和</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">并且这样的</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">元乘积有</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n(n-1)!=n!&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">项。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.2</font></span>
+        </p>
+            <p><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            (1)&nbsp;&nbsp;
+            <img width="21" height="27" src="05.files/image132.gif" align="absmiddle" v:shapes="_x0000_i1107">
+             &nbsp;=&nbsp;
+            <img width="29" height="29" src="05.files/image134.gif" align="absmiddle" v:shapes="_x0000_i1108">
+             </font></span></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;(2)
+            <img width="125" height="99" src="05.files/image136.gif" align="absmiddle" v:shapes="_x0000_i1109">
+             =
+            <img width="125" height="99" src="05.files/image138.gif" align="absmiddle" v:shapes="_x0000_i1110">
+             =
+            <img width="124" height="99" src="05.files/image140.gif" align="absmiddle" v:shapes="_x0000_i1111">
+             =
+            <img width="76" height="24" src="05.files/image142.gif" align="absmiddle" v:shapes="_x0000_i1112">
+             ;</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;(3)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">有全零行，那么，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            <img width="21" height="27" src="05.files/image143.gif" align="absmiddle" v:shapes="_x0000_i1113">
+             =0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.3</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;1&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A
+            <img width="29" height="37" src="05.files/image145.gif" align="absmiddle" v:shapes="_x0000_i1114">
+             &nbsp;B,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image147.gif" align="absmiddle" v:shapes="_x0000_i1115">
+             &nbsp;=</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">－</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image148.gif" align="absmiddle" v:shapes="_x0000_i1116">
+            
+            </font></span><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">有两行元素对应相等，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image149.gif" align="absmiddle" v:shapes="_x0000_i1117">
+             =0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A
+            <img width="28" height="36" src="05.files/image151.gif" align="absmiddle" v:shapes="_x0000_i1118">
+             B,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="21" height="27" src="05.files/image152.gif" align="absmiddle" v:shapes="_x0000_i1119">
+             &nbsp;= k
+            <img width="21" height="27" src="05.files/image153.gif" align="absmiddle" v:shapes="_x0000_i1120">
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">有两行元素对应成比例，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image154.gif" align="absmiddle" v:shapes="_x0000_i1121">
+             =0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">C</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">行元素是矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">和</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">B</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的第</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">行对应元素的和，除了第</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">行元素外，矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">B</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">C</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的其余</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">行元素对应相等，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="27" src="05.files/image156.gif" align="absmiddle" v:shapes="_x0000_i1122">
+             =
+            <img width="21" height="27" src="05.files/image157.gif" align="absmiddle" v:shapes="_x0000_i1123">
+             +
+            <img width="21" height="27" src="05.files/image158.gif" align="absmiddle" v:shapes="_x0000_i1124">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            6</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A
+            <img width="28" height="37" src="05.files/image160.gif" align="absmiddle" v:shapes="_x0000_i1125">
+             &nbsp;&nbsp;B,&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">那么</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            <img width="21" height="27" src="05.files/image161.gif" align="absmiddle" v:shapes="_x0000_i1126">
+             &nbsp;= &nbsp;
+            <img width="21" height="27" src="05.files/image162.gif" align="absmiddle" v:shapes="_x0000_i1127">
+             
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.4</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            1&nbsp;&nbsp;
+            <img width="53" height="29" src="05.files/image164.gif" align="absmiddle" v:shapes="_x0000_i1128">
+             &nbsp;= -1,&nbsp;&nbsp;
+            <img width="63" height="29" src="05.files/image166.gif" align="absmiddle" v:shapes="_x0000_i1129">
+             =k, &nbsp;&nbsp;
+            <img width="79" height="29" src="05.files/image168.gif" align="absmiddle" v:shapes="_x0000_i1130">
+             &nbsp;=1;</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;
+            <img width="63" height="37" src="05.files/image170.gif" align="absmiddle" v:shapes="_x0000_i1131">
+             &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;
+            <img width="29" height="51" src="05.files/image172.gif" align="absmiddle" v:shapes="_x0000_i1132">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="12" height="45" src="05.files/image174.gif" align="absmiddle" v:shapes="_x0000_i1133">
+             &nbsp;&nbsp;
+            <img width="35" height="45" src="05.files/image176.gif" align="absmiddle" v:shapes="_x0000_i1134">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="63" height="37" src="05.files/image178.gif" align="absmiddle" v:shapes="_x0000_i1135">
+             &nbsp;&nbsp;&nbsp;= &nbsp;
+            <img width="29" height="51" src="05.files/image179.gif" align="absmiddle" v:shapes="_x0000_i1136">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="12" height="45" src="05.files/image180.gif" align="absmiddle" v:shapes="_x0000_i1137">
+             &nbsp;&nbsp;
+            <img width="37" height="45" src="05.files/image182.gif" align="absmiddle" v:shapes="_x0000_i1138">
+             &nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">5.5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">和</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">B</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">是两个</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="32" height="27" src="05.files/image184.gif" align="absmiddle" v:shapes="_x0000_i1139">
+             =
+            <img width="39" height="27" src="05.files/image186.gif" align="absmiddle" v:shapes="_x0000_i1140">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        </td>
+    </tr>
+</table>
+        <p>
+            
+<font face="宋体"><span style="font-size:14pt;">&nbsp;</span></font></p>
+    </body>
+</html>
+

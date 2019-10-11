@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+        <link rel="Edit-Time-Data" href="./20.files/editdata.mso">
+        <link rel="OLE-Object-Data" href="./20.files/oledata.mso">
+        <title>特征值、特征向量与可对角化条件</title>
+    </head>
+    <body bgcolor="#FFFFFF" class="Normal" lang="ZH-CN">
+<table align="center" cellpadding="0" cellspacing="0" width="750">
+    <tr>
+        <td>
+            <h5><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">&sect;</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">20</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">特征值、特征向量与可对角化条件</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></h5>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">一、</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">可对角化条件</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">如上节例</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">9</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">所示，一个</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵相似于对角阵时，可以使许多问题的研究和计算简单化，在这一节我们将继续深入讨论。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定义</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">是数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">上</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵，如果存在可逆阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            P</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，使</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">P</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><sup><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">－１</font></span></sup><span lang="EN-US" style='font-size: 14.0pt'><font face="宋体">AP</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">为对角阵，那么</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">称为可对角化矩阵。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">并不是所有的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵都可对角化，例如，</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A=
+            <img width="47" height="48" src="20.files/image002.gif" align="absmiddle" v:shapes="_x0000_i1025">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">就一定不可对角化，所以我们要首先讨论可对角化的条件。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style='font-size:14.0pt;font-family: 宋体'><font face="宋体">∈</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">M
+            <img width="11" height="24" src="20.files/image004.gif" align="absmiddle" v:shapes="_x0000_i1026">
+             (F)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是可对角化矩阵，即存在可逆阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            P</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，使</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            P</font><sup><font face="宋体">-1</font></sup><font face="宋体">AP=&nbsp;&nbsp;
+            <img width="120" height="99" src="20.files/image006.gif" align="absmiddle" v:shapes="_x0000_i1027">
+             &nbsp;,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">, ... ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n
+            <img width="13" height="13" src="20.files/image008.gif" align="absmiddle" v:shapes="_x0000_i1028">
+             F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">又设</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="77" height="25" src="20.files/image010.gif" align="absmiddle" v:shapes="_x0000_i1029">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">P</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个列向量，由于</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            P</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是可逆的，向量组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="77" height="25" src="20.files/image012.gif" align="absmiddle" v:shapes="_x0000_i1030">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">线性无关，并且</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            AP = A (
+            <img width="77" height="25" src="20.files/image013.gif" align="absmiddle" v:shapes="_x0000_i1031">
+             ) =(
+            <img width="77" height="25" src="20.files/image014.gif" align="absmiddle" v:shapes="_x0000_i1032">
+             )
+            <img width="120" height="99" src="20.files/image016.gif" align="absmiddle" v:shapes="_x0000_i1033">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">即</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A pi =</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">p</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,&nbsp; i=1,2,
+            ...,n&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">反之，如果存在</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            F</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个线性无关的向量</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="77" height="25" src="20.files/image017.gif" align="absmiddle" v:shapes="_x0000_i1034">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">及</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个数λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">, ... ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，满足式（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20--1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">那么取</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">P</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">=(
+            <img width="77" height="25" src="20.files/image018.gif" align="absmiddle" v:shapes="_x0000_i1035">
+             )</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang="EN-US" style='font-size:14.0pt;font-family: 宋体'><font face="宋体"><img width="13" height="13" src="20.files/image020.gif" align="absmiddle" v:shapes="_x0000_i1036">
+             </font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">M
+            <img width="11" height="24" src="20.files/image021.gif" align="absmiddle" v:shapes="_x0000_i1037">
+             (F),</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">就有</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">P</font><sup><font face="宋体">-1</font></sup><font face="宋体">AP</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">=
+            <img width="120" height="99" src="20.files/image022.gif" align="absmiddle" v:shapes="_x0000_i1038">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，既</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">可以对角化。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定理</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.
+            1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">可对角化的充分必要条件为存在</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个数λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">, ... ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n
+            <img width="13" height="13" src="20.files/image024.gif" align="absmiddle" v:shapes="_x0000_i1039">
+             F&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">及</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">个线性无关的向量</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="77" height="25" src="20.files/image025.gif" align="absmiddle" v:shapes="_x0000_i1040">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">使</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="73" height="24" src="20.files/image027.gif" align="absmiddle" v:shapes="_x0000_i1041">
+             &nbsp;&nbsp; i=1,2, ...,n.</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">二、特征值与特征向量</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定理</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">告诉我们，对于任意一个</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，求出满足式（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）的数λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">i</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">及向量</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">p
+            <img width="8" height="24" src="20.files/image029.gif" align="absmiddle" v:shapes="_x0000_i1042">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一项很重要的工作。</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定义</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">上</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵，如果存在数λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="13" height="13" src="20.files/image031.gif" align="absmiddle" v:shapes="_x0000_i1043">
+             F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">及</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">维非零向量</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="28" height="15" src="20.files/image033.gif" align="absmiddle" v:shapes="_x0000_i1044">
+             F</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，使</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style="font-size:14pt;"><font face="宋体">A
+            <img width="16" height="15" src="20.files/image035.gif" align="absmiddle" v:shapes="_x0000_i1045">
+             =
+            <img width="25" height="19" src="20.files/image037.gif" align="absmiddle" v:shapes="_x0000_i1046">
+             &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-2</font></span><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么，数λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">称为</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的一个特征值，非零向量</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="20.files/image039.gif" align="absmiddle" v:shapes="_x0000_i1047">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的属于特征值</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的一个特征向量。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">这样一来，定理</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">可以重述为</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定理</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.1'</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">可对角化的充分必要条件是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">有</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个线性无关的特征向量。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">首先，我们要求出任意一个</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的全部特征值与属于每个特征值的全部的特征向量。设</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="20.files/image041.gif" align="absmiddle" v:shapes="_x0000_i1048">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的属于特征值</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的特征向量，即</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            A
+            <img width="16" height="15" src="20.files/image042.gif" align="absmiddle" v:shapes="_x0000_i1049">
+             = λ0
+            <img width="16" height="15" src="20.files/image043.gif" align="absmiddle" v:shapes="_x0000_i1050">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">于是</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;( A-λ0 E )
+            <img width="16" height="15" src="20.files/image044.gif" align="absmiddle" v:shapes="_x0000_i1051">
+             = 0
+            ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">即向量是齐次线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            (A-λ0E)X=0,&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">的非零解，推论</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">14.3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">告诉我们，</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">(20-3)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">有非零解的充分必要条件是系数矩阵的行列式为</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            |A-λ0E|=
+            <img width="225" height="99" src="20.files/image046.gif" align="absmiddle" v:shapes="_x0000_i1052">
+             =0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">作为λ的多项式，矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="51" height="19" src="20.files/image048.gif" align="absmiddle" v:shapes="_x0000_i1053">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的行列式</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">|
+            <img width="51" height="19" src="20.files/image050.gif" align="absmiddle" v:shapes="_x0000_i1054">
+             |</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="51" height="19" src="20.files/image052.gif" align="absmiddle" v:shapes="_x0000_i1055">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的行列式只差一个正负号。我们不妨如下定义的特征多项式：</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定义</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.
+            3&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">设</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">F</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶矩阵，λ是一个不定元，矩阵λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            E-A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的行列式</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            |λE-A| =
+            <img width="213" height="101" src="20.files/image054.gif" align="absmiddle" v:shapes="_x0000_i1056">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个关于λ的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">次多项式，称为</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的特征多项式，记为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style="font-size:14pt;"><font face="宋体"><img width="45" height="21" src="20.files/image056.gif" align="absmiddle" v:shapes="_x0000_i1057">
+             &nbsp;,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">它的根就是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的特征值。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">从现在起，我们假定</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            F=C</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是复数域，那么，特征多项式</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style="font-size:14pt;"><font face="宋体"><img width="45" height="21" src="20.files/image058.gif" align="absmiddle" v:shapes="_x0000_i1058">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">总有</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个根λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">, ... ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">设</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            &nbsp;
+            <img width="45" height="21" src="20.files/image059.gif" align="absmiddle" v:shapes="_x0000_i1059">
+             &nbsp;= |λE-A| =
+            <img width="19" height="24" src="20.files/image061.gif" align="absmiddle" v:shapes="_x0000_i1060">
+             +
+            <img width="16" height="23" src="20.files/image063.gif" align="absmiddle" v:shapes="_x0000_i1061">
+             λ + ... +
+            <img width="27" height="24" src="20.files/image065.gif" align="absmiddle" v:shapes="_x0000_i1062">
+             λ +
+            <img width="17" height="24" src="20.files/image067.gif" align="absmiddle" v:shapes="_x0000_i1063">
+            
+        </font></span></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            =(λ-λ1)(λ-λ2)...(λ-λn)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">根据多项式的根与系数的关系，有</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;λ
+            1 + λ2 + ... + λn&nbsp; = -c1 =tr(A)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">　　　　</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">其中</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;tr(A)=
+            <img width="119" height="24" src="20.files/image069.gif" align="absmiddle" v:shapes="_x0000_i1064">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-6</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的对角线元素的和，称为矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的迹</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">...</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n
+            =(-1)</font><sup><font face="宋体">n</font></sup><font face="宋体">cn=|A|</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">　　　　　　　　</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-7</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">是矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的一个特征值，属于λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="9" height="24" src="20.files/image071.gif" align="absmiddle" v:shapes="_x0000_i1065">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的特征向量是齐次线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;( A – λ0 E )X = 0</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">的非零解，这个齐次线性方程组的解向量全体构成一个向量空间</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">---</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">解空间，它的任意一个基础解系就是这个解空间的基。因此我们称这个向量空间为矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的属于特征值的特征子空间，记为</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">。它的维数等于它所包含的线性无关特征向量的个数，从而等于对应的齐次线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）基础解系所包含的线性无关解向量的个数，即</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">n-R(A
+            -</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">E</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，我们称这个数为特征值λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的几何重数，而把特征值λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">作为特征多项式Δ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A(</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">λ</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的根出现的重数称为特征值λ</font></span><span lang="EN-US" style='font-size: 14.0pt'><font face="宋体">
+            0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">的代数重数。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">定义</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20.4</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">复数域</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">C</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上形式为</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            J(</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style='font-size:14.0pt;font-family:宋体'><font face="宋体">λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">,t) =
+            <img width="129" height="120" src="20.files/image073.gif" align="absmiddle" v:shapes="_x0000_i1066">
+             <img width="16" height="24" src="20.files/image075.gif" align="absmiddle" v:shapes="_x0000_i1067">
+             &nbsp;
+            <img width="9" height="25" src="20.files/image077.gif" align="absmiddle" v:shapes="_x0000_i1068">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">20-8</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">的</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">t</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵称为一个若当块，它是以λ为特征值的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">t</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">阶矩阵，对角线元素全为λ，第二对角线元素全为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，其余元素全为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">。若干个若当块组成的准对角矩阵称为若当标准形。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">三、特征值与特征向量的性质</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）相似矩阵有相同的特征多项式，从而有相同的特征值、相同的迹和相同的行列式。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）如果λ是矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的一个特征值，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="175" height="25" src="20.files/image079.gif" align="absmiddle" v:shapes="_x0000_i1069">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个多项式，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="37" height="21" src="20.files/image081.gif" align="absmiddle" v:shapes="_x0000_i1070">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是矩阵多项式</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="39" height="21" src="20.files/image083.gif" align="absmiddle" v:shapes="_x0000_i1071">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的一个特征值</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）如果</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个可逆阵，λ是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的一个特征值，那么，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp; 1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'><font face="宋体">/λ</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">是</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><sup><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">-1</font></span></sup><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的一个特征值</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）属于不同特征值的特征向量线性无关。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）对矩阵</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的每个特征值</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="17" height="24" src="20.files/image085.gif" align="absmiddle" v:shapes="_x0000_i1072">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，它的几何重数一定不超过代数重数。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">6</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）如果</font></span><span lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个是对称矩阵，那么它的每个特征值的几何重数与代数重数相等，从而它有个线性无关的特征向量，他一定可以对角化。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        </td>
+    </tr>
+</table>
+        <p>
+<font face="宋体"><span style="font-size:14pt;">&nbsp;</span></font></p>
+    </body>
+</html>
+

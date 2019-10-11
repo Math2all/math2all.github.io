@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+        <link rel="Edit-Time-Data" href="./04.files/editdata.mso">
+        <link rel="OLE-Object-Data" href="./04.files/oledata.mso">
+        <title>线性方程组</title>
+    </head>
+    <body bgcolor="#FFFFFF" class="Normal" lang="ZH-CN">
+    <table cellpadding="0" cellspacing="0" width="750" align="center">
+        <tr>
+            <td>
+                <h4><span style='font-family:宋体; font-size:14pt; "Times New Roman";"Times New Roman"'><font face="宋体">&sect;</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span lang=EN-US style="font-size:14pt;"><font face="宋体">4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">线性方程组</font></span></h4>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="234" height="86" src="04.files/image002.jpg" align="absmiddle" v:shapes="_x0000_i1025">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="36" height="27" src="04.files/image004.gif" align="absmiddle" v:shapes="_x0000_i1026">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">是由</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">m</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个方程组成的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">元线性方程组，它的系数矩阵、未知数列向量和常数列向量分别是</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A =
+            <img width="12" height="23" src="04.files/image006.gif" align="absmiddle" v:shapes="_x0000_i1031">
+             &nbsp;
+            <img width="105" height="75" src="04.files/image008.gif" align="absmiddle" v:shapes="_x0000_i1032">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;
+            =&nbsp;&nbsp;
+            <img width="33" height="99" src="04.files/image010.gif" align="absmiddle" v:shapes="_x0000_i1033">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;β =&nbsp;&nbsp;
+            <img width="33" height="99" src="04.files/image012.gif" align="absmiddle" v:shapes="_x0000_i1034">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">于是线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）可改为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">AX=</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">β。记：</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="04.files/image014.gif" align="absmiddle" v:shapes="_x0000_i1035">
+             =
+            <img width="45" height="27" src="04.files/image016.gif" align="absmiddle" v:shapes="_x0000_i1036">
+             =
+            <img width="169" height="99" src="04.files/image018.gif" align="absmiddle" v:shapes="_x0000_i1037">
+             &nbsp;&nbsp;&nbsp;</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="04.files/image020.gif" align="absmiddle" v:shapes="_x0000_i1038">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体">(4-1)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的增广矩阵。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">如果β</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">=0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，那么，式</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体">(4-1)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">表示一个齐次线性方程组；否则</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">(4-1)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">表示一个非齐次线性方程组。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">如果线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">AX=</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">β有两个不同的解，那么它</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">一定有无穷多解。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            &nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）的解只有三种可能：无解，唯一解，无穷多解。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">下面介绍解线性方程组的一个规范方法</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">---</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">高斯消去法，它是加减</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">消元法和代入消元法的推广和规范化。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">设</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="160" height="21" src="04.files/image022.jpg" align="absmiddle" v:shapes="_x0000_i1039">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">是两个由</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">m</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">个方程组成的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">元线性方程组，如果</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="69" height="21" src="04.files/image024.jpg" align="absmiddle" v:shapes="_x0000_i1040">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的解都是</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="69" height="21" src="04.files/image026.jpg" align="absmiddle" v:shapes="_x0000_i1041">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的解</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,
+            <img width="69" height="21" src="04.files/image027.jpg" align="absmiddle" v:shapes="_x0000_i1042">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的解都是</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="69" height="21" src="04.files/image028.jpg" align="absmiddle" v:shapes="_x0000_i1043">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的解，即线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+style="font-size:14pt;"><font face="宋体"><img width="160" height="21" src="04.files/image029.jpg" align="absmiddle" v:shapes="_x0000_i1044">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">有相同的解，那么称它们为同解方程组，或称这两个方程组同解。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="69" height="21" src="04.files/image030.jpg" align="absmiddle" v:shapes="_x0000_i1045">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的增广矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A=
+            <img width="45" height="21" src="04.files/image032.jpg" align="absmiddle" v:shapes="_x0000_i1046">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">经过有限次行初等变换变成矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="20" height="27" src="04.files/image034.gif" align="absmiddle" v:shapes="_x0000_i1047">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="20" height="27" src="04.files/image036.gif" align="absmiddle" v:shapes="_x0000_i1048">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">作为增广矩阵对应于线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="69" height="21" src="04.files/image037.jpg" align="absmiddle" v:shapes="_x0000_i1049">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么，线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="160" height="21" src="04.files/image038.jpg" align="absmiddle" v:shapes="_x0000_i1050">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是同解方程组。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">用高斯消去法解线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，实际上就是对增广矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="04.files/image039.gif" align="absmiddle" v:shapes="_x0000_i1051">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">进行矩阵的行初等变换，先把</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="04.files/image040.gif" align="absmiddle" v:shapes="_x0000_i1052">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">变为阶梯形矩阵，再继续施行行初等变换，使其变为简化阶梯形矩阵。前者就是消元过程，后者就是
+            回代过程。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.3</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的增广矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">经过行初等变换变为阶梯形矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1
+            &nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">d
+            <img width="19" height="23" src="04.files/image042.gif" align="absmiddle" v:shapes="_x0000_i1053">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≠</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">时，线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">无解；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">d
+            <img width="19" height="23" src="04.files/image044.gif" align="absmiddle" v:shapes="_x0000_i1054">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">且</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">时，线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">只有唯一解；</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">3&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">d
+            <img width="19" height="23" src="04.files/image045.gif" align="absmiddle" v:shapes="_x0000_i1055">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">且</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＜</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">时，线性方程组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">有无穷多解。</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="262" height="134" src="04.files/image047.jpg" align="absmiddle" v:shapes="_x0000_i1056">
+             &nbsp;&nbsp;&nbsp;&nbsp;(4-4)</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">对于齐次线性方程组</font></span>
+        </p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;
+            <img width="231" height="86" src="04.files/image049.jpg" align="absmiddle" v:shapes="_x0000_i1057">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">）</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">由于</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="164" height="21" src="04.files/image051.jpg" align="absmiddle" v:shapes="_x0000_i1058">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">总是它的一个解（通常称为零解），所以齐次线性方程组的解总是存在的。问题是它会不会有非零解，从而有无穷多解。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.4</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果齐次线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）的系数矩阵</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的阶梯形中</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">非零行的数目</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">小于未知数的数目</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，那么它一定有非零解。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.5</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果齐次线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）的方程数目</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">m</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">小于未知数</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">的数目</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，那么它一定有非零解。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">推论</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4.6</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">如果齐次线性方程组（</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">4-5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">）的未知数的数目</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">不超过</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">方程的数目</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">m</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，那么，当且仅当</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r=n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">时，它只有非零解</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">。</font></span>
+        </p>
+            </td>
+        </tr>
+    </table>
+<p>            <font face="宋体"><span style="font-size:14pt;">&nbsp;</span></font></p>
+    </body>
+</html>
+

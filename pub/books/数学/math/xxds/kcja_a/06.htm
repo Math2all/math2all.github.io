@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+        <link rel="Edit-Time-Data" href="./06.files/editdata.mso">
+        <link rel="OLE-Object-Data" href="./06.files/oledata.mso">
+        <title>行列式的计算</title>
+    </head>
+    <body bgcolor="#FFFFFF" class="Normal" lang="ZH-CN">
+<table align="center" cellpadding="0" cellspacing="0" width="750">
+    <tr>
+        <td>
+            <h4><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">&sect;</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">6&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">行列式的计算</font></span></h4>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">一</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">化成三角形行列式法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">先把行列式的某一行（列）全部化为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，再利用该行（列）把行列式化为三角形行列式，从而求出它的值，这是因为所求行列式有如下特点：</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">各行元素之和相等；</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">各列元素除一个以外也相等。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">充分利用行列式的特点化简行列式是很重要的。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">二</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">降阶法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">根据行列式的特点，利用行列式性质把某行（列）化成只含一个非零元素，然后按该行（列）展开。展开一次，行列式降低一阶，对于阶数不高的数字行列式本法有效。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">三</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">拆成行列式之和（积）</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">把一个复杂的行列式简化成两个较为简单的。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">四</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">利用范德蒙行列式</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">根据行列式的特点，适当变形（利用行列式的性质——如：提取公因式；互换两行（列）；一行乘以适当的数加到另一行（列）去；</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">...)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">把所求行列式化成已知的或简单的形式。其中范德蒙行列式就是一种。这种变形法是计算行列式最常用的方法。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">五</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">数学归纳法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image002.gif" align="absmiddle" v:shapes="_x0000_i1025">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="31" height="24" src="06.files/image004.gif" align="absmiddle" v:shapes="_x0000_i1026">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是同型的行列式时，可考虑用数学归纳法求之。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">六</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">逆推法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">建立起</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image005.gif" align="absmiddle" v:shapes="_x0000_i1027">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="31" height="24" src="06.files/image006.gif" align="absmiddle" v:shapes="_x0000_i1028">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的递推关系式，逐步推下去，从而求出</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image007.gif" align="absmiddle" v:shapes="_x0000_i1029">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的值。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">有时也可以找到</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image008.gif" align="absmiddle" v:shapes="_x0000_i1030">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="31" height="24" src="06.files/image009.gif" align="absmiddle" v:shapes="_x0000_i1031">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image010.gif" align="absmiddle" v:shapes="_x0000_i1032">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的递推关系，最后利用</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="20" height="24" src="06.files/image012.gif" align="absmiddle" v:shapes="_x0000_i1033">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="21" height="24" src="06.files/image014.gif" align="absmiddle" v:shapes="_x0000_i1034">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">得到</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;
+            <img width="21" height="24" src="06.files/image015.gif" align="absmiddle" v:shapes="_x0000_i1035">
+             &nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的值。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">七</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">加边法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">要求：</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">保持原行列式的值不变；</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">新行列式的值容易计算。根据需要和原行列式的特点选取所加的行和列。加边法适用于某一行（列）有一个相同的字母外，也可用于其第</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">列（行）的元素分别为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个元素的倍数的情况。</font></span>
+        </p>
+        <p>
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman";"Times New Roman"'><font face="宋体">八</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman";"Times New Roman"'><font face="宋体">综合法</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">计算行列式的方法很多，也比较灵活，总的原则是：充分利用所求行列式的特点，运用行列式性质及上述常用的方法，有时综合运用以上方法可以更简便的求出行列式的值；有时也可用多种方法求出行列式的值。</font></span>
+        </p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">九</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">行列式的定义</font></span>
+        </p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">一般情况下不用。</font></span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>            <font face="宋体"><span style="font-size:14pt;">&nbsp;</span></font></p>
+    </body>
+</html>
+

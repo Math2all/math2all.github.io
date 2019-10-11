@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+        <link rel="Edit-Time-Data" href="./21.files/editdata.mso">
+        <link rel="OLE-Object-Data" href="./21.files/oledata.mso">
+        <title>向量的内积与欧氏空间</title>
+    </head>
+    <body bgcolor="#FFFFFF" class="Normal" lang="ZH-CN">
+<table align="center" cellpadding="0" cellspacing="0" width="750">
+    <tr>
+        <td>
+            <h4>            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">&sect;</font></span><span lang=EN-US style="font-size:14pt;"><font face="宋体">21&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">向量的内积与欧氏空间</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></h4>
+        <p>
+            
+            <span lang="EN-US" style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">一、</font></span><span lang="EN-US" style="font-family:'Times New Roman'; font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">与欧氏空间</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang=EN-US style="font-size:14pt;"><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">几何空间是抽象线性空间的一个最基本的模型，向量的度量性质是几何空间中最基本的研究对象。在&sect;</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">11</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">研究空间向量的数量积、向量积和混合积的基础上，我们要把空间向量的数量积概念推广到一般的线性空间上，进而研究线性空间的度量性质。在这一节里，我们总假设</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">是实数域</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">R</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上的线性空间。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">21.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">在</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上定义代数运算，记为（</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，）：</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">&times;</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">→</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">R</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">即对任意的</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            <img width="45" height="21" src="21.files/image002.gif" align="absmiddle" v:shapes="_x0000_i1025">
+            
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="56" height="21" src="21.files/image004.gif" align="absmiddle" v:shapes="_x0000_i1026">
+             R,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">并且对任意的</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            <img width="60" height="21" src="21.files/image006.gif" align="absmiddle" v:shapes="_x0000_i1027">
+             V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">及</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">k
+            <img width="13" height="13" src="21.files/image008.gif" align="absmiddle" v:shapes="_x0000_i1028">
+             R</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">满足下述条件：</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）对称性（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="33" height="21" src="21.files/image010.gif" align="absmiddle" v:shapes="_x0000_i1029">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">=(
+            <img width="33" height="21" src="21.files/image012.gif" align="absmiddle" v:shapes="_x0000_i1030">
+             );</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">线性性</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">(
+            <img width="57" height="21" src="21.files/image014.gif" align="absmiddle" v:shapes="_x0000_i1031">
+             ) =(
+            <img width="31" height="17" src="21.files/image016.gif" align="absmiddle" v:shapes="_x0000_i1032">
+             ) +(
+            <img width="31" height="21" src="21.files/image018.gif" align="absmiddle" v:shapes="_x0000_i1033">
+             )&nbsp; ,&nbsp; (k
+            <img width="33" height="21" src="21.files/image019.gif" align="absmiddle" v:shapes="_x0000_i1034">
+             )= k(
+            <img width="33" height="21" src="21.files/image020.gif" align="absmiddle" v:shapes="_x0000_i1035">
+             );</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）正定性</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">(
+            <img width="32" height="17" src="21.files/image022.gif" align="absmiddle" v:shapes="_x0000_i1036">
+             )</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≥</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">，等号成立当且仅当</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image024.gif" align="absmiddle" v:shapes="_x0000_i1037">
+             .=0</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">那么代数运算（</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">，）称为上一个内积，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">称为欧氏空间</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">21.2</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span lang="EN-US" style='font-size: 14.0pt'><font face="宋体">&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">设α是欧氏空间</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中任意的向量，非负实数</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="67" height="20" src="21.files/image026.jpg" v:shapes="_x0000_i1038">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为向量α的长度，记为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">||</font></span><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">
+            α</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">||&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">，特别，把长度为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的的向量称为单位向量。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与&sect;</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">11</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">一样可以证明下面的定理。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">21.1</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个欧氏空间，对任意的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="33" height="21" src="21.files/image027.gif" align="absmiddle" v:shapes="_x0000_i1039">
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体'><font face="宋体">∈</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">及</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">k</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span style='font-size:14.0pt;font-family:宋体'><font face="宋体">∈</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            R</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;,&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">（</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1)&nbsp;
+            ||
+            <img width="16" height="15" src="21.files/image029.gif" align="absmiddle" v:shapes="_x0000_i1040">
+             ||</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≥</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">，等号成立当且仅当</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image031.gif" align="absmiddle" v:shapes="_x0000_i1041">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0
+            ;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            (2 )&nbsp; ||k
+            <img width="16" height="15" src="21.files/image032.gif" align="absmiddle" v:shapes="_x0000_i1042">
+             || = k ||
+            <img width="16" height="15" src="21.files/image033.gif" align="absmiddle" v:shapes="_x0000_i1043">
+             || ;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            (3)&nbsp;&nbsp; |(
+            <img width="33" height="21" src="21.files/image034.gif" align="absmiddle" v:shapes="_x0000_i1044">
+             ) |</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≤</font></span><font face="宋体"><span style="font-size:14pt;"> </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">||
+            <img width="16" height="15" src="21.files/image035.gif" align="absmiddle" v:shapes="_x0000_i1045">
+             ||
+            <img width="16" height="21" src="21.files/image037.gif" align="absmiddle" v:shapes="_x0000_i1046">
+             || ,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">等号成立当且仅当与</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="21.files/image039.gif" align="absmiddle" v:shapes="_x0000_i1047">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">线性相关</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">（称为柯西</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">--</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">布涅雅科夫斯基不等式</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">）</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;
+            (4)&nbsp;&nbsp;&nbsp; ||
+            <img width="43" height="21" src="21.files/image041.gif" align="absmiddle" v:shapes="_x0000_i1048">
+             ||&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">≤</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp; ||
+            <img width="16" height="15" src="21.files/image043.gif" align="absmiddle" v:shapes="_x0000_i1049">
+             ||&nbsp; +&nbsp; ||
+            <img width="16" height="21" src="21.files/image045.gif" align="absmiddle" v:shapes="_x0000_i1050">
+             ||&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">（称为三角不等式）</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">21.3</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">在欧氏空间</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">中</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">如果两个向量与</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image046.gif" align="absmiddle" v:shapes="_x0000_i1051">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="21.files/image048.gif" align="absmiddle" v:shapes="_x0000_i1052">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的内积</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">(
+            <img width="16" height="15" src="21.files/image049.gif" align="absmiddle" v:shapes="_x0000_i1053">
+             ,
+            <img width="16" height="21" src="21.files/image051.gif" align="absmiddle" v:shapes="_x0000_i1054">
+             ) =0,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">那么称</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image052.gif" align="absmiddle" v:shapes="_x0000_i1055">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">与</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="21.files/image053.gif" align="absmiddle" v:shapes="_x0000_i1056">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">正交</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">记为</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image054.gif" align="absmiddle" v:shapes="_x0000_i1057">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">⊥</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="21" src="21.files/image055.gif" align="absmiddle" v:shapes="_x0000_i1058">
+             .</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">显然</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">只有零向量才于它自身正交</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">它也与中任意一个向量正交</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-family:宋体; font-size:14pt; "Times New Roman"'><font face="宋体">二、标准正交基与正交阵</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            21.4</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">　欧氏空间Ｖ中一个两两正交的非零向量组称为正交向量组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">我们规定由单个非零向量</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="16" height="15" src="21.files/image057.gif" align="absmiddle" v:shapes="_x0000_i1059">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">组成的向量组是个正交向量组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            21.2</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">　设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image059.gif" align="absmiddle" v:shapes="_x0000_i1060">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是欧氏空间Ｖ的一个正交向量组，那么</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image061.gif" align="absmiddle" v:shapes="_x0000_i1061">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">线性无关</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">.</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　证明　设有实数</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="73" height="23" src="21.files/image063.gif" align="absmiddle" v:shapes="_x0000_i1062">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">使</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　　　　</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="223" height="24" src="21.files/image065.gif" align="absmiddle" v:shapes="_x0000_i1063">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">　　</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">两边分别与</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="19" height="24" src="21.files/image067.gif" align="absmiddle" v:shapes="_x0000_i1064">
+             (i=1,2,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">……，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r)</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">作内积，并利用内积的线性，得</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　　</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="415" height="25" src="21.files/image069.gif" align="absmiddle" v:shapes="_x0000_i1065">
+            
+        </font></span></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">但是</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image070.gif" align="absmiddle" v:shapes="_x0000_i1066">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是两两正交的非零向量组，上述等式可写成</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img width="91" height="24" src="21.files/image072.gif" align="absmiddle" v:shapes="_x0000_i1067">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">且</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="77" height="24" src="21.files/image074.gif" align="absmiddle" v:shapes="_x0000_i1068">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，因此</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="73" height="23" src="21.files/image075.gif" align="absmiddle" v:shapes="_x0000_i1069">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">＝</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">0</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">这表明</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image076.gif" align="absmiddle" v:shapes="_x0000_i1070">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">线性无关。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　注意到</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">维线性空间</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中至多只有个</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">线性无关的向量，所以在</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">维欧氏空间中，任意一个正交向量组至多只有</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">个两两正交的非零向量，因此任意</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">个向量构成一个正交向量组时，它们一定成为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">的一组基，通常称为</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">的一个正交基。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            21. 5</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">　在</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">维欧氏空间</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">中</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">,</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">如果正交基</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image077.gif" align="absmiddle" v:shapes="_x0000_i1071">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中的每个向量</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="19" height="24" src="21.files/image079.gif" align="absmiddle" v:shapes="_x0000_i1072">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">都是单位向量，那么称</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的这个基为标准正交基。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　定理</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            21. 3</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size: 14.0pt;font-family:宋体;"Times New Roman"'><font face="宋体">　</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">(Gram
+            -Schmidt</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">正交化过程）设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            V</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是欧氏空间，</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image080.gif" align="absmiddle" v:shapes="_x0000_i1073">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一组线性无关的向量，那么取</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;β1 = α 1&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            β2=α 2 -
+            <img width="65" height="37" src="21.files/image082.jpg" v:shapes="_x0000_i1074">
+             β1&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;............</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;β r = α r -
+            <img width="74" height="37" src="21.files/image084.jpg" v:shapes="_x0000_i1075">
+             β1 -....... -
+            <img width="99" height="37" src="21.files/image086.jpg" v:shapes="_x0000_i1076">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">β</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">r-1</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">得到的向量</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="75" height="23" src="21.files/image088.gif" align="absmiddle" v:shapes="_x0000_i1077">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是一个正交的向量组，并且与向量组</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="81" height="23" src="21.files/image089.gif" align="absmiddle" v:shapes="_x0000_i1078">
+            
+            
+            </font></span><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">等价。　</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　定义</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            21.6</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">　如果实数域</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            R</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">上</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">阶矩阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">满足</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">　　　　　　</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font><sup><font face="宋体">T</font></sup><font face="宋体">A=E</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp; (</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">即</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font><sup><font face="宋体">-1</font></sup><font face="宋体">=A
+            </font><sup><font face="宋体">T</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">)</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">那么</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">称为正交阵。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　显然，正交阵的行列式只能是</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt; font-family:宋体;"Times New Roman"'><font face="宋体">或</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">-1</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，并且</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是正交阵当且仅当</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的列向量组成</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            R</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">的一个标准正交基。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">　　设</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">是</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">n</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family: 宋体;"Times New Roman"'><font face="宋体">阶正交矩阵，对任意的</font></span><font face="宋体"><span style="font-size:14pt;">
+            </span></font><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体"><img width="45" height="21" src="21.files/image091.gif" align="absmiddle" v:shapes="_x0000_i1079">
+             R</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">，</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">A
+            <img width="16" height="15" src="21.files/image093.gif" align="absmiddle" v:shapes="_x0000_i1080">
+             ,A
+            <img width="16" height="21" src="21.files/image095.gif" align="absmiddle" v:shapes="_x0000_i1081">
+            
+            </font></span><span lang="EN-US" style='font-size:14.0pt;font-family: 宋体'><font face="宋体"><img width="13" height="13" src="21.files/image097.gif" align="absmiddle" v:shapes="_x0000_i1082">
+            
+            </font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">R</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">并且有</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            (Aα,Aβ)=(Aα)T(Aβ)=.......=(α,β)&nbsp; ,</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            <span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;||Aα||&nbsp; =
+            <img width="90" height="20" src="21.files/image099.jpg" v:shapes="_x0000_i1083">
+             &nbsp;=
+            <img width="67" height="20" src="21.files/image101.jpg" v:shapes="_x0000_i1084">
+             &nbsp;=||α||</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        <p>
+            
+            <span style='font-size:14.0pt;font-family:宋体;"Times New Roman";"Times New Roman"'><font face="宋体">因此由正交阵</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            A</font></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">定义的</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">R
+            </font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">上线性变换，它保持了</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            R</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中向量的内积不变，从而保持</font></span><span
+lang=EN-US style='font-size:14.0pt'><font face="宋体">
+            R</font><sup><font face="宋体">n</font></sup></span><font face="宋体"><span style="font-size:14pt;">
+            
+            </span></font><span style='font-size:14.0pt;font-family:宋体; "Times New Roman"'><font face="宋体">中向量的长度不变，我们称这样的线性变换为正交变换。</font></span><font face="宋体"><span style="font-size:14pt;">
+        </span></font></p>
+        </td>
+    </tr>
+</table>
+        <p>
+            
+<font face="宋体"><span style="font-size:14pt;">&nbsp;</span></font></p>
+    </body>
+</html>
+
