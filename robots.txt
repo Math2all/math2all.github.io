@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /BLOGSYS/
+Disallow: /blogsys/
+Sitemap: https://zzj666.github.io/atom.xml

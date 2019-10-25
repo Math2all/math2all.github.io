@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="页面不存在：Page Not Found - zzj666's Little Site - 作者:zzj666"/> 
+    <meta name="description" content="Tags - zzj666's Little Site - 作者:zzj666"/> 
 	
-    <title>页面不存在：Page Not Found - zzj666's Little Site</title>
+    <title>Tags - zzj666's Little Site</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
@@ -106,14 +106,159 @@
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          <p align="center">
-<h1></h1>Page Not Found!</h1>
-Please wait...
-<br/>
-<br/>
-thanks!
-</p>
+          <!-- Navi -->
+<div class="post_frame">
+  <div class="post_navi">
+    <a href="/">首页</a>&nbsp;>&nbsp;
+    <span class="post_navi_span">Tags</span>
+  </div>
+  
+  <div style="padding:10px">
+    <svg class="cloud" style="width:95%;height:600px">
+    <g></g>
+</svg>
+<div class="tag_posts">
+</div>
 
+<!--
+<div>
+
+</div>
+
+//tag js
+
+-->
+
+<script src="/js/d3.js"></script>
+
+<script src="/js/d3.layout.cloud.js"></script>
+
+<script>
+    var tags = [
+        
+    ];
+    var minSize = 24, maxSize = 60;
+    var minFreq = 1;
+    var maxFreq = tags.reduce(function(memo, tag) {
+        if (tag.freq > memo) {
+            memo = tag.freq;
+        }
+        return memo;
+    }, 0);
+    var width = $('.cloud').width(), height = $('.cloud').height();
+    var fill = d3.scale.category10();
+    function scale(freq, minFreq, maxFreq, minSize, maxSize) {
+        return minSize + Math.floor((freq - minFreq) / (maxFreq - minFreq) * (maxSize - minSize));
+    }
+    function showPosts(tagContent) {
+        var tag = tags.filter(function(e) { return e.tag == tagContent; });
+        if (tag.length == 0) {
+            return;
+        }
+        tag = tag[0];
+        var $ul = $('<ul></ul>').append(tag.posts.map(function(post) {
+            var $li = $('<li></li>');
+            $li.html(post.date + ' - ' + '<a href="' + post.url + '">' + post.title + '</a>');
+            return $li;
+        }));
+        $('.tag_posts').slideUp('normal', function(e) {
+            $('.tag_posts').empty().append($('<div class="tag_title">' + tagContent + '</div>')).append($ul).slideDown('normal');
+        });
+    }
+    
+    if (location.hash != '') {
+        showPosts(location.hash.substring(1));
+    }
+    
+    function draw(words) {
+        d3.select('.cloud g')
+            .attr('transform', 'translate(' + [width / 2, height / 2] + ')')
+            .selectAll('text')
+            .data(words)
+            .enter()
+            .append('text')
+            .style('font-size', function(d) {
+                return d.size + 'px'
+            })
+            .style('fill', function(d, i) {
+                return fill(i);
+            })
+            .style('font-weight', function(d) {
+                return 'bold';
+            })
+            .style('font-family', 'Microsoft YaHei')
+            .style('cursor', 'pointer')
+            .text(function(d) {
+                return d.text;
+            })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .on('mouseover', function(d) {
+                d3.select(this).style('opacity', '0.5');
+            })
+            .on('mouseout', function(d) {
+                d3.select(this).style('opacity', '1');
+            })
+            .on('click', function(d) {
+                //showPosts(d.text);
+                window.location.href='/tag/'+d.text+'.html';
+            });
+    }
+    
+    var layout = d3.layout.cloud()
+        .size([width, height])
+        .words(tags.map(function(d) {
+            return {
+                text: d.tag,
+                size: scale(d.freq, minFreq, maxFreq, minSize, maxSize)
+            };
+        }).sort(function(a, b) {
+            return b.size - a.size;
+        }))
+        .padding(1)
+        .rotate(function() {
+            return ~~(Math.random() * 3 - 1) * 30;
+        })
+        .spiral('archimedean')
+        .font('Microsoft Yahei')
+        .fontSize(function(d) {
+            return d.size;
+        })
+        .on('end', draw);
+        
+    layout.start();
+    
+</script>
+
+
+  </div>
+
+  <!-- Blog Comments -->
+  <div class="media">
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NDY0NC8yMTE3Mw==">
+		<script type="text/javascript">
+   (function(d, s) {
+	          var j, e = d.getElementsByTagName(s)[0];
+
+		         if (typeof LivereTower === 'function') { return; }
+
+			        j = d.createElement(s);
+				       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				              j.async = true;
+
+					             e.parentNode.insertBefore(j, e);
+						        })(document, 'script');
+	</script>
+	<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+ 
+  </div>
+</div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
