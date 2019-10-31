@@ -4,12 +4,87 @@
  <title></title>
  <link href="http:///atom.xml" rel="self"/>
  <link href="http://"/>
- <updated>2019-10-28T09:44:06+08:00</updated>
+ <updated>2019-10-31T10:38:19+08:00</updated>
  <author>
    <name>zzj666</name>
    <email>zzj666#gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>如何在安卓系统中编译 Tex 文档</title>
+   <link href="http:///termux/texlive-on-termux.html"/>
+   <updated>2019-10-31T00:00:00+08:00</updated>
+   <id>/termux/texlive-on-termux</id>
+   <content type="html">&lt;h1 id=&quot;如何在安卓系统中编译-tex-文档-转&quot;&gt;如何在安卓系统中编译 Tex 文档 ?【转】&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;导语：Tex（.tex） 文档本质上是一个文本文件，因此，要在手机上编辑 Tex 文档并不算什么难事，只要安装一个文本编辑器就可以了。不过，如果想在手机上本地编译 Tex 文档输出 PDF 文件，则需要一定的折腾精神。 针对安卓系统，小编推荐的解决方案是：Termux + TexLive。`
+&lt;!-- more --&gt;
+Tex（.tex） 文档本质上是一个文本文件，因此，要在手机上编辑 Tex 文档并不算什么难事，只要安装一个文本编辑器就可以了。不过，如果想在手机上本地编译 Tex 文档输出 PDF 文件，则需要一定的折腾精神。 针对安卓系统，小编推荐的解决方案是：Termux + TexLive。 Termux 是安卓系统下的一款 Linux 终端模拟器，其最大特点是不需要对系统进行 root 操作。更多介绍可以访问 Termux 的官网：termux.com。&lt;/p&gt;
+  &lt;h1 id=&quot;第一步安装-termux&quot;&gt;第一步：安装 Termux&lt;/h1&gt;
+  &lt;p&gt;在应用商店里面搜索 Termux，然后下载、安装即可。 目前，Google Play 上的最新版本为 0.60。不过，国内的几大应用商店要么是搜不到，要么就是版本比较老旧。 有想法的小伙伴可以到 Google Play 上去下载，具体链接为：https://play.google.com/store/apps/details?id=com.termux。&lt;/p&gt;
+  &lt;h1 id=&quot;第二步安装-texlive&quot;&gt;第二步：安装 TexLive&lt;/h1&gt;
+  &lt;p&gt;TexLive 的安装方法也比较简单，打开 Termux，输入以下命令即可：&lt;/p&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pkg install texLive
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;第三步配置-texlive&quot;&gt;第三步：配置 TexLive&lt;/h1&gt;
+&lt;p&gt;理论上，TexLive 安装完成后，就可以使用了。但是要想进行复杂的写作（比如中文支持、中文字体、参考文献等），还需要一些必要的设置。 如果你十分清楚自己需要哪些宏包，可以通过 tlmgr install 命令一个一个地安装，比如：&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tlmgr install ctex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果空间允许，可以像小编一样把所有宏包都安装了，省得以后烦心：&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tlmgr install scheme-full
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;另外，可以用 tlmgr info 命令来查询已安装宏包的版本信息，比如：&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tlmgr info ctex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对于命令 tlmgr 的详细用法查阅 http://tug.org/texlive/tlmgr.html。&lt;/p&gt;
+&lt;h1 id=&quot;第四步编译方式与字体设置&quot;&gt;第四步：编译方式与字体设置&lt;/h1&gt;
+&lt;p&gt;由于安卓系统本身的限制，在完成 Tex 编译环境的配置之后，还需要解决一下字体的问题。 
+如果安卓系统已经 root，可以把一些常用的字体拷贝到对应的文件夹下，此时选用何种编译命令只要看 Tex 文档的要求。如果系统没有 root，就需要在 Tex 文档中设置一下字体，此时只能使用 &lt;strong&gt;xelatex&lt;/strong&gt; 命令。 
+这里推荐使用 fandol 字体，可以通过 &lt;strong&gt;tlmgr install fandol&lt;/strong&gt; 命令直接安装，无需系统 root。在文档中引用 xeCJK 宏包，具体如下：&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\usepackag{xeCJK} 
+\newCJKfontfamily
+\hei{FandolHei-Regular.otf} 
+\newCJKfontfamily\song{FandolSong-Regular.otf}
+\newCJKfontfamily\kaiti{FandolKai-Regular.otf}
+\newCJKfontfamily\fang{FandolFang-Regular.otf}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;第五步文档编译&quot;&gt;第五步：文档编译&lt;/h1&gt;
+&lt;p&gt;打开 Termux，切换至文档目录，即可使用命令进行编译。&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /storage/emulated/0/.../文档目录
+xelatex 文档名称.tex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开始在安卓系统中畅快使用 Tex 吧！ 
+其他问题 如果出现类似 “I can’t write on file ‘xxx.log’” 的错误，把文件夹拷贝到内置存储卡即可。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;原文：&lt;a href=&quot;http://www.hijtr.com/android-latex/&quot; title=&quot;如何在安卓系统中编译 Tex 文档&quot;&gt;如何在安卓系统中编译 Tex 文档？&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>关于Termux的一些链接</title>
@@ -34,11 +109,10 @@
   &lt;li&gt;&lt;a href=&quot;/pub/books/math/fortran/Index.htm&quot; title=&quot;Fortran77和90/95编程入门&quot;&gt;Fortran77和90/95编程入门&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/pub/books/gits/git-guide/index.html&quot; title=&quot;git - 简易指南&quot;&gt;git简易指南&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/pub/books/gits/simplegit/index.htm&quot; title=&quot;深入浅出Git教程（转载）&quot;&gt;深入浅出Git教程（转载）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gitee.com/all-about-git&quot; title=&quot;Git大全&quot;&gt;Git大全&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;生活信息&quot;&gt;生活信息，&lt;/h2&gt;
-&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gitee.com/all-about-git&quot; title=&quot;Git大全&quot;&gt;Git大全&lt;/a&gt;
+&lt;!-- more --&gt;
+    &lt;h2 id=&quot;生活信息&quot;&gt;生活信息，&lt;/h2&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://typhoon.weather.com.cn/gis/typhoon_full.shtml&quot; title=&quot;台风路径&quot;&gt;台风路径&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content>
