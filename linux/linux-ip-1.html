@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Linux命令之ip - zzj666's Little Site - 作者:zzj666"/> 
+	
+    <title>Linux命令之ip - zzj666's Little Site</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tongji.js"></script>
+  </head>
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/termux/index.html">
+					Termux专题
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/linux/index.html">
+					Linux专题
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/git/index.html">
+					git专题
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/develop/index.html">
+					开发
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/other/index.html">
+					杂记
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/read/index.html">
+					书摘
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/about.html">
+					关于
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          
+
+
+
+<div  class="post_frame">
+<!-- Navi -->
+<div class="post_navi">
+	<a href="/">首页</a>&nbsp;>&nbsp;
+	<a href=""></a>&nbsp;>&nbsp;
+	<span class="post_navi_span">正文</span>
+</div>
+
+<!-- Title -->
+<div class="post_titlearea">
+	<h1>Linux命令之ip</h1>
+	<hr class="hrline"/>
+	<div class="post_titledate"/>
+		&nbsp;&nbsp;&nbsp;
+		栏目：<a href=""></a>&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		日期：2019-11-01&nbsp;&nbsp;&nbsp;		
+	</div>
+</div>
+
+<div style="text-indent:2em;padding:10px">
+<h1 id="linux命令之ip转">Linux命令之ip【转】</h1>
+<p>**ip [ OPTIONS ] OBJECT { COMMAND | help }</p>
+
+<p>这一条命令几乎包含了所有使用方法，其中</p>
+
+<p>对象</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OBJECT={ link | addr | addrlabel | route | rule | neigh | ntable | tunnel | maddr | mroute | mrule | monitor | xfrm | token }
+</code></pre></div>  </div>
+</blockquote>
+
+<p>选项</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OPTIONS={ -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] | -h[uman-readable] | -iec | -f[amily] { inet | inet6 | ipx | dnet | link } | -o[neline] | -t[imestamp] | -b[atch] [filename] | -rc[vbuf] [size] } &lt;!-- more --&gt; 不过COMMAND比较长，请使用’ip OBJECT help’查看。
+</code></pre></div>  </div>
+</blockquote>
+
+<p>剩下的如下显示：</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip [-force] -batch filename
+</code></pre></div>  </div>
+</blockquote>
+
+<p>ip是iproute2软件包里面的一个强大的网络配置工具，用来显示或操作路由、网络设备、策略路由和隧道，它能够替代一些传统的网络管理工具，例如ifconfig、route等。用ip配置的设备信息，大部分会在设备重启后还原，如果想永久保留配置，请尽量进入配置文件修改。</p>
+
+<p>(1).对象</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>link 网络设备
+address 设备上的协议（IP或IPv6）地址
+addrlabel 协议地址选择的标签配置
+neighbour ARP或NDISC缓存条目
+route 路由表条目
+rule 路由策略数据库中的规则
+maddress 组播地址
+mroute 组播路由缓存条目
+tunnel IP隧道
+xfrm IPSec协议框架 所有对象的名称可以用完整或缩写形式书写，例如address可以缩写成addr或只是a。
+</code></pre></div>  </div>
+</blockquote>
+
+<p>(2).选项</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-V，-Version 显示指令版本信息
+-s,-stats,statistics 输出详细信息
+-h,-human,-human-readable 输出人类可读的统计信息和后缀
+-iec 以IEC标准单位打印人类可读速率（例如1K=1024）
+-f,-family &lt;FAMILY&gt; 指定要使用的协议族。协议族标识可以是inet、inet6、ipx、dnet或link之一。如果此选项不存在，则从其他参数中推测协议族。如果命令行的其余部分没有提供足够的信息来推测该族，则ip会退回到默认值，通常是inet或any。link是一个特殊的系列标识符，表示不涉及网络协议。
+-4 –family inet的快捷方式
+-6 –family inet6的快捷方式
+-0 –family link的快捷方式
+-o,-oneline 将每条记录输出到一行，用’\’字符替换换行符。
+-r,-resolve 使用系统名称解析程序来打印DNS名称而不是主机地址。 (3).实例
+</code></pre></div>  </div>
+</blockquote>
+
+<p>注意：以下介绍的ip命令都是临时配置，一但重启就会还原，如<code class="highlighter-rouge">service network restart</code></p>
+
+<p>查看所有IP地址</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip a/addr/address
+ip a/addr/address sh/show
+</code></pre></div>  </div>
+</blockquote>
+
+<p>查看指定IP地址</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip a/addr/address sh/show dev eth1
+ip a/addr/address sh/show eth1
+
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+
+[root@CentOS6 桌面]# ip a sh eth1
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever 增加或删除IP地址
+
+ip a/addr/address add 192.168.78.130/24 dev eth1
+ip a/addr/address del/delete 192.168.78.130/24 dev eth1
+
+[root@CentOS6 桌面]# ip a add 192.168.78.130/24 dev eth1
+[root@CentOS6 桌面]# ip a sh eth1
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet 192.168.78.130/24 scope global secondary eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip a del 192.168.78.130/24 dev eth1
+[root@CentOS6 桌面]# ip a sh eth1
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever 删除eth1所有IP地址
+
+ip a flush dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1 
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip a add 192.168.78.130/24 dev eth1
+[root@CentOS6 桌面]# ip a add 192.168.78.131/24 dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+   valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet 192.168.78.130/24 scope global secondary eth1
+inet 192.168.78.131/24 scope global secondary eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip a flush dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff 删除eth1的所有IPv4的IP地址
+
+ip -4 a flush dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip a add 192.168.78.130/24 dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.129/24 brd 192.168.78.255 scope global eth1
+inet 192.168.78.130/24 scope global secondary eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip -4 a flush dev eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever 查看网络设备信息
+
+ip link sh/show/l/list/ls
+ip link sh/show/l/ls/lsit eth1
+ip link sh/show/l/ls/list dev eth1
+[root@CentOS6 桌面]# ip link l
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+[root@CentOS6 桌面]# ip link l eth1
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+[root@CentOS6 桌面]# ip link l dev eth1
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff 停止与激活网络设备
+
+ip link set dev eth1 down
+ip link set dev eth1 up
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.133/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip link set dev eth1 down
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast state DOWN qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.133/24 brd 192.168.78.255 scope global eth1
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast state DOWN qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+[root@CentOS6 桌面]# ip link set dev eth1 up
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever
+[root@CentOS6 桌面]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+link/ether 00:0c:29:42:9f:ce brd ff:ff:ff:ff:ff:ff
+inet 192.168.78.133/24 brd 192.168.78.255 scope global eth1
+inet6 fe80::20c:29ff:fe42:9fce/64 scope link
+valid_lft forever preferred_lft forever 查看路由表
+
+ip r/ro/route
+ip r/ro/route sh/show
+ip r/ro/route sh/show dev eth1
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+default via 192.168.78.2 dev eth1  proto static
+[root@CentOS6 桌面]# ip r sh dev eth1
+192.168.78.0/24  proto kernel  scope link  src 192.168.78.133  metric 1
+default via 192.168.78.2  proto static 添加或删除路由
+
+ip r/ro/route add 192.168.79.0/24 dev eth1
+ip r/ro/route d/del/delete 192.168.79.0/24
+ip r/ro/route d/del/delete 192.168.79.0/24 dev eth1
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+default via 192.168.78.2 dev eth1  proto static
+[root@CentOS6 桌面]# ip r add 192.168.79.0/24 dev eth1
+[root@CentOS6 桌面]# ip r
+192.168.79.0/24 dev eth1  scope link
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+default via 192.168.78.2 dev eth1  proto static
+[root@CentOS6 桌面]# ip r d 192.168.79.0/24 dev eth1
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+default via 192.168.78.2 dev eth1  proto static 默认路由的删除、添加与修改
+
+ip r/ro/route d/del/delete default
+ip r/ro/route add default via 192.168.78.1
+ip r/ro/route chg/change default via 192.168.78.2
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+default via 192.168.78.2 dev eth1  proto static
+[root@CentOS6 桌面]# ip r d default
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+[root@CentOS6 桌面]# ip r add default via 192.168.78.1
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+default via 192.168.78.1 dev eth1
+[root@CentOS6 桌面]# ip r chg default via 192.168.78.2
+[root@CentOS6 桌面]# ip r
+192.168.78.0/24 dev eth1  proto kernel  scope link  src 192.168.78.133  metric 1
+192.168.78.0/24 dev eth2  proto kernel  scope link  src 192.168.78.132  metric 1
+default via 192.168.78.2 dev eth1 查看ARP表
+
+ip n/neigh/neighbuor sh/show
+[root@CentOS6 桌面]# ip n
+192.168.78.2 dev eth1 lladdr 00:50:56:f0:d4:05 REACHABLE
+192.168.78.2 dev eth2 lladdr 00:50:56:f0:d4:05 STALE
+192.168.78.254 dev eth2 lladdr 00:50:56:f5:45:c8 STALE 参考：
+</code></pre></div>  </div>
+</blockquote>
+
+<p>参考：<a href="https://blog.csdn.net/freeking101/article/details/68939059" title="linux ip命令和ifconfig命令">linux ip命令和ifconfig命令</a></p>
+
+<p>原文：<a href="https://www.cnblogs.com/diantong/p/9511072.html" title="Linux命令之ip">Linux命令之ip</a></p>
+
+</div>
+
+<div style="text-align:center">
+	<div>
+		<b>本文位置：</b><a href="https://zzj666.github.com">zzj666's Little Site</a> » <a href="https://zzj666.github.com/linux/linux-ip-1.html" title="">Linux命令之ip</a>
+	</div>
+</div>
+
+
+<!-- next and previous -->
+<div style="margin:10px">
+  <span class="next">
+		
+			<a href="">
+				
+			</a>
+		 
+  </span>
+  
+  <div style="float:right">
+  <span class="prev" >
+		
+			<a href="">
+				
+			</a>
+		
+  </span>
+  </div>
+  
+</div>
+
+<hr>
+
+</div>
+
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Side Widget Well -->
+          <div class="well">
+            <h4>
+              资源
+            </h4>
+			      <div class="row">
+                        <div class="col-lg-12">
+              <ul class="list-unstyled">
+                <li>
+                <a href="/pub/books/math/math/tj_math.html" target="_blank" rel="nofollow">
+                  数学基础知识
+                </a>
+				</li>
+				<li>
+                <a href="/pub/books/math/fortran/Index.htm" target="_blank" rel="nofollow">
+                  Fortran77和90/95编程入门
+                </a><br /><i><font size="2">（中国科技大学天文与应用物理系，丁泽军编）</font></i>
+				</li>
+                <li>
+                <a href="/pub/books/gits/git-guide/index.html" target="_blank" rel="nofollow">
+                  git - 简易指南
+                </a>
+				</li>
+				<a href="/pub/books/gits/simplegit/index.htm" target="_blank" rel="nofollow">
+                  深入浅出Git教程
+                </a>（转载）
+				</li>
+			  </ul>
+          </div>
+ 
+            </div>
+          </div>
+
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogRightB -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:336px;height:280px"
+	 data-ad-client="ca-pub-3557776493079475"
+	 data-ad-slot="4042604803"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+          </div>
+
+		      <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+            <div class="row">
+                                  
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                     
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div style="text-align:center;margin-top:15px;">
+	<a href="https://math2all.github.io">zzj666</a> 小站，由 Jekyll 生成。
+	<br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+	<br />除非单独声明。
+</div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ -->
+  </body>
+
+</html>
