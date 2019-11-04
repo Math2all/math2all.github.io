@@ -4,7 +4,7 @@
  <title></title>
  <link href="http:///atom.xml" rel="self"/>
  <link href="http://"/>
- <updated>2019-11-04T16:50:46+08:00</updated>
+ <updated>2019-11-04T17:01:20+08:00</updated>
  <author>
    <name>zzj666</name>
    <email>zzj666#gmail.com</email>
@@ -46,7 +46,7 @@
 
 &lt;p&gt;作为学术界的领袖，Pearson先生当初发表在《哲学杂志》上的$χ^2$论文题目为：On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling.&lt;/p&gt;
 
-&lt;p&gt;由卡方的计算公式可知，当观察频数与期望频数完全一致时，$χ^2$值为0；观察频数与期望频数越接近，两者之间的差异越小，$χ^2$值越小；反之，观察频数与期望频数差别越大，两者之间的差异越大，$χ^2$值越大。换言之，大的$χ^2$值表明观察频数远离期望频数，即表明远离假设。小的χ2值表明观察频数接近期望频数，接近假设。因此，$χ^2$是观察频数与期望频数之间距离的一种度量指标，也是假设成立与否的度量指标。如果$χ^2$值“小”，研究者就倾向于不拒绝H0；如果$χ^2$值大，就倾向于拒绝H0。至于$χ^2$在每个具体研究中究竟要大到什么程度才能拒绝H0，则要借助于卡方分布求出所对应的P值来确定。&lt;/p&gt;
+&lt;p&gt;由卡方的计算公式可知，当观察频数与期望频数完全一致时，$χ^2$值为0；观察频数与期望频数越接近，两者之间的差异越小，$χ^2$值越小；反之，观察频数与期望频数差别越大，两者之间的差异越大，$χ^2$值越大。换言之，大的$χ^2$值表明观察频数远离期望频数，即表明远离假设。小的χ2值表明观察频数接近期望频数，接近假设。因此，$χ^2$是观察频数与期望频数之间距离的一种度量指标，也是假设成立与否的度量指标。如果$χ^2$值“小”，研究者就倾向于不拒绝$H_0$；如果$χ^2$值大，就倾向于拒绝$H_0$。至于$χ^2$在每个具体研究中究竟要大到什么程度才能拒绝H0，则要借助于卡方分布求出所对应的P值来确定。&lt;/p&gt;
 
 &lt;h2 id=&quot;卡方检验的样本量要求&quot;&gt;卡方检验的样本量要求&lt;/h2&gt;
 &lt;p&gt;卡方分布本身是连续型分布，但是在分类资料的统计分析中，显然频数只能以整数形式出现，因此计算出的统计量是非连续的。只有当样本量比较充足时，才可以忽略两者间的差异，否则将可能导致较大的偏差具体而言，一般认为对于卡方检验中的每一个单元格，要求其最小期望频数均大于1，且至少有4／5的单元格期望频数大于5，此时使用卡方分布计算出的概率值才是准确的。如果数据不符合要求，可以采用确切概率法进行概率的计算。&lt;/p&gt;
@@ -55,11 +55,11 @@
 &lt;h4 id=&quot;1四格表资料的卡方检验&quot;&gt;1、四格表资料的卡方检验&lt;/h4&gt;
 &lt;p&gt;四格表资料的卡方检验用于进行两个率或两个构成比的比较。&lt;/p&gt;
 
-&lt;p&gt;　　1）专用公式：&lt;/p&gt;
+&lt;p&gt;1）专用公式：&lt;/p&gt;
 
-&lt;p&gt;　　若四格表资料四个格子的频数分别为a，b，c，d，则&lt;/p&gt;
+&lt;p&gt;若四格表资料四个格子的频数分别为a，b，c，d，则四格表资料卡方检验的&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;四格表资料卡方检验的卡方值=(ad-bc)^2\frac n{(a+b)(c+d)(a+c)(b+d)}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;卡方值=(ad-bc)^2\frac n{(a+b)(c+d)(a+c)(b+d)}&lt;/script&gt;
 
 &lt;p&gt;,&lt;/p&gt;
 
@@ -71,7 +71,9 @@
 
 &lt;p&gt;1）专用公式：&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;r行c列表资料卡方检验的卡方值=n[(\frac {A_{11}}{n_1n_1}+\frac {A_{12}}{n_1n_2}+\ldots+\frac {A_{rc}}{n_rn_c})]-1&lt;/script&gt;
+&lt;p&gt;r行c列表资料卡方检验的&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;卡方值=n[(\frac {A_{11}}{n_1n_1}+\frac {A_{12}}{n_1n_2}+\ldots+\frac {A_{rc}}{n_rn_c})]-1&lt;/script&gt;
 
 &lt;p&gt;2)应用条件：&lt;/p&gt;
 
@@ -101,7 +103,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;　　列联表卡方检验应用中的注意事项同R×C表的卡方检验相同。&lt;/p&gt;
+&lt;p&gt;列联表卡方检验应用中的注意事项同R×C表的卡方检验相同。&lt;/p&gt;
 
 &lt;h2 id=&quot;卡方检验的用途&quot;&gt;卡方检验的用途&lt;/h2&gt;
 &lt;p&gt;卡方检验最常见的用途就是考察某无序分类变量各水平在两组或多组间的分布是否一致实际上，除了这个用途之外．卡方检验还有更广泛的应用。具体而言，其用途主要包括以下几个方面：&lt;/p&gt;
@@ -224,14 +226,12 @@ D10=“=D5*E4/E5” 。
 &lt;p&gt;(6)比较统计量和临界值，统计量1.3875小于临界值7.81，故接受零假设。&lt;/p&gt;
 
 &lt;h2 id=&quot;参考文献&quot;&gt;参考文献&lt;/h2&gt;
-&lt;blockquote&gt;
 
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 1.0 1.1 张文彤,邝春伟编著.第16章 无序分类变量的统计推断——卡方检验 SPSS统计分析基础教程 第2版.高等教育出版社,2011.11.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 1.0 1.1 张文彤,邝春伟编著.第16章 无序分类变量的统计推断——卡方检验 SPSS统计分析基础教程 第2版.高等教育出版社,2011.11.
 2.刘铁民主编.第十章 安全生产统计分析 安全生产管理知识 2006版.中国大百科全书出版社,2006年05月第1版.
 3.卡方检验的应用条件[J].中国医药科学,2013,(第2期).
 4.孙志刚,杨聪.第八章 假设检验 Excel在经济与数理统计中的应用.中国电力出版社,2004年01月第1版.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
  
