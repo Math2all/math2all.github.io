@@ -16,6 +16,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/tongji.js"></script>
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
   </head>
   
   <body>
@@ -44,20 +49,26 @@
           		<ul class="nav navbar-nav">
 			
 				<li>
+				  <a href="/math/index.html">
+					数学
+				  </a>
+				</li>
+			
+				<li>
 				  <a href="/termux/index.html">
-					Termux专题
+					Termux
 				  </a>
 				</li>
 			
 				<li>
 				  <a href="/linux/index.html">
-					Linux专题
+					Linux
 				  </a>
 				</li>
 			
 				<li>
 				  <a href="/git/index.html">
-					git专题
+					git
 				  </a>
 				</li>
 			
@@ -351,50 +362,63 @@ TX: bytes  packets  errors  dropped carrier collsns
 <p>这样，就可以看到网络接口的流量信息了。</p>
 
 <p>如果只想看当前被激活的网络接口，可以在命令后头增加一个up:</p>
+<blockquote>
 
-<p>root@astrol:~# ip link show up<br />
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default<br />
-link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br />
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000<br />
-link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~# ip link show up  
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default  
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00  
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000  
+link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff  
+</code></pre></div>  </div>
+</blockquote>
 
-<p>（2）查询网络设备的IP地址</p>
+<p>(2)查询网络设备的IP地址</p>
 
-<p>使用net-tools：</p>
+<p>使用net-tools：
+<code class="highlighter-rouge">root@astrol:~# ifconfig eth0</code>
+使用iproute2：</p>
+<blockquote>
 
-<p>使用iproute2：</p>
-
-<p>root@astrol:~
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000<br />
-link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff<br />
-inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0<br />
-valid_lft forever preferred_lft forever<br />
-inet 192.168.6.139/24 brd 192.168.6.255 scope global secondary eth0:1<br />
-valid_lft forever preferred_lft forever<br />
-inet6 fe80::20c:29ff:fe0d:ce93/64 scope link<br />
-valid_lft forever preferred_lft forever</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip addr show dev eth0  
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000  
+link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff  
+inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0  
+valid_lft forever preferred_lft forever  
+inet 192.168.6.139/24 brd 192.168.6.255 scope global secondary eth0:1  
+valid_lft forever preferred_lft forever  
+inet6 fe80::20c:29ff:fe0d:ce93/64 scope link  
+valid_lft forever preferred_lft forever  
+</code></pre></div>  </div>
+</blockquote>
 
 <p>当不指定网络接口时，ip addr其实是ip addr show的简略写法。</p>
 
 <p>（3）设置网络设备的IP地址</p>
 
 <p>使用net-tools：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~# ifconfig eth0:1 192.168.6.140  
+root@astrol:~# ifconfig eth0:1 192.168.6.140 netmask 255.255.255.0  
+root@astrol:~# ifconfig eth0:1 192.168.6.140 netmask 255.255.255.0 broadcast 192.168.6.255
+</code></pre></div>  </div>
+</blockquote>
 
-<p>使用iproute2：</p>
+<p>使用iproute2：
+<code class="highlighter-rouge">root@astrol:~# ip addr add 192.168.6.140/24 brd + dev eth0:1</code></p>
 
-<p>这里使用的模版是：ip addr add ip_address/net_prefix brd + devinterface</p>
+<p>这里使用的模版是：<code class="highlighter-rouge">ip addr add ip_address/net_prefix brd + devinterface </code></p>
 
 <p>net_prefix隐含指定了子网掩码，brd +表明是标准的广播地址。</p>
 
 <p>需要了解的一点是，通过ip addr可以非常容易地给一块网卡添加多个地址，ifconfig同样可以，是通过叫做“IP别名”的方式做到的。</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip addr add 192.168.6.140/24 broadcast 192.168.6.255 dev eth0 
+root@astrol:~ ip addr add 192.168.6.141/24 broadcast 192.168.6.255 dev eth0
+root@astrol:~ ip addr add 192.168.6.142/24 broadcast 192.168.6.255 dev eth0 
+</code></pre></div>  </div>
+</blockquote>
 
 <p>（4）删除网络设备的IP地址</p>
 
@@ -406,37 +430,46 @@ root@astrol:~</p>
 
 <p>使用iproute2：</p>
 
-<p>模版：ip addr del ip_address/net_prefix dev interface</p>
+<p>模版：<code class="highlighter-rouge">ip addr del ip_address/net_prefix dev interface</code></p>
+<blockquote>
 
-<p>root@astrol:~# ip -4 addr show dev eth0<br />
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000<br />
-inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0<br />
-valid_lft forever preferred_lft forever<br />
-inet 192.168.6.141/24 brd 192.168.6.255 scope global secondary eth0<br />
-valid_lft forever preferred_lft forever<br />
-root@astrol:~# ip addr del 192.168.6.141/24 dev eth0<br />
-root@astrol:~# ip -4 addr show dev eth0<br />
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000<br />
-inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0<br />
-valid_lft forever preferred_lft forever</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~# ip -4 addr show dev eth0  
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000  
+inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0  
+valid_lft forever preferred_lft forever  
+inet 192.168.6.141/24 brd 192.168.6.255 scope global secondary eth0  
+valid_lft forever preferred_lft forever  
+root@astrol:~# ip addr del 192.168.6.141/24 dev eth0  
+root@astrol:~# ip -4 addr show dev eth0  
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000  
+inet 192.168.6.138/24 brd 192.168.6.255 scope global eth0  
+valid_lft forever preferred_lft forever  
+</code></pre></div>  </div>
+</blockquote>
 
-<p>此外，iproute2提供ip addr flush可以一次性删除一个网络设备的所有地址：</p>
-
-<p>默认的，这条命令会删除IPv4和IPv6的地址，如果想分别删除，可以通过分别指定-4和-6选项。</p>
+<p>此外，iproute2提供ip addr flush可以一次性删除一个网络设备的所有地址：
+<code class="highlighter-rouge">root@astrol:~# ip addr flush dev eth0</code><br />
+默认的，这条命令会删除IPv4和IPv6的地址，如果想分别删除，可以通过分别指定-4和-6选项。</p>
 
 <p>（5）激活或者停用网络接口</p>
 
 <p>使用net-tools：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ifconfig eth0 up
+root@astrol:~ fcofig eth0 dow
+</code></pre></div>  </div>
+</blockquote>
 
 <p>在linux下还可以使用ifup和ifdown来达到同样的目的。</p>
 
 <p>使用iproute2：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip link set eth0 up
+root@astrol:~ ip link set eth0 down
+</code></pre></div>  </div>
+</blockquote>
 
 <p>（6）设置或者改变网络接口的参数（属性）</p>
 
@@ -447,43 +480,61 @@ root@astrol:~</p>
 <p>可以看到其中的up和down就是用来激活或者停用某个网络接口的。例如，使能或者关闭eth0的多播功能：</p>
 
 <p>使用net-tools：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ifconfig eth0 multicast
+root@astrol:~ ifconfig eth0 -multicast
+</code></pre></div>  </div>
+</blockquote>
 
 <p>使用iproute2：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip link set eth0 multicast on
+root@astrol:~ ip link set eth0 multicast off 
+</code></pre></div>  </div>
+</blockquote>
 
 <p>通常，调整最大传输单元MTU用的比较多。</p>
 
 <p>使用net-tools：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~
-2: eth0: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1400 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000<br />
-link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ifconfig eth0 mtu 1400
+root@astrol:~ ip link show eth0
+2: eth0: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1400 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000  
+link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff  
+</code></pre></div>  </div>
+</blockquote>
 
 <p>使用iproute2：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~
-2: eth0: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000<br />
-link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip link set eth0 mtu 1500
+root@astrol:~ ip link show eth0  
+2: eth0: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000  
+link/ether 00:0c:29:0d:ce:93 brd ff:ff:ff:ff:ff:ff  
+</code></pre></div>  </div>
+</blockquote>
 
 <p>改变网卡硬件地址，即MAC地址（注意，修改MAC地址前网卡必须先关闭）：</p>
 
 <p>使用net-tools：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ifconfig eth0 down
+root@astrol:~ ifconfig eth0 hw ether 00:0c:29:0d:ce:95 up
+</code></pre></div>  </div>
+</blockquote>
 
 <p>使用iproute2：</p>
+<blockquote>
 
-<p>root@astrol:~
-root@astrol:~
-root@astrol:~</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@astrol:~ ip link set eth0 down
+root@astrol:~ ip link set eth0 address 00:0c:29:0d:ce:95
+&gt;root@astrol:~ ip link set eth0 up
+</code></pre></div>  </div>
+</blockquote>
 
 <p>类似的，需要先关闭网卡再设置的属性有name</p>
 
@@ -495,14 +546,19 @@ root@astrol:~</p>
 
 <p>要安装ip，请点击这里下载iproute2套装工具 。不过，大多数Linux发行版已经预装了iproute2工具。</p>
 
-<p>显示所有已连接的网络接口</p>
+<h3 id="显示所有已连接的网络接口">显示所有已连接的网络接口</h3>
 
 <p>下面的命令显示出所有可用网络接口的列表（无论接口是否激活）。</p>
 
-<p>使用net-tools:
-$ ifconfig -a
-使用iproute2：
-$ ip link show</p>
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig -a
+</code></pre></div></div>
+
+<p>使用iproute2：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip link show
+</code></pre></div></div>
 
 <p><img src="https://s2.ax1x.com/2019/11/01/KHAlAx.jpg" alt="KHAlAx.jpg" /></p>
 
@@ -510,922 +566,974 @@ $ ip link show</p>
 
 <p>使用这些命令来激活或停用某个指定的网络接口。</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 up
+<p>使用net-tools:</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig eth1 up
 $ sudo ifconfig eth1 down
-使用iproute2:
-$ sudo ip link set down eth1
-$ sudo ip link set up eth1</p>
+</code></pre></div>  </div>
+</blockquote>
 
-<p>为网络接口分配IPv4地址</p>
+<p>使用iproute2:</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 10.0.0.1/24
-使用iproute2:
-$ sudo ip addr add 10.0.0.1/24 dev eth1</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip link set down eth1
+$ sudo ip link set up eth1
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="为网络接口分配ipv4地址">为网络接口分配IPv4地址</h3>
+
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig eth1 10.0.0.1/24
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip addr add 10.0.0.1/24 dev eth1
+</code></pre></div></div>
 
 <p>可以使用iproute2给同一个接口分配多个IP地址，ifconfig则无法这么做。使用ifconfig的变通方案是使用IP别名。</p>
 
-<p>使用net-tools配置多IP：
-$ sudo ifconfig eth0:1 192.168.10.10 netmask 255.255.255.0 up
-$ sudo ifconfig eth0:2 192.168.10.15 netmask 255.255.255.0 up</p>
+<p>使用net-tools配置多IP：</p>
+<blockquote>
 
-<p>使用iproute2配置多IP:
-$ sudo ip addr add 10.0.0.1/24 broadcast 10.0.0.255 dev eth1
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig eth0:1 192.168.10.10 netmask 255.255.255.0 up
+$ sudo ifconfig eth0:2 192.168.10.15 netmask 255.255.255.0 up
+</code></pre></div>  </div>
+</blockquote>
+
+<p>使用iproute2配置多IP:</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip addr add 10.0.0.1/24 broadcast 10.0.0.255 dev eth1
 $ sudo ip addr add 10.0.0.2/24 broadcast 10.0.0.255 dev eth1
-$ sudo ip addr add 10.0.0.3/24 broadcast 10.0.0.255 dev eth1</p>
+$ sudo ip addr add 10.0.0.3/24 broadcast 10.0.0.255 dev eth1
+</code></pre></div>  </div>
+</blockquote>
 
 <p>查看eth0的IP地址
-$sudo ip addr list dev eth0</p>
+<code class="highlighter-rouge">$sudo ip addr list dev eth0</code></p>
 
-<p>移除网络接口的IPv4地址</p>
+<h3 id="移除网络接口的ipv4地址">移除网络接口的IPv4地址</h3>
 
 <p>就IP地址的移除而言，除了给接口分配全0地址外，net-tools没有提供任何合适的方法来移除网络接口的IPv4地址。而 iproute2则能很好地完成。</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 0
-使用iproute2:
-$ sudo ip addr del 10.0.0.1/24 dev eth1</p>
+<p>使用net-tools:</p>
 
-<p>显示网络接口的IPv4地址</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig eth1 0
+</code></pre></div></div>
 
-<p>使用net-tools:
-$ ifconfig eth1
-使用iproute2:
-$ ip addr show dev eth1
-如果是网卡绑定了多IP的话，iproute2能显示所有的地址，而net-tools只能显示一个</p>
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip addr del 10.0.0.1/24 dev eth1
+</code></pre></div></div>
+
+<h3 id="显示网络接口的ipv4地址">显示网络接口的IPv4地址</h3>
+
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig eth1
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip addr show dev eth1
+</code></pre></div></div>
+
+<p>如果是网卡绑定了多IP的话，iproute2能显示所有的地址，而net-tools只能显示一个</p>
 
 <p><img src="https://s2.ax1x.com/2019/11/01/KHA1N6.jpg" alt="KHA1N6.jpg" /></p>
 
-<p>为网络接口分配IPv6地址</p>
+<h3 id="为网络接口分配ipv6地址">为网络接口分配IPv6地址</h3>
 
 <p>使用这些命令为网络接口添加IPv6地址。net-tools和iproute2都允许用户为一个接口添加多个IPv6地址。</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 inet6 add 2002:0db5:0:f102::1/64
-$ sudo ifconfig eth1 inet6 add 2003:0db5:0:f102::1/64
-使用iproute2:
-$ sudo ip -6 addr add 2002:0db5:0:f102::1/64 dev eth1
-$ sudo ip -6 addr add 2003:0db5:0:f102::1/64 dev eth1</p>
+<p>使用net-tools:</p>
+<blockquote>
 
-<p>显示网络接口的IPv6地址</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig eth1 inet6 add 2002:0db5:0:f102::1/64
+$ sudo ifconfig eth1 inet6 add 2003:0db5:0:f102::1/64
+</code></pre></div>  </div>
+</blockquote>
+
+<p>使用iproute2:</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip -6 addr add 2002:0db5:0:f102::1/64 dev eth1
+$ sudo ip -6 addr add 2003:0db5:0:f102::1/64 dev eth1
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="显示网络接口的ipv6地址">显示网络接口的IPv6地址</h3>
 
 <p>net-tools和iproute2都可以显示出所有已分配的IPv6地址。</p>
 
-<p>使用net-tools:
-$ ifconfig eth1
-使用iproute2:
-$ ip -6 addr show dev eth1</p>
+<p>使用net-tools:</p>
 
-<p><img src="https://s2.ax1x.com/2019/11/01/KHAMH1.jpg" alt="KHAMH1.jpg" />
-移除网络设备的IPv6地址</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig eth1
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip -6 addr show dev eth1
+</code></pre></div></div>
+
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAMH1.jpg" alt="KHAMH1.jpg" /></p>
+<h3 id="移除网络设备的ipv6地址">移除网络设备的IPv6地址</h3>
 
 <p>使用这些命令可移除接口中不必要的IPv6地址。</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 inet6 del 2002:0db5:0:f102::1/64
-使用iproute2:
-$ sudo ip -6 addr del 2002:0db5:0:f102::1/64 dev eth1</p>
+<p>使用net-tools:</p>
+
+<p><code class="highlighter-rouge">$ sudo ifconfig eth1 inet6 del 2002:0db5:0:f102::1/64</code></p>
+
+<p>使用iproute2:</p>
+
+<p><code class="highlighter-rouge">$ sudo ip -6 addr del 2002:0db5:0:f102::1/64 dev eth1</code></p>
 
 <p>改变网络接口的MAC地址</p>
 
 <p>使用下面的命令可篡改网络接口的MAC地址，请注意在更改MAC地址前，需要停用接口。</p>
 
-<p>使用net-tools:
-$ sudo ifconfig eth1 hw ether 08:00:27:75:2a:66
-使用iproute2:
-$ sudo ip link set dev eth1 address 08:00:27:75:2a:67</p>
+<p>使用net-tools:</p>
 
-<p>查看IP路由表</p>
+<p><code class="highlighter-rouge">$ sudo ifconfig eth1 hw ether 08:00:27:75:2a:66</code></p>
+
+<p>使用iproute2:</p>
+
+<p><code class="highlighter-rouge">$ sudo ip link set dev eth1 address 08:00:27:75:2a:67</code></p>
+
+<h3 id="查看ip路由表">查看IP路由表</h3>
 
 <p>net-tools中有两个选择来显示内核的IP路由表：route和netstat。在iproute2中，使用命令ip route。</p>
 
-<p>使用net-tools:
-$route -n
-$ netstat -rn
-使用iproute2:
-$ ip route show</p>
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$route -n
+$netstat -rn
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip route show
+</code></pre></div></div>
 
 <p><img src="https://s2.ax1x.com/2019/11/01/KHAJ3D.jpg" alt="KHAJ3D.jpg" /></p>
 <h3 id="添加和修改默认路由">添加和修改默认路由</h3>
 
 <p>这里的命令用来添加或修改内核IP路由表中的默认路由规则。请注意在net-tools中可通过添加新的默认路由、删除旧的默认路由来实现修改默认路由。在iproute2使用ip route命令来代替。</p>
 
-<p>使用net-tools:
-$ sudo route add default gw 192.168.1.2 eth0
-$ sudo route del default gw 192.168.1.1 eth0
-使用iproute2:
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo route add default gw 192.168.1.2 eth0
+$ sudo route del default gw 192.168.1.1 eth0 使用iproute2:
+
 $ sudo ip route add default via 192.168.1.2 dev eth0
-$ sudo ip route replace default via 192.168.1.2 dev eth0</p>
+$ sudo ip route replace default via 192.168.1.2 dev eth0
+</code></pre></div></div>
 
-<p>添加和移除静态路由</p>
+<h3 id="添加和移除静态路由">添加和移除静态路由</h3>
 
-<p>使用net-tools:
-$ sudo route add default gw 192.168.1.2 eth0
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo route add default gw 192.168.1.2 eth0
 $ sudo route del default gw 192.168.1.1 eth0
-使用iproute2:
-$ sudo ip route add default via 192.168.1.2 dev eth0
-$ sudo ip route replace default via 192.168.1.2 dev eth0</p>
+</code></pre></div></div>
 
-<p>查看套接字统计信息</p>
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip route add default via 192.168.1.2 dev eth0
+$ sudo ip route replace default via 192.168.1.2 dev eth0
+</code></pre></div></div>
+
+<h3 id="查看套接字统计信息">查看套接字统计信息</h3>
 
 <p>这里的命令用来查看套接字统计信息（比如活跃或监听状态的TCP/UDP套接字）。</p>
 
-<p>使用net-tools:
-$ netstat
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ netstat
 $ netstat -l
-使用iproute2:
-$ ss
-$ ss -l</p>
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ss
+$ ss -l
+</code></pre></div></div>
 
 <p><img src="https://s2.ax1x.com/2019/11/01/KHA34K.jpg" alt="KHA34K.jpg" /></p>
 
 <h3 id="查看arp表">查看ARP表</h3>
 
-<p>使用net-tools:
-$ arp -an
-使用iproute2:
-$ ip neigh</p>
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ arp -an
+</code></pre></div></div>
+
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip neigh
+</code></pre></div></div>
 
 <p><img src="https://s2.ax1x.com/2019/11/01/KHAYge.jpg" alt="KHAYge.jpg" /></p>
 
 <h3 id="添加或删除静态arp项">添加或删除静态ARP项</h3>
 
-<p>使用net-tools:
-$ sudo arp -s 192.168.1.100 00:0c:29:c0:5a:ef
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo arp -s 192.168.1.100 00:0c:29:c0:5a:ef
 $ sudo arp -d 192.168.1.100
-使用iproute2:
-$ sudo ip neigh add 192.168.1.100 lladdr 00:0c:29:c0:5a:ef dev eth0
-$ sudo ip neigh del 192.168.1.100 dev eth0</p>
+</code></pre></div></div>
 
-<p>添加、删除或查看多播地址</p>
+<p>使用iproute2:</p>
 
-<p>使用net-tools:
-$ sudo ipmaddr add 33:44:00:00:00:01 dev eth0
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip neigh add 192.168.1.100 lladdr 00:0c:29:c0:5a:ef dev eth0
+$ sudo ip neigh del 192.168.1.100 dev eth0
+</code></pre></div></div>
+
+<h3 id="添加删除或查看多播地址">添加、删除或查看多播地址</h3>
+
+<p>使用net-tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ipmaddr add 33:44:00:00:00:01 dev eth0
 $ sudo ipmaddr del 33:44:00:00:00:01 dev eth0
 $ ipmaddr show dev eth0
 $ netstat -g
-使用iproute2:
-$ sudo ip maddr add 33:44:00:00:00:01 dev eth0
-$ sudo ip maddr del 33:44:00:00:00:01 dev eth0
-$ ip maddr list dev eth0</p>
+</code></pre></div></div>
 
+<p>使用iproute2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip maddr add 33:44:00:00:00:01 dev eth0
+$ sudo ip maddr del 33:44:00:00:00:01 dev eth0
+$ ip maddr list dev eth0
+</code></pre></div></div>
+
+<h2 id="iproute2中ip命令">iproute2中ip命令</h2>
 <p>你也可以使用git命令来下载最新源代码来编译：</p>
 
-<p>$ git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2.git</p>
+<p><code class="highlighter-rouge">$ git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2.git</code></p>
 
-<p>iproute2 git clone</p>
-
-<p>iproute2 git clone</p>
-
-<p>设置和删除Ip地址</p>
+<h3 id="设置和删除ip地址">设置和删除Ip地址</h3>
 
 <p>要给你的机器设置一个IP地址，可以使用下列ip命令：</p>
 
-<p>$ sudo ip addr add 192.168.0.193/24 dev wlan0</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip addr add 192.168.0.193/24 dev wlan0
+</code></pre></div></div>
 
 <p>请注意IP地址要有一个后缀，比如/24。这种用法用于在无类域内路由选择（CIDR）中来显示所用的子网掩码。在这个例子中，子网掩码是255.255.255.0。</p>
 
 <p>在你按照上述方式设置好IP地址后，需要查看是否已经生效。</p>
 
-<p>$ ip addr show wlan0</p>
-
-<p>set ip address</p>
-
-<p>set ip address</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip addr show wlan0
+</code></pre></div></div>
 
 <p>你也可以使用相同的方式来删除IP地址，只需用del代替add。</p>
 
-<p>$ sudo ip addr del 192.168.0.193/24 dev wlan0</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip addr del 192.168.0.193/24 dev wlan0
+</code></pre></div></div>
 
-<p>delete ip address</p>
-
-<p>delete ip address</p>
-
-<p>列出路由表条目</p>
+<h3 id="列出路由表条目">列出路由表条目</h3>
 
 <p>ip命令的路由对象的参数还可以帮助你查看网络中的路由数据，并设置你的路由表。第一个条目是默认的路由条目，你可以随意改动它。</p>
 
 <p>在这个例子中，有几个路由条目。这个结果显示有几个设备通过不同的网络接口连接起来。它们包括WIFI、以太网和一个点对点连接。</p>
 
-<p>$ ip route show</p>
-
-<p>ip route show</p>
-
-<p>ip route show</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip route show
+</code></pre></div></div>
 
 <p>假设现在你有一个IP地址，你需要知道路由包从哪里来。可以使用下面的路由选项（译注：列出了路由所使用的接口等）：</p>
 
-<p>$ ip route get 10.42.0.47</p>
-
-<p>ip route get</p>
-
-<p>ip route get</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip route get 10.42.0.47
+</code></pre></div></div>
 
 <p>更改默认路由</p>
 
 <p>要更改默认路由，使用下面ip命令：</p>
 
-<p>$ sudo ip route add default via 192.168.0.196</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip route add default via 192.168.0.196
+</code></pre></div></div>
 
-<p>default route</p>
-
-<p>default route</p>
-
-<p>显示网络统计数据</p>
+<h3 id="显示网络统计数据">显示网络统计数据</h3>
 
 <p>使用ip命令还可以显示不同网络接口的统计数据。</p>
 
-<p>ip statistics all interfaces</p>
-
-<p>ip statistics all interfaces</p>
-
 <p>当你需要获取一个特定网络接口的信息时，在网络接口名字后面添加选项ls即可。使用多个选项-s会给你这个特定接口更详细的信息。特别是在排除网络连接故障时，这会非常有用。</p>
 
-<p>$ ip -s -s link ls p2p1</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip -s -s link ls p2p1
+</code></pre></div></div>
 
-<p>ip link statistics</p>
-
-<p>ip link statistics</p>
-
-<p>ARP条目</p>
+<h3 id="arp条目">ARP条目</h3>
 
 <p>地址解析协议（ARP）用于将一个IP地址转换成它对应的物理地址，也就是通常所说的MAC地址。使用ip命令的neigh或者neighbour选项，你可以查看接入你所在的局域网的设备的MAC地址。</p>
 
-<p>$ ip neighbour</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip neighbour
+</code></pre></div></div>
 
-<p>ip neighbour</p>
-
-<p>ip neighbour</p>
-
-<p>监控netlink消息</p>
+<h3 id="监控netlink消息">监控netlink消息</h3>
 
 <p>也可以使用ip命令查看netlink消息。monitor选项允许你查看网络设备的状态。比如，所在局域网的一台电脑根据它的状态可以被分类成REACHABLE或者STALE。使用下面的命令：</p>
 
 <p>$ ip monitor all</p>
 
-<p>ip monitor all</p>
-
-<p>ip monitor all</p>
-
-<p>激活和停止网络接口</p>
+<h3 id="激活和停止网络接口">激活和停止网络接口</h3>
 
 <p>你可以使用ip命令的up和down选项来激某个特定的接口，就像ifconfig的用法一样。</p>
 
 <p>在这个例子中，当ppp0接口被激活和在它被停止和再次激活之后，你可以看到相应的路由表条目。这个接口可能是wlan0或者eth0。将ppp0更改为你可用的任意接口即可。</p>
 
-<p>$ sudo ip link set ppp0 down</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ip link set ppp0 down
+ 
+$ sudo ip link set ppp0 up
+</code></pre></div></div>
 
-<p>$ sudo ip link set ppp0 up</p>
-
-<p>ip link set up and down</p>
-
-<p>ip link set up and down</p>
-
-<p>获取帮助</p>
+<h3 id="获取帮助">获取帮助</h3>
 
 <p>当你陷入困境，不知道某一个特定的选项怎么用的时候，你可以使用help选项。man页面并不会提供许多关于如何使用ip选项的信息，因此这里就是获取帮助的地方。</p>
 
 <p>比如，想知道关于route选项更多的信息：</p>
 
-<p>$ ip route help</p>
-
-<p>ip route help</p>
-
-<p>ip route help</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip route help
+</code></pre></div></div>
 
 <p>小结：对于网络管理员们和所有的Linux使用者们，ip命令是必备工具。是时候抛弃ifconfig命令了，特别是当你写脚本时。</p>
 
+<h2 id="net-tools-中-ifconfig-详细解释">net-tools 中 ifconfig 详细解释</h2>
 <p>许多windows非常熟悉ipconfig命令行工具，它被用来获取网络接口配置信息并对此进行修改。Linux系统拥有一个类似的工具，也就是ifconfig(interfaces config)。通常需要以root身份登录或使用sudo以便在Linux机器上使用ifconfig工具。依赖于ifconfig命令中使用一些选项属性，ifconfig工具不仅可以被用来简单地获取网络接口配置信息，还可以修改这些配置。</p>
 
 <p>1．命令格式：</p>
 
-<p>ifconfig [网络设备] [参数]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig [网络设备] [参数]
+</code></pre></div></div>
 
 <p>2．命令功能：</p>
 
-<p>ifconfig 命令用来查看和配置网络设备。当网络环境发生改变时可通过此命令对网络进行相应的配置。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig 命令用来查看和配置网络设备。当网络环境发生改变时可通过此命令对网络进行相应的配置。
+</code></pre></div></div>
 
 <p>3．命令参数：</p>
 
-<p>up 启动指定网络设备/网卡。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>up 启动指定网络设备/网卡。
 
-<p>down 关闭指定网络设备/网卡。该参数可以有效地阻止通过指定接口的IP信息流，如果想永久地关闭一个接口，我们还需要从核心路由表中将该接口的路由信息全部删除。</p>
+down 关闭指定网络设备/网卡。该参数可以有效地阻止通过指定接口的IP信息流，如果想永久地关闭一个接口，我们还需要从核心路由表中将该接口的路由信息全部删除。
 
-<p>arp 设置指定网卡是否支持ARP协议。</p>
+arp 设置指定网卡是否支持ARP协议。
 
-<p>-promisc 设置是否支持网卡的promiscuous模式，如果选择此参数，网卡将接收网络中发给它所有的数据包</p>
+-promisc 设置是否支持网卡的promiscuous模式，如果选择此参数，网卡将接收网络中发给它所有的数据包
 
-<p>-allmulti 设置是否支持多播模式，如果选择此参数，网卡将接收网络中所有的多播数据包</p>
+-allmulti 设置是否支持多播模式，如果选择此参数，网卡将接收网络中所有的多播数据包
 
-<p>-a 显示全部接口信息</p>
+-a 显示全部接口信息
 
-<p>-s 显示摘要信息（类似于 netstat -i）</p>
+-s 显示摘要信息（类似于 netstat -i）
 
-<p>add 给指定网卡配置IPv6地址</p>
+add 给指定网卡配置IPv6地址
 
-<p>del 删除指定网卡的IPv6地址</p>
+del 删除指定网卡的IPv6地址
 
-<硬件地址> 配置网卡最大的传输单元
+&lt;硬件地址&gt; 配置网卡最大的传输单元
 
-mtu<字节数> 设置网卡的最大传输单元 (bytes)
+mtu&lt;字节数&gt; 设置网卡的最大传输单元 (bytes)
 
-netmask<子网掩码> 设置网卡的子网掩码。掩码可以是有前缀0x的32位十六进制数，也可以是用点分开的4个十进制数。如果不打算将网络分成子网，可以不管这一选项；如果要使用子网，那么请记住，网络中每一个系统必须有相同子网掩码。
+netmask&lt;子网掩码&gt; 设置网卡的子网掩码。掩码可以是有前缀0x的32位十六进制数，也可以是用点分开的4个十进制数。如果不打算将网络分成子网，可以不管这一选项；如果要使用子网，那么请记住，网络中每一个系统必须有相同子网掩码。
 
 tunel 建立隧道
 
 dstaddr 设定一个远端地址，建立点对点通信
+</code></pre></div></div>
 
--broadcast<地址> 为指定网卡设置广播协议
+<ul>
+  <li>
+    <p>broadcast<地址> 为指定网卡设置广播协议</地址></p>
 
--pointtopoint<地址> 为网卡设置点对点通讯协议
+    <p>-pointtopoint<地址> 为网卡设置点对点通讯协议</地址></p>
 
-multicast 为网卡设置组播标志
+    <p>multicast 为网卡设置组播标志</p>
 
-address 为网卡设置IPv4地址
+    <p>address 为网卡设置IPv4地址</p>
 
-txqueuelen<长度> 为网卡设置传输列队的长度
+    <p>txqueuelen<长度> 为网卡设置传输列队的长度</长度></p>
+  </li>
+</ul>
 
-4．使用实例：
+<p>4．使用实例：</p>
 
-实例1：显示网络设备信息（激活状态的）
+<p>实例1：显示网络设备信息（激活状态的）</p>
 
-命令：ifconfig
+<p>命令：ifconfig</p>
 
-实例2：启动关闭指定网卡
+<p>实例2：启动关闭指定网卡</p>
 
-命令：
+<p>命令：</p>
 
-ifconfig eth0 up
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 up
 ifconfig eth0 down
+</code></pre></div></div>
 
-实例3：为网卡配置和删除IPv6地址
+<p>实例3：为网卡配置和删除IPv6地址</p>
 
-命令：
+<p>命令：</p>
 
-ifconfig eth0 add 33ffe:3240:800:1005::2/64
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 add 33ffe:3240:800:1005::2/64
 ifconfig eth0 del 33ffe:3240:800:1005::2/64
+</code></pre></div></div>
 
-实例4：用ifconfig修改MAC地址
+<p>实例4：用ifconfig修改MAC地址</p>
 
-命令：
+<p>命令：</p>
 
-ifconfig eth0 hw ether 00:AA:BB:CC:DD:EE
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 hw ether 00:AA:BB:CC:DD:EE
+</code></pre></div></div>
 
-实例5：配置IP地址
+<p>实例5：配置IP地址</p>
 
-[root@localhost ~]# ifconfig eth0 192.168.120.56 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost ~]# ifconfig eth0 192.168.120.56 
 [root@localhost ~]# ifconfig eth0 192.168.120.56 netmask 255.255.255.0 
 [root@localhost ~]# ifconfig eth0 192.168.120.56 netmask 255.255.255.0 broadcast 192.168.120.255
+</code></pre></div></div>
 
-说明：
+<p>说明：</p>
 
-ifconfig eth0 192.168.120.56 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 192.168.120.56 
+</code></pre></div></div>
 
-给eth0网卡配置IP地：192.168.120.56
+<p>给eth0网卡配置IP地：192.168.120.56</p>
 
- ifconfig eth0 192.168.120.56 netmask 255.255.255.0 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 192.168.120.56 netmask 255.255.255.0 
+</code></pre></div></div>
 
-给eth0网卡配置IP地址：192.168.120.56 ，并加上子掩码：255.255.255.0
+<p>给eth0网卡配置IP地址：192.168.120.56 ，并加上子掩码：255.255.255.0</p>
 
-ifconfig eth0 192.168.120.56 netmask 255.255.255.0 broadcast 192.168.120.255
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 192.168.120.56 netmask 255.255.255.0 broadcast 192.168.120.255
+</code></pre></div></div>
 
-/给eth0网卡配置IP地址：192.168.120.56，加上子掩码：255.255.255.0，加上个广播地址： 192.168.120.255 
+<p>/给eth0网卡配置IP地址：192.168.120.56，加上子掩码：255.255.255.0，加上个广播地址： 192.168.120.255</p>
 
-实例6：启用和关闭ARP协议
+<p>实例6：启用和关闭ARP协议</p>
 
-命令：
+<p>命令：</p>
 
-ifconfig eth0 arp
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 arp
 ifconfig eth0 -arp
+</code></pre></div></div>
 
-输出： 
+<p>输出：</p>
 
-[root@localhost ~]# ifconfig eth0 arp 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@localhost ~]# ifconfig eth0 arp 
 [root@localhost ~]# ifconfig eth0 -arp
+</code></pre></div></div>
 
-说明：
+<p>说明：</p>
 
-ifconfig eth0 arp 开启网卡eth0 的arp协议；
+<p>ifconfig eth0 arp 开启网卡eth0 的arp协议；</p>
 
-ifconfig eth0 -arp 关闭网卡eth0 的arp协议； 
+<p>ifconfig eth0 -arp 关闭网卡eth0 的arp协议；</p>
 
-实例7：设置最大传输单元
+<p>实例7：设置最大传输单元</p>
 
-命令：
+<p>命令：</p>
 
-ifconfig eth0 mtu 1500
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig eth0 mtu 1500
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig   #处于激活状态的网络接口
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig -a  #所有配置的网络接口，不论其是否激活
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0  #显示eth0的网卡信息
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 down  #关闭eth0网卡
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 up    #开启eth0网卡
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 add 33ffe:3240:800:1005::2/ 64  #为网卡添加IPv6地址
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 del 33ffe:3240:800:1005::2/ 64 #为网卡删除IPv6地址
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 hw ether 00:AA:BB:CC:DD:EE  #修改MAC地址
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 192.168.1.56  #给eth0网卡配置IP地址
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 192.168.1.56 netmask 255.255.255.0  #给eth0网卡配置IP地址,并加上子掩码
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 192.168.1.56 netmask 255.255.255.0 broadcast 192.168.1.255   #给eth0网卡配置IP地址,加上子掩码,加上个广播地址
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 mtu 1500  #设置能通过的最大数据包大小为 1500 bytes
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 arp   #开启arp功能
 
-[root@localhost ~]
+[root@localhost ~]# ifconfig eth0 -arp  #关闭arp功能
+</code></pre></div></div>
 
-一、作为一个linux的疯狂热爱者，我们首先需要掌握的就是在linux系统下怎么配置IP、路由和主机名基本的linux网络配置，当然如果要我们接入互联网基本的IP地址配置还是不够的，访问网络的话我们需要配置我们的域名解析服务器DNS，下面作为菜鸟的我就把我们平常用到的基本网络配置命令来和大家介绍一下，写的不好的话，还请见谅~~~~~
+<h2 id="net-tools中ifconfig-和-route-与-iproute2-中-ip">net-tools中ifconfig 和 route 与 iproute2 中 ip</h2>
+<p>一、作为一个linux的疯狂热爱者，我们首先需要掌握的就是在linux系统下怎么配置IP、路由和主机名基本的linux网络配置，当然如果要我们接入互联网基本的IP地址配置还是不够的，访问网络的话我们需要配置我们的域名解析服务器DNS，下面作为菜鸟的我就把我们平常用到的基本网络配置命令来和大家介绍一下，写的不好的话，还请见谅~~~~~</p>
 
-      本篇主要介绍linux下网络查看、配置的基本命令：ifconfig、ip、route，然后捎带介绍下DNS、主机名等信息的配置！
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  本篇主要介绍linux下网络查看、配置的基本命令：ifconfig、ip、route，然后捎带介绍下DNS、主机名等信息的配置！
+</code></pre></div></div>
 
-二、我们在配置网络之前，首先我们来认识一下linux系统下网络接口的类型和命名规则以及网络地址的类型
+<p>二、我们在配置网络之前，首先我们来认识一下linux系统下网络接口的类型和命名规则以及网络地址的类型</p>
 
-1、网络接口类型：
+<p>1、网络接口类型：</p>
 
-lo：本地回环接口
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lo：本地回环接口
 
 eth[0-9]：以太网接口
 
 pppx：点对点的连接
+</code></pre></div></div>
 
-当然我们平常用到的也就是lo和以太网接口这两种类型回环环接口lo只是我们用在系统内部进行回环测试的，至于eth的以太网接口就是我们经常用来连接网线的那个物理接口了。
+<p>当然我们平常用到的也就是lo和以太网接口这两种类型回环环接口lo只是我们用在系统内部进行回环测试的，至于eth的以太网接口就是我们经常用来连接网线的那个物理接口了。</p>
 
-2、以太网网卡的命名规则：
+<p>2、以太网网卡的命名规则：</p>
 
-在不同的系统之下其命名规则是不尽相同的，我们这就以RedHat 5-32bit的系统为例：
+<p>在不同的系统之下其命名规则是不尽相同的，我们这就以RedHat 5-32bit的系统为例：</p>
 
-REHL 5-32bit：以太网网卡命名规则的定义文件为/etc/modprod.conf
+<p>REHL 5-32bit：以太网网卡命名规则的定义文件为/etc/modprod.conf</p>
 
-![KHkI6H.png](https://s2.ax1x.com/2019/11/01/KHkI6H.png)
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkI6H.png" alt="KHkI6H.png" /></p>
 
-图像 120
+<p>图像 120</p>
 
-3、网络地址类型：
+<p>3、网络地址类型：</p>
 
-暂时性网络地址：利用ifconfig等命令配置的网络信息，会立即生效，但重启网络服务或系统会失效
+<p>暂时性网络地址：利用ifconfig等命令配置的网络信息，会立即生效，但重启网络服务或系统会失效</p>
 
-永久性的网络地址：通过修改系统内的网络配置文件进行的修改，不会立即生效，需要重启网络服务或者系统会生效，并且会永久性的生效。 
+<p>永久性的网络地址：通过修改系统内的网络配置文件进行的修改，不会立即生效，需要重启网络服务或者系统会生效，并且会永久性的生效。</p>
 
-三、网络IP地址配置命令之ifconfig
+<p>三、网络IP地址配置命令之ifconfig</p>
 
-1、ifconfig：查看活动的网卡信息，仅限于活动的网卡
+<p>1、ifconfig：查看活动的网卡信息，仅限于活动的网卡</p>
 
-        例如先查看本地的网卡信息如下—ifconfig
-![KHkoXd.png](https://s2.ax1x.com/2019/11/01/KHkoXd.png)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    例如先查看本地的网卡信息如下—ifconfig ![KHkoXd.png](https://s2.ax1x.com/2019/11/01/KHkoXd.png)
+</code></pre></div></div>
 
-图像 121
+<p>图像 121</p>
 
-为了说明ifconfig查看的只是活动的网卡信息，我们下面把lo网卡down掉，在查看
+<p>为了说明ifconfig查看的只是活动的网卡信息，我们下面把lo网卡down掉，在查看</p>
 
-![KHkH0I.png](https://s2.ax1x.com/2019/11/01/KHkH0I.png)
-图像 122
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkH0I.png" alt="KHkH0I.png" />
+图像 122</p>
 
-2、ifconfig的相关子命令
+<p>2、ifconfig的相关子命令</p>
 
-ifconfig  eth[0-9]：后面跟某个网卡则可以直接查看某个网卡的信息，如只查看eth0的信息
+<p>ifconfig  eth[0-9]：后面跟某个网卡则可以直接查看某个网卡的信息，如只查看eth0的信息</p>
 
-![KHAec4.png](https://s2.ax1x.com/2019/11/01/KHAec4.png)
-图像 123
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAec4.png" alt="KHAec4.png" />
+图像 123</p>
 
-ifconfig –a ：则是查看所有的网卡信息，包括活动或非活动的网卡信息
+<p>ifconfig –a ：则是查看所有的网卡信息，包括活动或非活动的网卡信息</p>
 
-![KHkLAP.png](https://s2.ax1x.com/2019/11/01/KHkLAP.png)
-图像 124
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkLAP.png" alt="KHkLAP.png" />
+图像 124</p>
 
-下面利用ifconfig来配置网卡的IP地址，当然这个地址是临时的地址，一旦重启网络服务或者重启网络系统就会失效的！！
+<p>下面利用ifconfig来配置网卡的IP地址，当然这个地址是临时的地址，一旦重启网络服务或者重启网络系统就会失效的！！</p>
 
-格式：ifconfig  ethx IP/MASK Can you trust your perceptions?
-You chose this... a reminder of
-the forces at work in your world.
-If you no longer wish to peer
-through the looking glass, you can
-return to blissful ignorance：配置某个网卡的ip地址
+<p>格式：ifconfig  ethx IP/MASK：配置某个网卡的ip地址</p>
 
-        例如：设置eth0的IP地址为172.16.35.1/16,则就可以在命令行下直接键入：ifconfig eth0 172.16.36.5/16
-![KHkb7t.png](https://s2.ax1x.com/2019/11/01/KHkb7t.png)
-图像 126
+<p>例如：设置eth0的IP地址为172.16.35.1/16,则就可以在命令行下直接键入：ifconfig eth0 172.16.36.5/16</p>
 
-![KHkOtf.png](https://s2.ax1x.com/2019/11/01/KHkOtf.png)
-图像 127
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkb7t.png" alt="KHkb7t.png" />
+图像 126</p>
 
-我们下面重启一下网络服务，此配置就会失效，然后恢复为原来的IP地址的，如下图
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkOtf.png" alt="KHkOtf.png" />
+图像 127</p>
 
-![KHkzcQ.png](https://s2.ax1x.com/2019/11/01/KHkzcQ.png)
-图像 128
+<p>我们下面重启一下网络服务，此配置就会失效，然后恢复为原来的IP地址的，如下图</p>
 
-3、网络服务的管理命令，上面已经提到过一个重启网络服务的命令了，那么我们的网络服务控制命令都有哪些那？？？就是很简单，就是start，stop，restart，status这几个命令而已。
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkzcQ.png" alt="KHkzcQ.png" />
+图像 128</p>
 
-用法格式：
+<p>3、网络服务的管理命令，上面已经提到过一个重启网络服务的命令了，那么我们的网络服务控制命令都有哪些那？？？就是很简单，就是start，stop，restart，status这几个命令而已。</p>
 
-/etc/init.d/network {start | stop | restart | status} 或者service network {start | stop | restart | status}
+<p>用法格式：</p>
 
-四、永久性IP地址配置
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/init.d/network {start | stop | restart | status} 或者service network {start | stop | restart | status}
+</code></pre></div></div>
 
-通过上面我们了解了利用ifconfig来配置临时的网络IP地址了，当然这还不能满足我们的需求，我们不能每次使用电脑的时候都配置IP地址啊~那太麻烦，所以我们需要把IP地址配置为固定的IP或者通过DHCP服务来回去，这样的配置就需要修改系统的网络配置文件了，我们REHL5上的网络配置文为/etc/sysconfig/network-scripts/ifcfg-eth[0-9],下面我们就来看看怎么定义这个文件内的内容。
+<p>四、永久性IP地址配置</p>
 
-其配置方式有两种：DHCP和固定IP
+<p>通过上面我们了解了利用ifconfig来配置临时的网络IP地址了，当然这还不能满足我们的需求，我们不能每次使用电脑的时候都配置IP地址啊~那太麻烦，所以我们需要把IP地址配置为固定的IP或者通过DHCP服务来回去，这样的配置就需要修改系统的网络配置文件了，我们REHL5上的网络配置文为/etc/sysconfig/network-scripts/ifcfg-eth[0-9],下面我们就来看看怎么定义这个文件内的内容。</p>
 
-DHCP的设置比较简单，只需指定BOOTPROTOL类型为ＤＨＣＰ即可，当然、配置之前让我们先来了解下其配置文件内定义的内容都是有哪些？详解如下图所示
+<p>其配置方式有两种：DHCP和固定IP</p>
 
-![KHkv9S.png](https://s2.ax1x.com/2019/11/01/KHkv9S.png)
-图像 129
+<p>DHCP的设置比较简单，只需指定BOOTPROTOL类型为ＤＨＣＰ即可，当然、配置之前让我们先来了解下其配置文件内定义的内容都是有哪些？详解如下图所示</p>
 
-当然，我们上图是基于固定IP的设置，那么基于DHCP的呢？DHCP的更加简单，配置参数如下
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkv9S.png" alt="KHkv9S.png" />
+图像 129</p>
 
-  DEVICE=eth0 
-  BOOTPROTO=DHCP 
-  ONBOOT=YES 
-  HWADDR=......
+<p>当然，我们上图是基于固定IP的设置，那么基于DHCP的呢？DHCP的更加简单，配置参数如下</p>
 
-五、以上内容我们了解了在linux系统上通过ifconfig命令和配置文件来为linux系统配置临时IP地址和永久性的IP的相关操作，那么我们下面来看下关于系统路由的设定，路由相关信息的设定命令是route
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEVICE=eth0 
+BOOTPROTO=DHCP 
+ONBOOT=YES 
+HWADDR=......
+</code></pre></div></div>
 
-1、route：直接可以查看我们系统上的路由信息
+<p>五、以上内容我们了解了在linux系统上通过ifconfig命令和配置文件来为linux系统配置临时IP地址和永久性的IP的相关操作，那么我们下面来看下关于系统路由的设定，路由相关信息的设定命令是route</p>
 
-     route –n ：以数字的形式显示路由信息
+<p>1、route：直接可以查看我们系统上的路由信息</p>
 
-![KHASXj.png](https://s2.ax1x.com/2019/11/01/KHASXj.png)
-图像 130
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> route –n ：以数字的形式显示路由信息
+</code></pre></div></div>
 
-2、route命令的子选项
+<p><img src="https://s2.ax1x.com/2019/11/01/KHASXj.png" alt="KHASXj.png" />
+图像 130</p>
 
-添加路由
+<p>2、route命令的子选项</p>
 
-route  add -host：添加主机路由
+<p>添加路由</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>route  add -host：添加主机路由
 
 route  add -net：添加网络路由
 
 route  add -net  0.0.0.0：添加默认路由
+</code></pre></div></div>
 
-格式：route add -net|host DEST gw NEXTHOP
+<p>格式：<code class="highlighter-rouge">route add -net|host DEST gw NEXTHOP</code></p>
 
-例如，添加一条路由，让主机通过172.16.7.3访问192.168.0.0/24网段
+<p>例如，添加一条路由，让主机通过172.16.7.3访问192.168.0.0/24网段</p>
 
-        route add –net 192.168.0.0/24 gw 172.16.7.3
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>route add –net 192.168.0.0/24 gw 172.16.7.3
+</code></pre></div></div>
 
-![KHkx1g.png](https://s2.ax1x.com/2019/11/01/KHkx1g.png)
-图像 131
+<p><img src="https://s2.ax1x.com/2019/11/01/KHkx1g.png" alt="KHkx1g.png" />
+图像 131</p>
 
-删除路由
+<p>删除路由</p>
 
-route del -host：删除主机路由
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>route del -host：删除主机路由
 
 route del –net：删除网络路由
+</code></pre></div></div>
 
-  例如，删除刚才加的那条路由信息：route del –net 192.168.0.0、24 即可实现
+<p>例如，删除刚才加的那条路由信息：<code class="highlighter-rouge">route del –net 192.168.0.0、24</code> 即可实现</p>
 
-3、以上利用route命令增加的配置在重启网络服务或者系统的时候，所有的配置都会失效，这只是临时的配置而已，要想使我们配置的路由信息永久性的有效，我们需要把配置信息定义在配置文件内：/etc/sysconfig/network-scripts/route-ethx，ethx表示对应的通过那个网卡路由
+<p>3、以上利用route命令增加的配置在重启网络服务或者系统的时候，所有的配置都会失效，这只是临时的配置而已，要想使我们配置的路由信息永久性的有效，我们需要把配置信息定义在配置文件内：<code class="highlighter-rouge">/etc/sysconfig/network-scripts/route-ethx</code>，ethx表示对应的通过那个网卡路由</p>
 
-配置格式：
+<p>配置格式：</p>
 
-格式1：DEST（目的） via NEXTTOP（下一跳）
+<p>格式1：<code class="highlighter-rouge">DEST（目的） via NEXTTOP（下一跳）</code></p>
 
-格式2：ADDRESS0=网络地址（目的地址）、NETMASK Can you trust your perceptions?
-You chose this... a reminder of
-the forces at work in your world.
-If you no longer wish to peer
-through the looking glass, you can
-return to blissful ignorance0=子网掩码（目的网络）、
+<p>格式2：`ADDRESS0=网络地址（目的地址）、NETMASK0=子网掩码（目的网络）、</p>
 
-GATEWAY0=网关（通过那个网卡的网关）、ADDRESS1=、NETMASK Can you trust your perceptions?
-You chose this... a reminder of
-the forces at work in your world.
-If you no longer wish to peer
-through the looking glass, you can
-return to blissful ignorance1=……等等，可以设置条路由。
+<p>GATEWAY0=网关（通过那个网卡的网关）、ADDRESS1=、NETMASK1=……`等等，可以设置条路由。</p>
 
-![KHAmjJ.png](https://s2.ax1x.com/2019/11/01/KHAmjJ.png)
-图像 132
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAmjJ.png" alt="KHAmjJ.png" />
+图像 132</p>
 
-![KHA9ns.png](https://s2.ax1x.com/2019/11/01/KHA9ns.png)
-图像 133
+<p><img src="https://s2.ax1x.com/2019/11/01/KHA9ns.png" alt="KHA9ns.png" />
+图像 133</p>
 
-以上的配置不会立即生效，但是重启网络服务或者系统就会生效，并且是永久有效。
+<p>以上的配置不会立即生效，但是重启网络服务或者系统就会生效，并且是永久有效。</p>
 
-六、网络配置的另外一个功能强大的命令：IP
+<p>六、网络配置的另外一个功能强大的命令：IP</p>
 
-IP命令是iproute2软件包内的一个命令，功能比ifconfig更强大，可以对系统配置IP和路由信息。
+<p>IP命令是iproute2软件包内的一个命令，功能比ifconfig更强大，可以对系统配置IP和路由信息。</p>
 
-1、ip link：配置网络接口属性
+<p>1、ip link：配置网络接口属性</p>
 
-     ip link show：查看所有网络接口属性信息
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip link show：查看所有网络接口属性信息
 
-     ip -s link show：查看所有统计信息
+ip -s link show：查看所有统计信息
 
-     ip link set ethX {up|down|arp {on|off}}:设置网络接口的工作属性
+ip link set ethX {up|down|arp {on|off}}:设置网络接口的工作属性
+</code></pre></div></div>
 
-![KHACBn.png](https://s2.ax1x.com/2019/11/01/KHACBn.png)
-图像 134
+<p><img src="https://s2.ax1x.com/2019/11/01/KHACBn.png" alt="KHACBn.png" />
+图像 134</p>
 
-2、ip addr：配置网络地址
+<p>2、ip addr：配置网络地址</p>
 
-    ip addr show：查看网络信息，看到的信息和ip link show差不多，都比较简要
+<p><code class="highlighter-rouge">ip addr show</code>：查看网络信息，看到的信息和ip link show差不多，都比较简要</p>
 
-    ip addr add IP dev ethX ：配置IP地址（此命令配置的网卡信息利用ifconfig查看不到，需要利用ip addr show查看）
+<p><code class="highlighter-rouge">ip addr add IP dev ethX</code>：配置IP地址（此命令配置的网卡信息利用ifconfig查看不到，需要利用ip addr show查看）</p>
 
-![KHAP7q.png](https://s2.ax1x.com/2019/11/01/KHAP7q.png)
-图像 135
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAP7q.png" alt="KHAP7q.png" />
+图像 135</p>
 
-      ip addr add IP dev ethx label ethX:X：配置子Ip并对其加别名
+<p><code class="highlighter-rouge">ip addr add IP dev ethx label ethX:X</code>：配置子Ip并对其加别名</p>
 
-![KHKv9I.png](https://s2.ax1x.com/2019/11/01/KHKv9I.png)
- 图像 139
+<p><img src="https://s2.ax1x.com/2019/11/01/KHKv9I.png" alt="KHKv9I.png" />
+ 图像 139</p>
 
-删除已经配置的IP地址
+<p>删除已经配置的IP地址</p>
 
-ip addr del  IPADDR dev STRING
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip addr del  IPADDR dev STRING
+</code></pre></div></div>
 
-![KHAkNV.png](https://s2.ax1x.com/2019/11/01/KHAkNV.png)
-图像 140
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAkNV.png" alt="KHAkNV.png" />
+图像 140</p>
 
-3、我们说过IP命令是个强大的命令，那是因为我们不仅仅能利用IP命令来创建IP地址相关的配置，还可以利用IP命令来实现对系统上路由信息的设置，其主要命令如下：
+<p>3、我们说过IP命令是个强大的命令，那是因为我们不仅仅能利用IP命令来创建IP地址相关的配置，还可以利用IP命令来实现对系统上路由信息的设置，其主要命令如下：</p>
 
-ip route：路由信息
+<p>ip route：路由信息</p>
 
-ip route change|replace :修改路由信息
+<p><code class="highlighter-rouge">ip route change|replace</code> :修改路由信息</p>
 
-ip route add to 目的网段 dev ethx via IP(下一跳IP)
+<p><code class="highlighter-rouge">ip route add to 目的网段 dev ethx via IP(下一跳IP)</code></p>
 
-![KHAAhT.png](https://s2.ax1x.com/2019/11/01/KHAAhT.png)
-图像 143
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAAhT.png" alt="KHAAhT.png" />
+图像 143</p>
 
-上面就是IP命令的用法，当然这些命令行下的操作只是暂时性的，一旦重启网络服务或系统这些配置都将会失效，如果想使其永久生效，就需要利用前的相关方法在配置文件内进行设定了。
+<p>上面就是IP命令的用法，当然这些命令行下的操作只是暂时性的，一旦重启网络服务或系统这些配置都将会失效，如果想使其永久生效，就需要利用前的相关方法在配置文件内进行设定了。</p>
 
-七、IP地址的配置我们已经在前面介绍过了，这里不在重述，下面介绍下关于eth0:0这个主机网络别名的配置文件的配置方法
+<p>七、IP地址的配置我们已经在前面介绍过了，这里不在重述，下面介绍下关于eth0:0这个主机网络别名的配置文件的配置方法</p>
 
-    ⑴、命令配置法：ifconfig和ip 
-     
-          Ifconfig ethx:x IP/netmask 
-     
-          ip addr add IP dev ethx label ethX:X 
-     
-          利用命令配置的只是暂时的IP地址，如果重启网络服务和系统都会失效的。 
-     
-    ⑵、配置文件配置法： 
-     
-        修改/etc/sysconfig/network-scripts/ifcfg-ethx:x 
-     
-          DEVICE=ethx:x 
-     
-          BOOTPROTO=static  
-     
-          IPIPADDR=   IP地址 
-     
-          NETMASK=  子网掩码 
-     
-          GATEWAY=  网关 
-     
-          ONBOOT=YES   是否开机启用 
-     
-          HWADDR=...... MAC 
-     
-          非主要地址不能用DHCP服务获得，必须为静止的。 
+<p>⑴、命令配置法：ifconfig和ip</p>
 
-八、 DNS配置文件：
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Ifconfig ethx:x IP/netmask 
+ 
+ip addr add IP dev ethx label ethX:X 
+</code></pre></div></div>
 
-    ⑴、DNS配置文件位置：/etc/resolv.conf 
-     
-    ⑵、DNS配置格式： 
-     
-             nameserver DNS_IP1 
-     
-             nameserver DNS_IP2 
-     
-    指定本地解析： 
-     
-         /etc/hosts下添加 
-     
-        目标主机IP        主机名       
-     
-        fg：172.16.36.1  www.chris.com  
-     
-    DNS解析过程--&gt;/etc/hosts--&gt;DNS 服务器 
+<p>利用命令配置的只是暂时的IP地址，如果重启网络服务和系统都会失效的。</p>
 
-九、主机名配置文件：
+<p>⑵、配置文件配置法：</p>
 
-    ⑴、配置文件位置： /etc/sysconfig/network 
-     
-    ⑵、配置格式： 
-     
-             HOSTNAME=名称 
-     
-             NETWORKING={yes|no}：是否开启网络功能 
+<p>修改/etc/sysconfig/network-scripts/ifcfg-ethx:x</p>
 
-![KHAZ3F.png](https://s2.ax1x.com/2019/11/01/KHAZ3F.png)
-  图像 145
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEVICE=ethx:x 
+BOOTPROTO=static  
+IPIPADDR=   IP地址 
+NETMASK=  子网掩码 
+GATEWAY=  网关 
+ONBOOT=YES   是否开机启用 
+HWADDR=...... MAC  非主要地址不能用DHCP服务获得，必须为静止的。 
+</code></pre></div></div>
 
-http://blog.chinaunix.net/uid-738429-id-2057370.html
-Linux策略性路由应用及分析(iproute2)
-策略性路由
+<p>八、 DNS配置文件：</p>
 
-　　策略性是指对于IP包的路由是以网络管理员根据需要定下的一些策略为主要依据进行路由的。例如我们可以有这样的策略：“所有来直自网A的包，选择X路径；其他选择Y路径”，或者是“所有TOS为A的包选择路径F；其他选者路径K”。
-　　Cisco 的网络操作系统 (Cisco IOS) 从11.0开始就采用新的策略性路由机制。而Linux是在内核2.1开始采用策略性路由机制的。策略性路由机制与传统的路由算法相比主要是引入了多路由表以及规则的概念。
-多路由表（multiple Routing Tables）
+<p>⑴、DNS配置文件位置：/etc/resolv.conf</p>
 
-　　传统的路由算法是仅使用一张路由表的。但是在有些情形底下，我们是需要使用多路由表的。例如一个子网通过一个路由器与外界相连，路由器与外界有两条线路相连，其中一条的速度比较快，一条的速度比较慢。对于子网内的大多数用户来说对速度并没有特殊的要求，所以可以让他们用比较慢的路由；但是子网内有一些特殊的用户却是对速度的要求比较苛刻，所以他们需要使用速度比较快的路由。如果使用一张路由表上述要求是无法实现的，而如果根据源地址或其它参数，对不同的用户使用不同的路由表，这样就可以大大提高路由器的性能。
-规则（rule）
+<p>⑵、DNS配置格式：</p>
 
-　　规则是策略性的关键性的新的概念。我们可以用自然语言这样描述规则，例如我门可以指定这样的规则：
-　　规则一：“所有来自192.16.152.24的IP包，使用路由表10， 本规则的优先级别是1500”
-　　规则二：“所有的包，使用路由表253，本规则的优先级别是32767”
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nameserver DNS_IP1 
+ 
+nameserver DNS_IP2 
+ 
+指定本地解析： 
+</code></pre></div></div>
 
-　　我们可以看到，规则包含3个要素：
-　　什么样的包，将应用本规则（所谓的SELECTOR，可能是filter更能反映其作用）；
-　　符合本规则的包将对其采取什么动作（ACTION），例如用那个表；
-　　本规则的优先级别。优先级别越高的规则越先匹配（数值越小优先级别越高）。
-策略性路由的配置方法
+<p>/etc/hosts下添加</p>
 
-　　传统的linux下配置路由的工具是route，而实现策略性路由配置的工具是iproute2工具包。这个软件包是由Alexey Kuznetsov开发的，软件包所在的主要网址为ftp://ftp.inr.ac.ru/ip-routing/。
-这里简单介绍策略性路由的配置方法，以便能更好理解第二部分的内容。详细的使用方法请参考Alexey Kuznetsov写的 ip-cfref文档。策略性路由的配置主要包括接口地址的配置、路由的配置、规则的配置。
-接口地址的配置IP Addr
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>目标主机IP        主机名       
+ 
+fg：172.16.36.1  www.chris.com  
+</code></pre></div></div>
 
-对于接口的配置可以用下面的命令进行：
+<p>DNS解析过程–&gt;/etc/hosts–&gt;DNS 服务器</p>
 
-Usage: ip addr [ add | del ] IFADDR dev STRING
+<p>九、主机名配置文件：</p>
 
-　　例如：
+<p>⑴、配置文件位置： /etc/sysconfig/network</p>
 
-router&gt;# ip addr add 192.168.0.1/24 broadcast 192.168.0.255 label eth0 dev eth0
+<p>⑵、配置格式：</p>
 
-　　上面表示，给接口eth0赋予地址192.168.0.1 掩码是255.255.255.0(24代表掩码中1的个数)，广播地址是192.168.0.255
-路由的配置IP Route
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOSTNAME=名称 
+NETWORKING={yes|no}：是否开启网络功能 
+</code></pre></div></div>
 
-　　Linux最多可以支持255张路由表，其中有3张表是内置的：
-　　表255 本地路由表（Local table） 本地接口地址，广播地址，已及NAT地址都放在这个表。该路由表由系统自动维护，管理员不能直接修改。
-　　表254 主路由表（Main table） 如果没有指明路由所属的表，所有的路由都默认都放在这个表里，一般来说，旧的路由工具（如route）所添加的路由都会加到这个表。一般是普通的路由。
-　　表253 默认路由表 （Default table） 一般来说默认的路由都放在这张表，但是如果特别指明放的也可以是所有的网关路由。
-　　表 0 保留
+<p><img src="https://s2.ax1x.com/2019/11/01/KHAZ3F.png" alt="KHAZ3F.png" />
+  图像 145</p>
 
-　　路由配置命令的格式如下：
+<h2 id="linux策略性路由应用及分析iproute2">Linux策略性路由应用及分析(iproute2)</h2>
+<p>http://blog.chinaunix.net/uid-738429-id-2057370.html</p>
+<h3 id="linux策略性路由应用及分析iproute2-1">Linux策略性路由应用及分析(iproute2)</h3>
+<h3 id="策略性路由">策略性路由</h3>
 
-Usage: ip route list SELECTOR
+<p>策略性是指对于IP包的路由是以网络管理员根据需要定下的一些策略为主要依据进行路由的。例如我们可以有这样的策略：“所有来直自网A的包，选择X路径；其他选择Y路径”，或者是“所有TOS为A的包选择路径F；其他选者路径K”。
+Cisco 的网络操作系统 (Cisco IOS) 从11.0开始就采用新的策略性路由机制。而Linux是在内核2.1开始采用策略性路由机制的。策略性路由机制与传统的路由算法相比主要是引入了多路由表以及规则的概念。</p>
+<h3 id="多路由表multiple-routing-tables">多路由表（multiple Routing Tables）</h3>
 
+<p>传统的路由算法是仅使用一张路由表的。但是在有些情形底下，我们是需要使用多路由表的。例如一个子网通过一个路由器与外界相连，路由器与外界有两条线路相连，其中一条的速度比较快，一条的速度比较慢。对于子网内的大多数用户来说对速度并没有特殊的要求，所以可以让他们用比较慢的路由；但是子网内有一些特殊的用户却是对速度的要求比较苛刻，所以他们需要使用速度比较快的路由。如果使用一张路由表上述要求是无法实现的，而如果根据源地址或其它参数，对不同的用户使用不同的路由表，这样就可以大大提高路由器的性能。
+规则（rule）</p>
+
+<p>规则是策略性的关键性的新的概念。我们可以用自然语言这样描述规则，例如我门可以指定这样的规则：
+	规则一：“所有来自192.16.152.24的IP包，使用路由表10， 本规则的优先级别是1500”
+	规则二：“所有的包，使用路由表253，本规则的优先级别是32767”
+我们可以看到，规则包含3个要素：</p>
+
+<p>什么样的包，将应用本规则（所谓的SELECTOR，可能是filter更能反映其作用）；</p>
+
+<p>符合本规则的包将对其采取什么动作（ACTION），例如用那个表；</p>
+
+<p>本规则的优先级别。优先级别越高的规则越先匹配（数值越小优先级别越高）。</p>
+
+<h3 id="策略性路由的配置方法">策略性路由的配置方法</h3>
+
+<p>传统的linux下配置路由的工具是route，而实现策略性路由配置的工具是iproute2工具包。这个软件包是由Alexey Kuznetsov开发的，软件包所在的主要网址为ftp://ftp.inr.ac.ru/ip-routing/。</p>
+
+<p>这里简单介绍策略性路由的配置方法，以便能更好理解第二部分的内容。详细的使用方法请参考Alexey Kuznetsov写的 ip-cfref文档。策略性路由的配置主要包括接口地址的配置、路由的配置、规则的配置。</p>
+
+<p>接口地址的配置IP Addr</p>
+
+<p>对于接口的配置可以用下面的命令进行：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: ip addr [ add | del ] IFADDR dev STRING
+</code></pre></div></div>
+
+<p>例如：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>router&gt;# ip addr add 192.168.0.1/24 broadcast 192.168.0.255 label eth0 dev eth0
+</code></pre></div></div>
+
+<p>上面表示，给接口eth0赋予地址192.168.0.1 掩码是255.255.255.0(24代表掩码中1的个数)，广播地址是192.168.0.255
+路由的配置IP Route</p>
+
+<p>Linux最多可以支持255张路由表，其中有3张表是内置的：</p>
+
+<p>表255 本地路由表（Local table） 本地接口地址，广播地址，已及NAT地址都放在这个表。该路由表由系统自动维护，管理员不能直接修改。</p>
+
+<p>表254 主路由表（Main table） 如果没有指明路由所属的表，所有的路由都默认都放在这个表里，一般来说，旧的路由工具（如route）所添加的路由都会加到这个表。一般是普通的路由。</p>
+
+<p>表253 默认路由表 （Default table） 一般来说默认的路由都放在这张表，但是如果特别指明放的也可以是所有的网关路由。</p>
+
+<p>表 0 保留</p>
+
+<p>路由配置命令的格式如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: ip route list SELECTOR
 ip route { change | del | add | append | replace | monitor } ROUTE
+</code></pre></div></div>
 
-　　如果想查看路由表的内容，可以通过命令：
+<p>如果想查看路由表的内容，可以通过命令：</p>
 
-　　ip route list table table_number
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip route list table table_number
+</code></pre></div></div>
 
-　　对于路由的操作包括change、del、add 、append 、replace 、 monitor这些。例如添加路由可以用：
+<p>对于路由的操作包括change、del、add 、append 、replace 、 monitor这些。例如添加路由可以用：</p>
 
-router&gt;# ip route add 0/0 via 192.168.0.4 table main
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>router&gt;# ip route add 0/0 via 192.168.0.4 table main
 router&gt;# ip route add 192.168.3.0/24 via 192.168.0.3 table 1
+</code></pre></div></div>
 
-　　第一条命令是向主路由表（main table）即表254添加一条路由，路由的内容是设置192.168.0.4成为网关。
-　　第二条命令代表向路由表1添加一条路由，子网192.168.3.0（子网掩码是255.255.255.0）的网关是192.168.0.3。
+<p>第一条命令是向主路由表（main table）即表254添加一条路由，路由的内容是设置192.168.0.4成为网关。</p>
 
-　　在多路由表的路由体系里，所有的路由的操作，例如网路由表添加路由，或者在路由表里寻找特定的路由，需要指明要操作的路由表，所有没有指明路由表，默认是对主路由表（表254）进行操作。而在单表体系里，路由的操作是不用指明路由表的。
-规则的配置IP Rule
+<p>第二条命令代表向路由表1添加一条路由，子网192.168.3.0（子网掩码是255.255.255.0）的网关是192.168.0.3。</p>
 
-　　在Linux里，总共可以定义 个优先级的规则，一个优先级别只能有一条规则，即理论上总共可以有 条规则。其中有3个规则是默认的。命令用法如下：
+<p>在多路由表的路由体系里，所有的路由的操作，例如网路由表添加路由，或者在路由表里寻找特定的路由，需要指明要操作的路由表，所有没有指明路由表，默认是对主路由表（表254）进行操作。而在单表体系里，路由的操作是不用指明路由表的。</p>
 
-Usage: ip rule [ list | add | del ] SELECTOR ACTION
+<h3 id="规则的配置ip-rule">规则的配置IP Rule</h3>
 
+<p>在Linux里，总共可以定义 个优先级的规则，一个优先级别只能有一条规则，即理论上总共可以有 条规则。其中有3个规则是默认的。命令用法如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: ip rule [ list | add | del ] SELECTOR ACTION
 SELECTOR := [ from PREFIX ] [ to PREFIX ] [ tos TOS ]
-
 [ dev STRING ] [ pref NUMBER ]
-
 ACTION := [ table TABLE_ID ] [ nat ADDRESS ]
-
 [ prohibit | reject | unreachable ]
-
 [ flowid CLASSID ]
-
 TABLE_ID := [ local | main | default | new | NUMBER
+</code></pre></div></div>
 
-　　首先我们可以看看路由表默认的所有规则：
+<p>首先我们可以看看路由表默认的所有规则：</p>
 
-root@netmonster# ip rule list
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@netmonster# ip rule list
 0: from all lookup local
-
 32766: from all lookup main
-
 32767: from all lookup default
+</code></pre></div></div>
 
+<p>规则0，它是优先级别最高的规则，规则规定，所有的包，都必须首先使用local表（254）进行路由。本规则不能被更改和删除。</p>
 
+<p>规则32766，规定所有的包，使用表main进行路由。本规则可以被更改和删除。</p>
 
-　　规则0，它是优先级别最高的规则，规则规定，所有的包，都必须首先使用local表（254）进行路由。本规则不能被更改和删除。
+<p>规则32767，规定所有的包，使用表default进行路由。本规则可以被更改和删除。</p>
 
-　　规则32766，规定所有的包，使用表main进行路由。本规则可以被更改和删除。
+<p>在默认情况下进行路由时，首先会根据规则0在本地路由表里寻找路由，如果目的地址是本网络，或是广播地址的话，在这里就可以找到合适的路由；如果路由失败，就会匹配下一个不空的规则，在这里只有32766规则，在这里将会在主路由表里寻找路由;如果失败，就会匹配32767规则，即寻找默认路由表。如果失败，路由将失败。重这里可以看出，策略性路由是往前兼容的。</p>
 
-　　规则32767，规定所有的包，使用表default进行路由。本规则可以被更改和删除。
+<p>还可以添加规则：</p>
 
-
-
-　　在默认情况下进行路由时，首先会根据规则0在本地路由表里寻找路由，如果目的地址是本网络，或是广播地址的话，在这里就可以找到合适的路由；如果路由失败，就会匹配下一个不空的规则，在这里只有32766规则，在这里将会在主路由表里寻找路由;如果失败，就会匹配32767规则，即寻找默认路由表。如果失败，路由将失败。重这里可以看出，策略性路由是往前兼容的。
-
-
-
-　　还可以添加规则：
-
-
-
-router&gt;# ip rule add [from 0/0] table 1 pref 32800
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>router&gt;# ip rule add [from 0/0] table 1 pref 32800
 router &gt;#ip rule add from 192.168.3.112/32 [tos 0x10] table 2 pref 1500 prohibit
+</code></pre></div></div>
 
+<p>第一条命令将向规则链增加一条规则，规则匹配的对象是所有的数据包，动作是选用路由表1的路由，这条规则的优先级是32800。</p>
 
+<p>第二条命令将向规则链增加一条规则，规则匹配的对象是IP为192.168.3.112，tos等于0x10的包，使用路由表2，这条规则的优先级是1500，动作是prohibit。添加以后，我们可以看看系统规则的变化。</p>
 
-　　第一条命令将向规则链增加一条规则，规则匹配的对象是所有的数据包，动作是选用路由表1的路由，这条规则的优先级是32800。
-
-　　第二条命令将向规则链增加一条规则，规则匹配的对象是IP为192.168.3.112，tos等于0x10的包，使用路由表2，这条规则的优先级是1500，动作是prohibit。添加以后，我们可以看看系统规则的变化。
-
-router&gt;# ip rule
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>router&gt;# ip rule
 0: from all lookup local
-
 1500 from 192.168.3.112/32 [tos 0x10] lookup 2
-
 32766: from all lookup main
-
 32767: from all lookup default
-
 32800: from all lookup 1
+</code></pre></div></div>
 
-　　上面的规则是以源地址为关键字，作为是否匹配的依据的。除了源地址外，还可以用以下的信息：
-　　From -- 源地址
-　　To -- 目的地址（这里是选择规则时使用，查找路由表时也使用）
-　　Tos -- IP包头的TOS（type of sevice）域
-　　Dev -- 物理接口
-　　Fwmark -- 防火墙参数
+<p>上面的规则是以源地址为关键字，作为是否匹配的依据的。除了源地址外，还可以用以下的信息：
+	From – 源地址
+	To – 目的地址（这里是选择规则时使用，查找路由表时也使用）
+	Tos – IP包头的TOS（type of sevice）域
+	Dev – 物理接口
+	Fwmark – 防火墙参数</p>
 
-　　采取的动作除了指定表，还可以指定下面的动作：
-　　　Table 指明所使用的表
-　　　Nat 透明网关
-　　　Action prohibit 丢弃该包，并发送 COMM.ADM.PROHIITED的ICMP信息
-　　　Reject 单纯丢弃该包
-　　　Unreachable丢弃该包， 并发送 NET UNREACHABLE的ICMP信息
-策略性路由的应用
+<p>采取的动作除了指定表，还可以指定下面的动作：
+	Table 指明所使用的表
+	Nat 透明网关
+	Action prohibit 丢弃该包，并发送 COMM.ADM.PROHIITED的ICMP信息
+	Reject 单纯丢弃该包
+	Unreachable丢弃该包， 并发送 NET UNREACHABLE的ICMP信息</p>
 
-　　基于源地址选路（ Source-Sensitive Routing）
-　　如果一个网络通过两条线路接入互联网，一条是比较快的ADSL，另外一条是比较慢的普通的调制解调器。这样的话，网络管理员既可以提供无差别的路由服务，也可以根据源地址的不同，使一些特定的地址使用较快的线路，而普通用户则使用较慢的线路，即基于源址的选路。
+<h3 id="策略性路由的应用">策略性路由的应用</h3>
 
-　　根据服务级别选路（Quality of Service）
-　　网络管理员可以根据IP报头的服务级别域，对于不同的服务要求可以分别对待对于传送速率、吞吐量以及可靠性的有不同要求的数据报根据网络的状况进行不同的路由。
+<h3 id="基于源地址选路-source-sensitive-routing">基于源地址选路（ Source-Sensitive Routing）</h3>
 
-　　节省费用的应用
-　　网络管理员可以根据通信的状况，让一些比较大的阵发性通信使用一些带宽比较高但是比较贵的路径一段短的时间，然后让基本的通信继续使用原来比较便宜的基本线路。例如，管理员知道，某一台主机与一个特定的地址通信通常是伴随着大量的阵发性通信的，那么网络管理员可以安排一些策略，使得这些主机使用特别的路由，这些路由是按需拨号，带宽比较高的线路，通信完成以后就停止使用，而普通的通信则不受影响。这样既提高网络的性能，又能节省费用。
+<p>如果一个网络通过两条线路接入互联网，一条是比较快的ADSL，另外一条是比较慢的普通的调制解调器。这样的话，网络管理员既可以提供无差别的路由服务，也可以根据源地址的不同，使一些特定的地址使用较快的线路，而普通用户则使用较慢的线路，即基于源址的选路。</p>
 
-　　负载平衡（Load Sharing）
-　　根据网络交通的特征，网络管理员可以在不同的路径之间分配负荷实现负载平衡。
-Linux下策略性路由的实现--RPDB（Routing　Policy DataBase）
+<p>根据服务级别选路（Quality of Service）</p>
 
-　　在Linux下，策略性路由是由RPDB实现的。对于RPDB的内部机制的理解，可以加深对于策略性路由使用的理解。这里分析的是linux 2.4.18的RPDB实现的细节。主要的实现文件包括：
+<p>网络管理员可以根据IP报头的服务级别域，对于不同的服务要求可以分别对待对于传送速率、吞吐量以及可靠性的有不同要求的数据报根据网络的状况进行不同的路由。</p>
 
-fib_hash.c
+<h3 id="节省费用的应用">节省费用的应用</h3>
 
+<p>网络管理员可以根据通信的状况，让一些比较大的阵发性通信使用一些带宽比较高但是比较贵的路径一段短的时间，然后让基本的通信继续使用原来比较便宜的基本线路。例如，管理员知道，某一台主机与一个特定的地址通信通常是伴随着大量的阵发性通信的，那么网络管理员可以安排一些策略，使得这些主机使用特别的路由，这些路由是按需拨号，带宽比较高的线路，通信完成以后就停止使用，而普通的通信则不受影响。这样既提高网络的性能，又能节省费用。</p>
+
+<h3 id="负载平衡load-sharing">负载平衡（Load Sharing）</h3>
+<p>根据网络交通的特征，网络管理员可以在不同的路径之间分配负荷实现负载平衡。</p>
+
+<h2 id="linux下策略性路由的实现rpdbroutingpolicy-database">Linux下策略性路由的实现–RPDB（Routing　Policy DataBase）</h2>
+
+<p>在Linux下，策略性路由是由RPDB实现的。对于RPDB的内部机制的理解，可以加深对于策略性路由使用的理解。这里分析的是linux 2.4.18的RPDB实现的细节。主要的实现文件包括：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fib_hash.c
 fib_rules.c
-
 fib_sematic
-
 fib_frontend.c
-
 route.c
+</code></pre></div></div>
 
-　　RDPB主要由多路由表和规则组成。路由表以及对其的操作和其对外的接口是整个RPDB的核心部分。路由表主要由table，zone，node这些主要的数据结构构成。对路由表的操作主要包含物理的操作以及语义的操作。路由表除了向IP层提供路由寻找的接口以外还必须与几个元素提供接口：与用户的接口（即更改路由）、proc的接口、IP层控制接口、以及和硬件的接口（网络接口的改变会导致路由表内容的改变）。处在RDPB的中心的规则，由规则选取表。IP层并不直接使用路由表，而是通过一个路由适配层,路由适配层提供为IP层提供高性能的路由服务。
-路由表（Fib Table）
+<p>RDPB主要由多路由表和规则组成。路由表以及对其的操作和其对外的接口是整个RPDB的核心部分。路由表主要由table，zone，node这些主要的数据结构构成。对路由表的操作主要包含物理的操作以及语义的操作。路由表除了向IP层提供路由寻找的接口以外还必须与几个元素提供接口：与用户的接口（即更改路由）、proc的接口、IP层控制接口、以及和硬件的接口（网络接口的改变会导致路由表内容的改变）。处在RDPB的中心的规则，由规则选取表。IP层并不直接使用路由表，而是通过一个路由适配层,路由适配层提供为IP层提供高性能的路由服务。</p>
 
-　　数据结构：
-　　在整个策略性路由的框架里，路由表是最重要的的数据结构，我们在上面以及对路由表的概念和结构进行了清楚的说明。Linux里通过下面这些主要的数据结构进行实现的。
+<h3 id="路由表fib-table">路由表（Fib Table）</h3>
+<p>数据结构：</p>
 
-主要的数据结构 作用 位置
+<p>在整个策略性路由的框架里，路由表是最重要的的数据结构，我们在上面以及对路由表的概念和结构进行了清楚的说明。Linux里通过下面这些主要的数据结构进行实现的。</p>
 
-struct fib_table 路由表 ip_fib.h 116
+<p>主要的数据结构 作用 位置</p>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct fib_table 路由表 ip_fib.h 116
 struct fn_hash 路由表的哈希数据 fib_hash.c 104
-
 struct fn_zone zone域 fib_hash.c 85
-
 struct fib_node 路由节点 fib_hash.c 68
-
 struct fib_info 路由信息 ip_fib.h 57
-
 struct fib_result 路由结果 ip_fib.h 86
+</code></pre></div></div>
 
-数据结构之间的主要关系如下。路由表由路由表号以及路由表的操作函数指针还有表数据组成。这里需要注意的是，路由表结构里并不直接定义zone域，而是通过一个数据指针指向fn_hash。只有当zone里有数据才会连接到fn_zone_list里。（如图）
-系统的所有的路由表由数组变量*fib_tables[RT_TABLE_MAX+1]维护，其中系统定义RT_TABLE_MAX为254，也就是说系统最大的路由表为255张，所有的路由表的操作都是对这个数组进行的。。同时系统还定义了三长路由表*local_table; *main_table。
-路由表的操作：
+<p>数据结构之间的主要关系如下。路由表由路由表号以及路由表的操作函数指针还有表数据组成。这里需要注意的是，路由表结构里并不直接定义zone域，而是通过一个数据指针指向fn_hash。只有当zone里有数据才会连接到fn_zone_list里。（如图）
+系统的所有的路由表由数组变量<em>fib_tables[RT_TABLE_MAX+1]维护，其中系统定义RT_TABLE_MAX为254，也就是说系统最大的路由表为255张，所有的路由表的操作都是对这个数组进行的。。同时系统还定义了三长路由表</em>local_table; *main_table。</p>
 
-　　Linux策略路由代码的主要部分是对路由表的操作。对于路由表的操作，物理操作是直观的和易于理解的。对于表的操作不外乎就是添加、删除、更新等的操作。还有一种操作，是所谓的语义操作，语义操作主要是指诸如计算下一条的地址，把节点转换为路由项，寻找指定信息的路由等。
+<h3 id="路由表的操作">路由表的操作：</h3>
 
-　　1、物理操作(operation)：
-　　路由表的物理操作主要包括如下这些函数：
+<p>Linux策略路由代码的主要部分是对路由表的操作。对于路由表的操作，物理操作是直观的和易于理解的。对于表的操作不外乎就是添加、删除、更新等的操作。还有一种操作，是所谓的语义操作，语义操作主要是指诸如计算下一条的地址，把节点转换为路由项，寻找指定信息的路由等。</p>
 
-路由标操作 实现函数 位置
+<p>1、物理操作(operation)：</p>
+
+<p>路由表的物理操作主要包括如下这些函数：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>路由标操作 实现函数 位置
 
 新建路由表
 
@@ -1442,144 +1550,132 @@ fn_hash_dump
 fib_hash.c 433
 
 fib_hash.c 614
+</code></pre></div></div>
 
-更新路由表的路由 fn_hash_flush fib_hash.c 729
+<p>更新路由表的路由 fn_hash_flush fib_hash.c 729</p>
 
-显示路由表的路由信息 fn_hash_get_info fib_hash.c 750
+<p>显示路由表的路由信息 fn_hash_get_info fib_hash.c 750</p>
 
-选择默认路由 fn_hash_select_default fib_hash.c 842
+<p>选择默认路由 fn_hash_select_default fib_hash.c 842</p>
 
-　　2、语义操作(semantics operation)：
-　　语义操作并不涉及路由表整体框架的理解，而且，函数名也是不言自明的，所以请大家参考fib_semantics.c。
+<p>　　2、语义操作(semantics operation)：
+　　语义操作并不涉及路由表整体框架的理解，而且，函数名也是不言自明的，所以请大家参考fib_semantics.c。</p>
 
-　　3、接口(front end)
-　　对于路由表接口的理解，关键在于理解那里有
+<p>　　3、接口(front end)
+　　对于路由表接口的理解，关键在于理解那里有</p>
 
-　　IP
-　　首先是路由表于IP层的接口。路由在目前linux的意义上来说，最主要的还是IP层的路由，所以和IP层的的接口是最主要的接口。和ip层的衔接主要是向IP层提供寻找路由、路由控制、寻找指定ip的接口。
+<p>　　IP
+　　首先是路由表于IP层的接口。路由在目前linux的意义上来说，最主要的还是IP层的路由，所以和IP层的的接口是最主要的接口。和ip层的衔接主要是向IP层提供寻找路由、路由控制、寻找指定ip的接口。</p>
 
-Fil_lookup
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fil_lookup
 ip_rt_ioctl fib_frontend.c 286;" f
-
 ip_dev_find 145
+Inet
+</code></pre></div></div>
 
-　　Inet
-　　路由表还必须提供配置接口，即用户直接操作路由的接口，例如增加和删除一条路由。当然在策略性路由里，还有规则的添加和删除。
+<p>路由表还必须提供配置接口，即用户直接操作路由的接口，例如增加和删除一条路由。当然在策略性路由里，还有规则的添加和删除。</p>
 
-inet_rtm_delroute 351
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inet_rtm_delroute 351
 inet_rtm_newroute 366
-
 inet_check_attr 335
+</code></pre></div></div>
 
-　　proc
-　　在/proc/net/route里显示路由信息。
-　　fib_get_procinfo
+<p>proc</p>
 
-　　4、网络设备（net dev event）
-　　路由是和硬件关联的，当网络设备启动或关闭的时候，必须通知路由表的管理程序，更新路由表的信息。
+<p>在/proc/net/route里显示路由信息。</p>
 
-fib_disable_ip 567
+<p>fib_get_procinfo</p>
 
+<p>　　4、网络设备（net dev event）
+　　路由是和硬件关联的，当网络设备启动或关闭的时候，必须通知路由表的管理程序，更新路由表的信息。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fib_disable_ip 567
 fib_inetaddr_event 575
-
 fib_netdev_event
+</code></pre></div></div>
 
-　　5、内部维护（ magic）
-　　上面我们提到，本地路由表（local table）的维护是由系统自动进行的。也就是说当用户为硬件设置IP地址等的时候，系统自动在本地路由表里添加本地接口地址以及广播地址。
+<p>　　5、内部维护（ magic）</p>
 
-fib_magic 417
+<p>上面我们提到，本地路由表（local table）的维护是由系统自动进行的。也就是说当用户为硬件设置IP地址等的时候，系统自动在本地路由表里添加本地接口地址以及广播地址。</p>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fib_magic 417
 fib_add_ifaddr 459
-
 fib_del_ifaddr 498
 Rule
+</code></pre></div></div>
 
-　　1、数据结构
-　　规则在fib_rules.c的52行里定义为 struct fib_rule。而RPDB里所有的路由是保存在101行的变量fib_rules里的，注意这个变量很关键，它掌管着所有的规则，规则的添加和删除都是对这个变量进行的。
+<h2 id="rule">Rule</h2>
+<p>1、数据结构</p>
 
-　　2、系统定义规则：
-　　fib_rules被定义以后被赋予了三条默认的规则：默认规则，本地规则以及主规则。
+<p>规则在fib_rules.c的52行里定义为 struct fib_rule。而RPDB里所有的路由是保存在101行的变量fib_rules里的，注意这个变量很关键，它掌管着所有的规则，规则的添加和删除都是对这个变量进行的。</p>
 
-u 本地规则local_rule
+<p>2、系统定义规则：
+fib_rules被定义以后被赋予了三条默认的规则：默认规则，本地规则以及主规则。</p>
 
-94 static struct fib_rule local_rule = {
+<p>u 本地规则local_rule</p>
 
-r_next: &amp;main_rule, /*下一条规则是主规则*/
-
-r_clntref: ATOMIC_INIT(2),
-
-r_table: RT_TABLE_LOCAL, /*指向本地路由表*/
-
-r_action: RTN_UNICAST, /*动作是返回路由*/
-
-};
-
-u 主规则main_rule
-
-86 static struct fib_rule main_rule = {
-
-r_next: &amp;default_rule,/*下一条规则是默认规则*/
-
-r_clntref: ATOMIC_INIT(2),
-
-r_preference: 0x7FFE, /*默认规则的优先级32766*/
-
-r_table: RT_TABLE_MAIN, /*指向主路由表*/
-
-r_action: RTN_UNICAST, /*动作是返回路由*/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static struct fib_rule local_rule = {
+	r_next: &amp;main_rule, /*下一条规则是主规则*/
+	r_clntref: ATOMIC_INIT(2),
+	r_table: RT_TABLE_LOCAL, /*指向本地路由表*/
+	r_action: RTN_UNICAST, /*动作是返回路由*/
 
 };
+</code></pre></div></div>
 
-u 默认规则default rule
+<p>主规则main_rule</p>
 
-79 static struct fib_rule default_rule = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static struct fib_rule main_rule = {
+	r_next: &amp;default_rule,/*下一条规则是默认规则*/
+	r_clntref: ATOMIC_INIT(2),
+	r_preference: 0x7FFE, /*默认规则的优先级32766*/
+	r_table: RT_TABLE_MAIN, /*指向主路由表*/
+	r_action: RTN_UNICAST, /*动作是返回路由*/
+	};
+</code></pre></div></div>
 
-r_clntref: ATOMIC_INIT(2),
+<p>默认规则default rule</p>
 
-r_preference: 0x7FFF,/*默认规则的优先级32767*/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static struct fib_rule default_rule = {
+	r_clntref: ATOMIC_INIT(2),
+	r_preference: 0x7FFF,/*默认规则的优先级32767*/
+	r_table: RT_TABLE_DEFAULT,/*指默认路由表*/
+	r_action: RTN_UNICAST,/*动作是返回路由*/
+	};
+</code></pre></div></div>
 
-r_table: RT_TABLE_DEFAULT,/*指默认路由表*/
+<p>规则链的链头指向本地规则。</p>
+<h3 id="rpdb的中心函数fib_lookup">RPDB的中心函数fib_lookup</h3>
 
-r_action: RTN_UNICAST,/*动作是返回路由*/
+<p>现在到了讨论RPDB的实现的的中心函数fib_lookup了。RPDB通过提供接口函数fib_lookup，作为寻找路由的入口点，在这里有必要详细讨论这个函数，下面是源代码：</p>
 
-};
+<p>上面的这段代码的思路是非常的清晰的。首先程序从优先级高到低扫描所有的规则，如果规则匹配，处理该规则的动作。如果是普通的路由寻址或者是nat地址转换的换，首先从规则得到路由表，然后对该路由表进行操作。这样RPDB终于清晰的显现出来了。</p>
+<h3 id="ip层路由适配ip-route">IP层路由适配（IP route）</h3>
 
-　　规则链的链头指向本地规则。
-RPDB的中心函数fib_lookup
+<p>路由表以及规则组成的系统，可以完成路由的管理以及查找的工作，但是为了使得IP层的路由工作更加的高效，linux的路由体系里，route.c里完成大多数IP层与RPDB的适配工作，以及路由缓冲（route cache）的功能。</p>
+<h3 id="调用接口">调用接口</h3>
 
-　　现在到了讨论RPDB的实现的的中心函数fib_lookup了。RPDB通过提供接口函数fib_lookup，作为寻找路由的入口点，在这里有必要详细讨论这个函数，下面是源代码：
+<p>IP层的路由接口分为发送路由接口以及接收路由接口：</p>
+<h3 id="发送路由接口">发送路由接口</h3>
 
-　　上面的这段代码的思路是非常的清晰的。首先程序从优先级高到低扫描所有的规则，如果规则匹配，处理该规则的动作。如果是普通的路由寻址或者是nat地址转换的换，首先从规则得到路由表，然后对该路由表进行操作。这样RPDB终于清晰的显现出来了。
-IP层路由适配（IP route）
+<p>IP层在发送数据时如果需要进行路由工作的时候，就会调用ip_route_out函数。这个函数在完成一些键值的简单转换以后，就会调用 ip_route_output_key函数，这个函数首先在缓存里寻找路由，如果失败就会调用 ip_route_output_slow，ip_route_output_slow里调用fib_lookup在路由表里寻找路由，如果命中，首先在缓存里添加这个路由，然后返回结果。</p>
 
-　　路由表以及规则组成的系统，可以完成路由的管理以及查找的工作，但是为了使得IP层的路由工作更加的高效，linux的路由体系里，route.c里完成大多数IP层与RPDB的适配工作，以及路由缓冲（route cache）的功能。
-调用接口
-
-　　IP层的路由接口分为发送路由接口以及接收路由接口：
-发送路由接口
-
-　　IP层在发送数据时如果需要进行路由工作的时候，就会调用ip_route_out函数。这个函数在完成一些键值的简单转换以后，就会调用 ip_route_output_key函数，这个函数首先在缓存里寻找路由，如果失败就会调用 ip_route_output_slow，ip_route_output_slow里调用fib_lookup在路由表里寻找路由，如果命中，首先在缓存里添加这个路由，然后返回结果。
-
-ip_route_out route.h
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip_route_out route.h
 ip_route_output_key route.c 1984;
+ip_route_output_slow route.c 1690;" ### 接收路由接口
+</code></pre></div></div>
 
-ip_route_output_slow route.c 1690;"
-接收路由接口
+<p>IP层接到一个数据包以后，如果需要进行路由，就调用函数ip_route_input，ip_route_input现在缓存里寻找，如果失败则 ip_route_inpu调用ip_route_input_slow， ip_route_input_slow里调用fib_lookup在路由表里寻找路由，如果命中，首先在缓存里添加这个路由，然后返回结果。</p>
 
-　　IP层接到一个数据包以后，如果需要进行路由，就调用函数ip_route_input，ip_route_input现在缓存里寻找，如果失败则 ip_route_inpu调用ip_route_input_slow， ip_route_input_slow里调用fib_lookup在路由表里寻找路由，如果命中，首先在缓存里添加这个路由，然后返回结果。
-
-ip_route_input_slow route.c 1312;" f
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip_route_input_slow route.c 1312;" f
 ip_route_input route.c 1622;" f
-cache
+</code></pre></div></div>
 
-　　路由缓存保存的是最近使用的路由。当IP在路由表进行路由以后，如果命中就会在路由缓存里增加该路由。同时系统还会定时检查路由缓存里的项目是否失效，如果失效则清除。
+<h3 id="cache">cache</h3>
 
-原文：[inux ip命令和ifconfig命令](https://blog.csdn.net/freeking101/article/details/68939059 "inux ip命令和ifconfig命令")
-</长度></地址></地址></子网掩码></字节数></硬件地址>
+<p>路由缓存保存的是最近使用的路由。当IP在路由表进行路由以后，如果命中就会在路由缓存里增加该路由。同时系统还会定时检查路由缓存里的项目是否失效，如果失效则清除。</p>
+
+<p>原文：<a href="https://blog.csdn.net/freeking101/article/details/68939059" title="inux ip命令和ifconfig命令">inux ip命令和ifconfig命令</a></p>
 
 </div>
 

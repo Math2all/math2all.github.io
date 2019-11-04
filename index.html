@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -15,6 +16,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/tongji.js"></script>
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
   </head>
   
   <body>
@@ -43,20 +49,26 @@
           		<ul class="nav navbar-nav">
 			
 				<li>
+				  <a href="/math/index.html">
+					数学
+				  </a>
+				</li>
+			
+				<li>
 				  <a href="/termux/index.html">
-					Termux专题
+					Termux
 				  </a>
 				</li>
 			
 				<li>
 				  <a href="/linux/index.html">
-					Linux专题
+					Linux
 				  </a>
 				</li>
 			
 				<li>
 				  <a href="/git/index.html">
-					git专题
+					git
 				  </a>
 				</li>
 			
@@ -107,6 +119,24 @@
 <!-- ad -->
 
 <!-- Loop output paged posts -->
+
+<h2>
+  <a href="/math/chi-square-test.html">
+    卡方检验
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2019-11-04
+  </div>
+</h2>
+<hr>
+<h1 id="卡方检验">卡方检验</h1>
+<p><strong>卡方检验(Chi-square test/Chi-Square Goodness-of-Fit Test)</strong></p>
+<h2 id="什么是卡方检验">什么是卡方检验</h2>
+<p>卡方检验是一种用途很广的计数资料的假设检验方法。它属于非参数检验的范畴，主要是比较两个及两个以上样本率( 构成比）以及两个分类变量的关联性分析。其根本思想就是在于比较理论频数和实际频数的吻合程度或拟合优度问题。</p>
+
+	<p><h3><a href="/math/chi-square-test.html">阅读全文 &raquo;</a></h3></p>
+<hr>
 
 <h2>
   <a href="/develop/riscv-knowledge.html">
@@ -308,6 +338,12 @@ iproute2 github地址（GitHub上有英文版使用文档）：https://github.co
                                   
               <div class="col-lg-12">
                 <ul class="list-unstyled">
+                    
+                              <li>
+                                <a href="/math/chi-square-test.html">
+                                  卡方检验
+                                </a>
+                              </li>
                     
                               <li>
                                 <a href="/develop/riscv-knowledge.html">
