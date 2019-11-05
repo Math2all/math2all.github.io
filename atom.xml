@@ -4,7 +4,7 @@
  <title></title>
  <link href="http:///atom.xml" rel="self"/>
  <link href="http://"/>
- <updated>2019-11-05T08:15:31+08:00</updated>
+ <updated>2019-11-05T09:36:38+08:00</updated>
  <author>
    <name>zzj666</name>
    <email>zzj666#gmail.com</email>
@@ -16,7 +16,7 @@
    <link href="http:///math/chi-square-test.html"/>
    <updated>2019-11-04T00:00:00+08:00</updated>
    <id>/math/chi-square-test</id>
-   <content type="html">&lt;h1 id=&quot;卡方检验&quot;&gt;卡方检验&lt;/h1&gt;
+   <content type="html">&lt;h1 id=&quot;卡方检验转&quot;&gt;卡方检验[转]&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;卡方检验(Chi-square test/Chi-Square Goodness-of-Fit Test)&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;什么是卡方检验&quot;&gt;什么是卡方检验&lt;/h2&gt;
 &lt;p&gt;卡方检验是一种用途很广的计数资料的假设检验方法。它属于非参数检验的范畴，主要是比较两个及两个以上样本率( 构成比）以及两个分类变量的关联性分析。其根本思想就是在于比较理论频数和实际频数的吻合程度或拟合优度问题。
@@ -232,6 +232,8 @@ D10=“=D5*E4/E5” 。
 3.卡方检验的应用条件[J].中国医药科学,2013,(第2期).
 4.孙志刚,杨聪.第八章 假设检验 Excel在经济与数理统计中的应用.中国电力出版社,2004年01月第1版.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;原文：&lt;a href=&quot;https://wiki.mbalib.com/wiki/卡方检验&quot; title=&quot;卡方检验&quot;&gt;卡方检验&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
