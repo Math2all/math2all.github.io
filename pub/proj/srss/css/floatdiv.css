@@ -1,0 +1,249 @@
+.box div{
+    overflow:hidden;
+}
+.box{
+    position:absolute;
+    background-image:url("../img/popup/holiday-bg_05.png");
+    background-color:#00a200;
+    width:300px;
+    height:32px;
+    overflow:visible;
+}
+.box .lt{
+    position:absolute;
+    width:4px;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_corner.png")!important;
+    background-position:top left;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_01.png', sizingMethod='scale');
+    left:-4px;
+    top:-5px;
+}
+.box .rt{
+    position:absolute;
+    width:4px;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_corner.png")!important;
+    background-position:top right;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_03.png', sizingMethod='scale');
+    right:-4px;
+    top:-5px;
+}
+.box .lb{
+    position:absolute;
+    width:4px;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_corner.png")!important;background-image:none;
+    background-position:bottom left;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_07.png', sizingMethod='scale');
+    left:-4px;
+    bottom:-5px;
+}
+.box .rb{
+    position:absolute;
+    width:4px;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_corner.png")!important;background-image:none;
+    background-position:bottom right;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_09.png', sizingMethod='scale');
+    right:-4px;
+    bottom:-5px;
+}
+.box .t{
+    position:absolute;
+    width:100%;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_h.png")!important;background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_02.png', sizingMethod='scale');
+    background-position:center top;
+    left:0;
+    top:-5px;
+    text-align:center;
+}
+.box .t .tp {
+    display:block;
+    width:5px;
+    height:5px;
+    margin:auto;
+    background-image:url("../img/popup/holiday-bg_02_c.png")!important;background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_02_c.png', sizeingMethod='scale');
+    line-height:5px;
+}
+.box .l{
+    position:absolute;
+    width:4px;
+    height:100%;
+    background-image:url("../img/popup/holiday-bg_v.png")!important;background-image:none;
+    background-position:left center;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_04.png', sizingMethod='scale');
+    top:0;
+    left:-4px;
+}
+.box .r{
+    position:absolute;
+    width:4px;
+    height:100%;
+    background-image:url("../img/popup/holiday-bg_v.png")!important;
+    background-position:right center;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_06.png', sizingMethod='scale');
+    top:0;
+    right:-4px;
+}
+.box .b{
+    position:absolute;
+    width:100%;
+    height:5px;
+    background-image:url("../img/popup/holiday-bg_h.png")!important;
+    background-position:center bottom;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup/holiday-bg_08.png', sizingMethod='scale');
+    left:0;
+    bottom:-5px;
+}
+.box .content{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width:100%;
+    vertical-align:middle;
+    color:white;
+    font-family:"tahoma","Arial",sans-serif;
+    text-align:center;
+    filter:progid:
+}
+.box strong{
+    display:none;
+    font-weight:normal;
+}
+.box span{
+    display:block;
+    margin:0 4px;
+}
+
+
+
+.box-dea div{
+    overflow:hidden;
+}
+.box-dea{
+    position:absolute;
+    background-image:url("../img/popup-dea/holiday-bg_05.png");
+    background-color:#00a200;
+    width:300px;
+    height:32px;
+    overflow:visible;
+}
+.box-dea .lt{
+    position:absolute;
+    width:3px;
+    height:7px;
+    background-image:url("../img/popup-dea/holiday-bg_corner.png")!important;
+    background-position:left top;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_01.png', sizingMethod='scale');
+    left:-3px;
+    top:-7px;
+}
+.box-dea .rt{
+    position:absolute;
+    width:3px;
+    height:7px;
+    background-image:url("../img/popup-dea/holiday-bg_corner.png")!important;
+    background-position:right top;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_03.png', sizingMethod='scale');
+    right:-3px;
+    top:-7px;
+}
+.box-dea .lb{
+    position:absolute;
+    width:3px;
+    height:4px;
+    background-image:url("../img/popup-dea/holiday-bg_corner.png")!important;background-image:none;
+    background-position:left bottom;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_07.png', sizingMethod='scale');
+    left:-3px;
+    bottom:-4px;
+}
+.box-dea .rb{
+    position:absolute;
+    width:3px;
+    height:4px;
+    background-image:url("../img/popup-dea/holiday-bg_corner.png")!important;background-image:none;
+    background-position:right bottom;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_09.png', sizingMethod='scale');
+    right:-3px;
+    bottom:-4px;
+}
+.box-dea .t{
+    position:absolute;
+    width:100%;
+    height:7px;
+    background-image:url("../img/popup-dea/holiday-bg_h.png")!important;background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_02.png', sizingMethod='scale');
+    background-position:center top;
+    left:0;
+    top:-7px;
+    text-align:center;
+}
+.box-dea .t .tp {
+    display:block;
+    width:7px;
+    height:7px;
+    margin:auto;
+    background-image:url("../img/popup-dea/holiday-bg_02_c.png")!important;background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_02_c.png', sizeingMethod='scale');
+    line-height:7px;
+}
+.box-dea .l{
+    position:absolute;
+    width:3px;
+    height:100%;
+    background-image:url("../img/popup-dea/holiday-bg_v.png")!important;background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_04.png', sizingMethod='scale');
+    background-position:left;
+    top:0;
+    left:-3px;
+}
+.box-dea .r{
+    position:absolute;
+    width:3px;
+    height:100%;
+    background-image:url("../img/popup-dea/holiday-bg_v.png")!important;
+    background-position:right;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_06.png', sizingMethod='scale');
+    top:0;
+    right:-3px;
+}
+.box-dea .b{
+    position:absolute;
+    width:100%;
+    height:4px;
+    background-image:url("../img/popup-dea/holiday-bg_h.png")!important;
+    background-position:center bottom;
+    *background-image:none;
+    filter:none!important;*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/popup-dea/holiday-bg_08.png', sizingMethod='scale');
+    left:0;
+    bottom:-4px;
+}
+.box-dea .content{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width:100%;
+    vertical-align:middle;
+    color:#00a200;
+    font-family:"tahoma",arial,sans-serif;
+    text-align:center;
+}
+.box-dea strong{
+    display:inline;
+    font-weight:normal;
+}
+.box-dea span{
+    display:inline;
+}

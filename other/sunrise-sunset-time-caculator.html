@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Tags - zzj666's Little Site - 作者:zzj666"/> 
+    <meta name="description" content="日出日落时间计算 - zzj666's Little Site - 作者:zzj666"/> 
 	
-    <title>Tags - zzj666's Little Site</title>
+    <title>日出日落时间计算 - zzj666's Little Site</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
@@ -108,137 +108,71 @@
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          <!-- Navi -->
-<div class="post_frame">
-  <div class="post_navi">
-    <a href="/">首页</a>&nbsp;>&nbsp;
-    <span class="post_navi_span">Tags</span>
+          
+
+
+
+<div  class="post_frame">
+<!-- Navi -->
+<div class="post_navi">
+	<a href="/">首页</a>&nbsp;>&nbsp;
+	<a href=""></a>&nbsp;>&nbsp;
+	<span class="post_navi_span">正文</span>
+</div>
+
+<!-- Title -->
+<div class="post_titlearea">
+	<h1>日出日落时间计算</h1>
+	<hr class="hrline"/>
+	<div class="post_titledate"/>
+		&nbsp;&nbsp;&nbsp;
+		栏目：<a href=""></a>&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		日期：2019-12-19&nbsp;&nbsp;&nbsp;		
+	</div>
+</div>
+
+<div style="text-indent:2em;padding:10px">
+<h1 id="日出日落计算">日出日落计算</h1>
+<p><a href="/" title="首页">首页</a>
+<!-- more --></p>
+<iframe src="/pub/proj/srss/richuriluoshijian.html" align="center" width="600" height="700" frameborder="0"></iframe>
+
+</div>
+
+<div style="text-align:center">
+	<div>
+		<b>本文位置：</b><a href="https://zzj666.github.com">zzj666's Little Site</a> » <a href="https://zzj666.github.com/other/sunrise-sunset-time-caculator.html" title="">日出日落时间计算</a>
+	</div>
+</div>
+
+
+<!-- next and previous -->
+<div style="margin:10px">
+  <span class="next">
+		
+			<a href="">
+				
+			</a>
+		 
+  </span>
+  
+  <div style="float:right">
+  <span class="prev" >
+		
+			<a href="">
+				
+			</a>
+		
+  </span>
   </div>
   
-  <div style="padding:10px">
-    <svg class="cloud" style="width:95%;height:600px">
-    <g></g>
-</svg>
-<div class="tag_posts">
 </div>
 
-<!--
-<div>
+<hr>
 
 </div>
 
-//tag js
-
--->
-
-<script src="/js/d3.js"></script>
-
-<script src="/js/d3.layout.cloud.js"></script>
-
-<script>
-    var tags = [
-        
-    ];
-    var minSize = 24, maxSize = 60;
-    var minFreq = 1;
-    var maxFreq = tags.reduce(function(memo, tag) {
-        if (tag.freq > memo) {
-            memo = tag.freq;
-        }
-        return memo;
-    }, 0);
-    var width = $('.cloud').width(), height = $('.cloud').height();
-    var fill = d3.scale.category10();
-    function scale(freq, minFreq, maxFreq, minSize, maxSize) {
-        return minSize + Math.floor((freq - minFreq) / (maxFreq - minFreq) * (maxSize - minSize));
-    }
-    function showPosts(tagContent) {
-        var tag = tags.filter(function(e) { return e.tag == tagContent; });
-        if (tag.length == 0) {
-            return;
-        }
-        tag = tag[0];
-        var $ul = $('<ul></ul>').append(tag.posts.map(function(post) {
-            var $li = $('<li></li>');
-            $li.html(post.date + ' - ' + '<a href="' + post.url + '">' + post.title + '</a>');
-            return $li;
-        }));
-        $('.tag_posts').slideUp('normal', function(e) {
-            $('.tag_posts').empty().append($('<div class="tag_title">' + tagContent + '</div>')).append($ul).slideDown('normal');
-        });
-    }
-    
-    if (location.hash != '') {
-        showPosts(location.hash.substring(1));
-    }
-    
-    function draw(words) {
-        d3.select('.cloud g')
-            .attr('transform', 'translate(' + [width / 2, height / 2] + ')')
-            .selectAll('text')
-            .data(words)
-            .enter()
-            .append('text')
-            .style('font-size', function(d) {
-                return d.size + 'px'
-            })
-            .style('fill', function(d, i) {
-                return fill(i);
-            })
-            .style('font-weight', function(d) {
-                return 'bold';
-            })
-            .style('font-family', 'Microsoft YaHei')
-            .style('cursor', 'pointer')
-            .text(function(d) {
-                return d.text;
-            })
-            .attr("text-anchor", "middle")
-            .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-            })
-            .on('mouseover', function(d) {
-                d3.select(this).style('opacity', '0.5');
-            })
-            .on('mouseout', function(d) {
-                d3.select(this).style('opacity', '1');
-            })
-            .on('click', function(d) {
-                //showPosts(d.text);
-                window.location.href='/tag/'+d.text+'.html';
-            });
-    }
-    
-    var layout = d3.layout.cloud()
-        .size([width, height])
-        .words(tags.map(function(d) {
-            return {
-                text: d.tag,
-                size: scale(d.freq, minFreq, maxFreq, minSize, maxSize)
-            };
-        }).sort(function(a, b) {
-            return b.size - a.size;
-        }))
-        .padding(1)
-        .rotate(function() {
-            return ~~(Math.random() * 3 - 1) * 30;
-        })
-        .spiral('archimedean')
-        .font('Microsoft Yahei')
-        .fontSize(function(d) {
-            return d.size;
-        })
-        .on('end', draw);
-        
-    layout.start();
-    
-</script>
-
-
-  </div>
-
-
-</div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">

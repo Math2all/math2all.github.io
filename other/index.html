@@ -1,28 +1,41 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Tags - zzj666's Little Site - 作者:zzj666"/> 
-	
-    <title>Tags - zzj666's Little Site</title>
+    <meta name="description" content=" - zzj666's Little Site" />
+
+    <title>栏目：杂记 - zzj666's Little Site</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
     <link href="/css/blog.css" rel="stylesheet"/>
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+    queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+    -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+      </script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
     <script src="/js/jquery-1.11.0.js"> </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/tongji.js"></script>
-
-	<script type="text/x-mathjax-config">
+		<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 	</script>
 	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 	</script>
-
+  </head>
   
   <body>
     <!-- Navigation -->
@@ -109,143 +122,46 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
           <!-- Navi -->
-<div class="post_frame">
-  <div class="post_navi">
-    <a href="/">首页</a>&nbsp;>&nbsp;
-    <span class="post_navi_span">Tags</span>
+          <div class="post_frame">
+            <div class="post_navi">
+              <a href="/">首页</a>&nbsp;>&nbsp;
+              <a href="">杂记</a>&nbsp;>&nbsp;
+              <span class="post_navi_span">列表</span>
+            </div>
+            <div style="padding:10px">
+<!-- Loop output paged posts -->
+
+
+<h2>
+  <a href="/other/sunrise-sunset-time-caculator.html">
+    日出日落时间计算
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	2019-12-19
   </div>
-  
-  <div style="padding:10px">
-    <svg class="cloud" style="width:95%;height:600px">
-    <g></g>
-</svg>
-<div class="tag_posts">
-</div>
+</h2>
+<hr>
+<h1 id="日出日落计算">日出日落计算</h1>
+<p><a href="/" title="首页">首页</a></p>
 
-<!--
-<div>
-
-</div>
-
-//tag js
-
--->
-
-<script src="/js/d3.js"></script>
-
-<script src="/js/d3.layout.cloud.js"></script>
-
-<script>
-    var tags = [
-        
-    ];
-    var minSize = 24, maxSize = 60;
-    var minFreq = 1;
-    var maxFreq = tags.reduce(function(memo, tag) {
-        if (tag.freq > memo) {
-            memo = tag.freq;
-        }
-        return memo;
-    }, 0);
-    var width = $('.cloud').width(), height = $('.cloud').height();
-    var fill = d3.scale.category10();
-    function scale(freq, minFreq, maxFreq, minSize, maxSize) {
-        return minSize + Math.floor((freq - minFreq) / (maxFreq - minFreq) * (maxSize - minSize));
-    }
-    function showPosts(tagContent) {
-        var tag = tags.filter(function(e) { return e.tag == tagContent; });
-        if (tag.length == 0) {
-            return;
-        }
-        tag = tag[0];
-        var $ul = $('<ul></ul>').append(tag.posts.map(function(post) {
-            var $li = $('<li></li>');
-            $li.html(post.date + ' - ' + '<a href="' + post.url + '">' + post.title + '</a>');
-            return $li;
-        }));
-        $('.tag_posts').slideUp('normal', function(e) {
-            $('.tag_posts').empty().append($('<div class="tag_title">' + tagContent + '</div>')).append($ul).slideDown('normal');
-        });
-    }
-    
-    if (location.hash != '') {
-        showPosts(location.hash.substring(1));
-    }
-    
-    function draw(words) {
-        d3.select('.cloud g')
-            .attr('transform', 'translate(' + [width / 2, height / 2] + ')')
-            .selectAll('text')
-            .data(words)
-            .enter()
-            .append('text')
-            .style('font-size', function(d) {
-                return d.size + 'px'
-            })
-            .style('fill', function(d, i) {
-                return fill(i);
-            })
-            .style('font-weight', function(d) {
-                return 'bold';
-            })
-            .style('font-family', 'Microsoft YaHei')
-            .style('cursor', 'pointer')
-            .text(function(d) {
-                return d.text;
-            })
-            .attr("text-anchor", "middle")
-            .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-            })
-            .on('mouseover', function(d) {
-                d3.select(this).style('opacity', '0.5');
-            })
-            .on('mouseout', function(d) {
-                d3.select(this).style('opacity', '1');
-            })
-            .on('click', function(d) {
-                //showPosts(d.text);
-                window.location.href='/tag/'+d.text+'.html';
-            });
-    }
-    
-    var layout = d3.layout.cloud()
-        .size([width, height])
-        .words(tags.map(function(d) {
-            return {
-                text: d.tag,
-                size: scale(d.freq, minFreq, maxFreq, minSize, maxSize)
-            };
-        }).sort(function(a, b) {
-            return b.size - a.size;
-        }))
-        .padding(1)
-        .rotate(function() {
-            return ~~(Math.random() * 3 - 1) * 30;
-        })
-        .spiral('archimedean')
-        .font('Microsoft Yahei')
-        .fontSize(function(d) {
-            return d.size;
-        })
-        .on('end', draw);
-        
-    layout.start();
-    
-</script>
+	<p><h3><a href="/other/sunrise-sunset-time-caculator.html">阅读全文 &raquo;</a></h3></p>
+<hr>
 
 
-  </div>
-
+<!-- Pager indicator -->
+<div style="margin:0px auto;text-align: center">
 
 </div>
+            </div>
+          </div>
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
           <!-- Side Widget Well -->
           <div class="well">
             <h4>
-              资源
+              链接
             </h4>
 			      <div class="row">
                         <div class="col-lg-12">
@@ -298,7 +214,7 @@
 </script> 
           </div>
 
-		      <!-- Blog Recent Well -->
+		     <!-- Blog Recent Well -->
           <div class="well">
             <h4>
               最新文章
@@ -307,11 +223,18 @@
                                   
               <div class="col-lg-12">
                 <ul class="list-unstyled">
+                    
+                              <li>
+                                <a href="/other/sunrise-sunset-time-caculator.html">
+                                  日出日落时间计算
+                                </a>
+                              </li>
                      
                 </ul>
               </div> 
             </div>
-          </div>
+          </div>		  
+
         </div>
       </div>
       <!-- /.row -->
@@ -336,5 +259,4 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
  -->
   </body>
-
 </html>

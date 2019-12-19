@@ -1,0 +1,93 @@
+.combobox{
+    width:120px;
+    height:20px;
+}
+.combobox-show{
+    border:1px solid #CACACA;
+    /*overflow-x:hidden;*/
+    width:120px;
+    height:20px!important;
+    height:20px;
+}
+.combo-button {
+ cursor:   pointer !important; 
+ *cursor:   hand;
+ display:  block;
+ position: absolute;
+ right:0px;
+ border:1px solid blue;
+ left:0px;
+ top:0px;
+ padding:0 4px;
+ height:   20px;
+ border:none;
+ width:auto;
+ text-align:right;
+ vertical-align: top;
+ /*font-family: Webdings, Marlett;*/
+ font-family:"Arial Unicode MS","宋体","tahoma",arial,sans-serif,serif;
+ font-size:16px;
+ color:#999;
+}
+.combo-hilite {
+ cursor:   hand;
+ cursor:   pointer;
+ background: #00a200; 
+ color:   white!important;
+}
+.combo-item   {
+ cursor:   hand;
+ cursor:   pointer;
+}
+
+.combo-input  {
+ border:   none;
+ width:    auto;
+ margin: 0 4px;
+ display:block;
+ line-height:16px;
+ height:16px;
+ vertical-align: middle;
+ padding:2px;
+ cursor:pointer;
+ *font-family:"tahoma",arial,sans-serif,serif;
+}
+
+.combo-list table {
+ background:  #fcf9da;
+ color: black;
+ table-layout: fixed;
+ width:100%;
+}
+.combo-list tr{
+    height:18px;
+}
+.combo-list td{
+    padding:0 4px;
+}
+.combo-list span.combo-checked{
+    color:#00a200;
+}
+.combo-hilite span.combo-checked{
+    color:white;
+}
+.combo-list {
+ background:  #fcf9da;
+    width:100%;
+    border:1px solid #CACACA;
+ height:    108px;
+ overflow-x:   hidden;
+ overflow-y:   scroll;
+/* scrollbar-base-color:  rgb(234,242,255);
+ scrollbar-highlight-color: rgb(234,242,255);
+ scrollbar-3dlight-color: rgb(120,172,255);
+ scrollbar-darkshadow-color: rgb(120,172,255);
+ scrollbar-shadow-color:  rgb(234,242,255);
+ scrollbar-face-color:  rgb(234,242,255);
+ scrollbar-track-color:  white;
+ scrollbar-arrow-color:  black;*/
+}
+.hidden{
+    display:none;
+}
+

@@ -1,0 +1,290 @@
+@import url("floatdiv.css");
+
+body{
+    position:relative;
+    margin:0px 0px;
+/*    overflow:hidden;*/
+    font-size:12px;
+    font-family:Helvetica;
+/*    width:540px;*/
+}
+a {
+    text-decoration:none;
+    color:inherit;
+}
+div.clear16 {
+    clear:both;
+    height:8px;
+}
+div.clear {
+    clear:both;
+    height:0px;
+    line-height:0px;
+}
+#main-container{
+    width:540px;
+
+    position:relative;
+}
+#calc-button{
+    background-image:url("../img/calc_sunrise.jpg");
+    background-color:transparent;
+    border:none;
+    width:137px;height:33px;
+    cursor:pointer;
+    color:white;
+}
+#calc-button.down{
+    background-image:url("../img/calc_sunrise_down.jpg");
+
+}
+#maincale{
+    /*border:solid 1px #e9e7e2;*/
+    width:540px;height:588px;
+    margin:0;
+    position:relative;
+    clear:both;
+    overflow:hidden;
+}
+    
+#caleheader{
+    margin-top:15px;
+    font-size:12px;
+    padding:0px;
+    height:22px;
+    overflow:hidden;
+}
+#today{
+    background-image:url("../img/todaybg.jpg");
+    width:46px;
+    line-height:20px;
+    height:20px;
+    padding-top:2px;
+    display:inline;
+    float:right;
+    margin-right:15px;
+    cursor:pointer;
+    text-align:center;
+    vertical-align:middle;
+    color:#333;
+}
+#today:hover {
+    background-image:url("../img/todaybg-down.jpg");
+    color:#666;
+}
+#year{
+    background-image:url("../img/yearmover.jpg");
+    /*--------可能是IE6/7的一个奇怪bug，有时间看下*/
+    /*display:inline;
+    margin-left:15px;
+    float:left;*/
+    /*--------*/
+    /*++++++++*/
+    position:absolute;
+    left:15px;
+    /*++++++++*/
+    width:112px;
+    height:22px;
+    color:#666;
+}
+#month{
+    background-image:url("../img/monthmover.jpg");
+    display:block;
+    /*--------*/
+    /*float:left;
+    margin-left:8px;*/
+    /*--------*/
+    /*++++++++*/
+    position:absolute;
+    left:135px;
+    /*++++++++*/
+    width:88px;
+    height:22px;
+    color:#666;
+    vertical-align:bottom;
+    line-height:22px;
+}
+#chineseyear{
+    font-family:"宋体";
+    color:#666;
+    display:block;
+    /*--------*/
+    /*float:left;
+    margin-left:8px;*/
+    /*--------*/
+    /*++++++++*/
+    position:absolute;
+    left:231px;
+    /*++++++++*/
+    height:22px;
+    line-height:22px;
+    vertical-align:middle;
+}
+.lrb{
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+    *font-family:"tahoma","Arial";
+    line-height:22px;
+}
+.nl a.lbtn, .nr a.rbtn{
+    display:none;
+}
+a.lbtn{
+    background-image:url("../img/leftbtn.jpg");
+    display:block;
+    position:absolute;
+    left:0; top:0;
+    width:26px;height:22px;
+}
+a.lbtn:hover {
+    background-image:url("../img/leftbtn-down.jpg");
+}
+a.rbtn{
+    background-image:url("../img/rightbtn.jpg");
+    display:block;
+    position:absolute;
+    right:0; top:0;
+    width:26px;height:22px;
+}
+a.rbtn:hover {
+    background-image:url("../img/rightbtn-down.jpg");
+}
+
+
+#calendartable {
+    margin:7px 15px 0!important;
+    border:1px solid #e4e4e4;
+    background-color:white;
+}
+#calendartable td,#calendartable th{
+    width:72px;
+    text-align:center;
+}
+#calendartable th{
+    border-left:1px dotted #e4e4e4;
+}
+#calendartable tr#weektitle{
+    height:31px;
+    background-image:url('../img/table-title.jpg');
+}
+#calendartable td.no-left-line, #calendartable th.no-left-line{
+    border-left:none;
+}
+#calendartable td{
+    border-left:1px dotted #e4e4e4;
+}
+#calendartable tr{
+    height:58px;
+}
+#calendartable tr.top-line td{
+    border-top:1px dotted #e4e4e4;
+}
+#calendartable span.date{
+    font:normal 18px Helvetica,Arial;
+    color:#404040;
+    display:block;
+}
+#calendartable span.cndate{
+    color:#979797;
+    display:block;
+}
+#calendartable td.hover{
+    background:#fcf9da!important;
+}
+#calendartable td.checked{
+    background:#F9E29B!important;
+}
+#calendartable td.checked span.date, #calendartable td.checked span.cndate{
+    color:#c60;
+}
+#calendartable td.weekend{
+    background:#f6f7f6;
+}
+#calendartable .weekend span.date{
+    color:#963;
+}
+#calendartable td.not-this-month span{
+    color:#AAA!important;
+}
+/* 绝对定位 */
+
+#query{
+    position:relative;
+    margin:8px 15px;
+    width:509px;
+    height:138px;
+    background-color:white;
+}
+#query .ctnr{
+    width:508px;
+    height:136px;
+    border:1px solid #eaeaea;
+}
+#cnt_month,#cnt_month .combobox,#cnt_month .combobox-show,#cnt_day,#cnt_day .combobox,#cnt_day .combobox-show{
+    width:47px;
+}
+#cnt_year,#cnt_year .combobox,#cnt_year .combobox-show{
+    width:62px;
+}
+#cnt_prov,#cnt_prov .combobox,#cnt_prov .combobox-show{
+    width:70px;
+}
+#cnt_posite,#cnt_posite .combobox,#cnt_posite .combobox-show{
+    width:114px;
+}
+input.lo_la{
+    width:64px;
+    height:18px;
+    border:1px solid #CACACA;
+    padding-left:4px;
+    padding-right:4px;
+    font-size:12px;
+}
+/* IE6 HACK */
+#cnt_month .combo-button,#cnt_day .combo-button{
+    *width:39px;
+}
+#cnt_year .combo-button{
+    *width:54px;
+}
+#cnt_prov .combo-button{
+    *width:62px;
+}
+#cnt_posite .combo-button{
+    *width:106px;
+}
+/* 绝对定位 end */
+#result{
+    height:33px;
+    border:1px solid #E6E6E6;
+    background:#f0f0f0;
+    width:479px;
+}
+#result th{
+    border-right:1px solid #F7F7F7;
+    text-align:center;
+    padding-left:5px;
+    width:104px;
+}
+#result td{
+    border-left:1px solid #e6e6e6;
+    background:#f7f7f7;
+    font-family:"Arial";
+    text-align:left;
+    padding:0 0 0 8px;
+}
+#result td span{
+    color:#00a200;
+    padding:0 16px 0 8px;
+}
+#result td span.nr{
+    padding:0 0 0 8px;
+}
+#result td span strong{
+    font-size:13px;
+}
+label {
+    vertical-align:bottom;
+    line-height:16px;
+}
