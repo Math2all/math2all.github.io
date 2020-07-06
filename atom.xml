@@ -4,7 +4,7 @@
  <title></title>
  <link href="http:///atom.xml" rel="self"/>
  <link href="http://"/>
- <updated>2020-07-06T19:45:02+08:00</updated>
+ <updated>2020-07-06T20:10:25+08:00</updated>
  <author>
    <name>zzj666</name>
    <email>zzj666#gmail.com</email>
@@ -13,9 +13,9 @@
  
  <entry>
    <title>Linux 桌面史话</title>
-   <link href="http:///linux/Linux-desktop-history.html"/>
+   <link href="http:///cs/Linux-desktop-history.html"/>
    <updated>2020-07-04T00:00:00+08:00</updated>
-   <id>/linux/Linux-desktop-history</id>
+   <id>/cs/Linux-desktop-history</id>
    <content type="html">&lt;h1 id=&quot;linux-桌面史话转&quot;&gt;Linux 桌面史话$^{[转]}$&lt;/h1&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;自 20 世纪 90 年代初以来，Linux 桌面已从一个简单的窗口管理器发展为一个完整的桌面。让我们一起来回顾一下 Linux 桌面的历史。
@@ -99,22 +99,64 @@ GNOME 2 也使用了任务栏概念，但将任务栏一分为二：屏幕顶部
  </entry>
  
  <entry>
+   <title>退刀槽的尺寸标注</title>
+   <link href="http:///eng/%E9%80%80%E5%88%80%E6%A7%BD%E7%9A%84%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.html"/>
+   <updated>2020-07-04T00:00:00+08:00</updated>
+   <id>/eng/退刀槽的尺寸标注</id>
+   <content type="html">&lt;h1 id=&quot;退刀槽的尺寸标注转&quot;&gt;退刀槽的尺寸标注$^{[转]}$&lt;/h1&gt;
+
+&lt;p&gt;退刀槽可按“槽宽×直径”或“槽宽×槽深”的形式注写，什么情况下用“槽宽×直径”？什么情况下用“槽宽×槽深”标？ 图中的直径9.2就是绿线所示部位的直径，0.4是红线所示的高度？&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1620983664,851208775&amp;amp;fm=173&amp;amp;app=25&amp;amp;f=JPEG?w=477&amp;amp;h=327&amp;amp;s=87907C235BA062941F08E0CC0100E0E3&quot; alt=&quot;退刀槽&quot; /&gt;
+1.退刀槽在没有“尺寸精度”要求前提下，两种标注（槽宽×直径或槽宽×槽深）都可以，两者可换算，“自由公差”精度没问题，不必考虑基准问题， 2.1.6×0.4退刀槽；0.4是红线所示的高度，操作者不会以大圆为基准往下量的。（退刀槽是由小圆轴切削成的） 3.退刀槽在《机械设计手册》中有标准，按所配合的零件结构不同，分为A,B,C,D,E,F几种形式，此类标注就不是简单的“槽宽×直径”或“槽宽×槽深” 供参考！
+&lt;img src=&quot;https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2466838317,324968750&amp;amp;fm=173&amp;amp;app=25&amp;amp;f=JPEG?w=615&amp;amp;h=179&amp;amp;s=0EAC7A22A4A0CD0B4C78F0D7000040B1&quot; alt=&quot;两种标注&quot; /&gt;
+在必须保证直径时用“槽宽×直径”。 同样，在必须保证槽深时用“槽宽×槽深”。 虽然，可能会得到相同的结果，但是，基准与概念都不一样。 槽宽×直径时：槽深的基准是中心线。 槽宽×槽深时：槽深的基准是轮廓线。&lt;/p&gt;
+
+&lt;p&gt;按GB4458.4（机械制图尺寸注法）提示： 图中A、B属销、轴类退刀槽一般注法，可以任选其一。 图中C属于非轴类的退刀槽的一般注法。&lt;/p&gt;
+
+&lt;h2&gt;&lt;img src=&quot;https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2236551485,65390368&amp;amp;fm=173&amp;amp;app=25&amp;amp;f=JPEG?w=640&amp;amp;h=191&amp;amp;s=8EAA7C23CDB0CC0B06DDE5DA0000C0B2&quot; alt=&quot;机械制图尺寸注法&quot; /&gt;&lt;/h2&gt;
+&lt;p&gt;退刀槽可按“槽宽×直径”或“槽宽×槽深”的形式注写，什么情况下用“槽宽×直径”？什么情况下用“槽宽×槽深”标？&lt;br /&gt;
+图中的直径9.2就是绿线所示部位的直径，0.4是红线所示的高度？
+&lt;img src=&quot;http://www.iw168.cn/upFiles/infoImg/coll/20161207/OT20161207161534986.png&quot; alt=&quot;输入图片描述&quot; /&gt;
+1.退刀槽在没有“尺寸精度”要求前提下，两种标注（槽宽×直径或槽宽×槽深）都可以，两者可换算，“自由公差”精度没问题，不必考虑基准问题，&lt;br /&gt;
+2.1.6×0.4退刀槽；0.4是红线所示的高度，操作者不会以大圆为基准往下量的。（退刀槽是由小圆轴切削成的）&lt;br /&gt;
+3.退刀槽在《机械设计手册》中有标准，按所配合的零件结构不同，分为A,B,C,D,E,F几种形式，此类标注就不是简单的“槽宽×直径”或“槽宽×槽深”&lt;br /&gt;
+供参考！
+&lt;img src=&quot;http://www.iw168.cn/upFiles/infoImg/coll/20161207/OT20161207161534865.png&quot; alt=&quot;输入图片描述&quot; /&gt;
+在必须保证直径时用“槽宽×直径”。&lt;br /&gt;
+同样，在必须保证槽深时用“槽宽×槽深”。&lt;br /&gt;
+虽然，可能会得到相同的结果，但是，6准与概念都不一样。&lt;br /&gt;
+槽宽×直径时：槽深的基准是中心线。&lt;br /&gt;
+槽宽×槽深时：槽深的基准是轮廓线。&lt;/p&gt;
+
+&lt;p&gt;按GB4458.4（机械制图尺寸注法）提示：&lt;br /&gt;
+图中A、B属销、轴类退刀槽一般注法，可以任选其一。&lt;br /&gt;
+图中C属于非轴类的退刀槽的一般注法。
+&lt;img src=&quot;http://www.iw168.cn/upFiles/infoImg/coll/20161207/OT20161207161534917.png&quot; alt=&quot;输入图片描述&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>日出日落时间计算</title>
    <link href="http:///other/sunrise-sunset-time-caculator.html"/>
    <updated>2019-12-19T00:00:00+08:00</updated>
    <id>/other/sunrise-sunset-time-caculator</id>
    <content type="html">&lt;h1 id=&quot;日出日落计算&quot;&gt;日出日落计算&lt;/h1&gt;
+
 &lt;p&gt;&lt;a href=&quot;/&quot; title=&quot;首页&quot;&gt;首页&lt;/a&gt;
 &lt;!-- more --&gt;&lt;/p&gt;
+
 &lt;iframe src=&quot;/pub/proj/srss/richuriluoshijian.html&quot; align=&quot;center&quot; width=&quot;600&quot; height=&quot;700&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 </content>
  </entry>
  
  <entry>
    <title>卡方检验</title>
-   <link href="http:///math/chi-square-test.html"/>
+   <link href="http:///sch/chi-square-test.html"/>
    <updated>2019-11-04T00:00:00+08:00</updated>
-   <id>/math/chi-square-test</id>
+   <id>/sch/chi-square-test</id>
    <content type="html">&lt;h1 id=&quot;卡方检验转&quot;&gt;卡方检验$^{[转]}$&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;卡方检验(Chi-square test/Chi-Square Goodness-of-Fit Test)&lt;/strong&gt;&lt;/p&gt;
@@ -340,9 +382,9 @@ D10=“=D5*E4/E5” 。
  
  <entry>
    <title>终于有人把RISC-V讲明白了</title>
-   <link href="http:///develop/riscv-knowledge.html"/>
+   <link href="http:///cs/riscv-knowledge.html"/>
    <updated>2019-11-01T00:00:00+08:00</updated>
-   <id>/develop/riscv-knowledge</id>
+   <id>/cs/riscv-knowledge</id>
    <content type="html">&lt;h1 id=&quot;终于有人把risc-v讲明白了转&quot;&gt;终于有人把RISC-V讲明白了$^{[转]}$&lt;/h1&gt;
 &lt;h2 id=&quot;0-risc-v和其他开放架构有何不同&quot;&gt;0 RISC-V和其他开放架构有何不同&lt;/h2&gt;
 &lt;p&gt;如果仅从“免费”或“开放”这两点来评判，RISC-V架构并不是第一个做到免费或开放的处理器架构。
@@ -577,9 +619,9 @@ RISC-V的指令集使用模块化的方式进行组织，每一个模块使用�
  
  <entry>
    <title>linux ip命令和ifconfig命令</title>
-   <link href="http:///linux/linux-ip-2.html"/>
+   <link href="http:///cs/linux-ip-2.html"/>
    <updated>2019-11-01T00:00:00+08:00</updated>
-   <id>/linux/linux-ip-2</id>
+   <id>/cs/linux-ip-2</id>
    <content type="html">&lt;h1 id=&quot;linux-ip命令和ifconfig命令转&quot;&gt;linux ip命令和ifconfig命令$^{[转]}$&lt;/h1&gt;
 &lt;blockquote&gt;
 
@@ -2129,9 +2171,9 @@ ip_route_input route.c 1622;&quot; f
  
  <entry>
    <title>Linux命令之ip</title>
-   <link href="http:///linux/linux-ip-1.html"/>
+   <link href="http:///cs/linux-ip-1.html"/>
    <updated>2019-11-01T00:00:00+08:00</updated>
-   <id>/linux/linux-ip-1</id>
+   <id>/cs/linux-ip-1</id>
    <content type="html">&lt;h1 id=&quot;linux命令之ip转&quot;&gt;Linux命令之ip$^{[转]}$&lt;/h1&gt;
 &lt;p&gt;**ip [ OPTIONS ] OBJECT { COMMAND | help }&lt;/p&gt;
 
@@ -2455,9 +2497,9 @@ ip n/neigh/neighbuor sh/show
  
  <entry>
    <title>如何在安卓系统中编译 Tex 文档</title>
-   <link href="http:///termux/texlive-on-termux.html"/>
+   <link href="http:///cs/texlive-on-termux.html"/>
    <updated>2019-10-31T00:00:00+08:00</updated>
-   <id>/termux/texlive-on-termux</id>
+   <id>/cs/texlive-on-termux</id>
    <content type="html">&lt;h1 id=&quot;如何在安卓系统中编译-tex-文档-转&quot;&gt;如何在安卓系统中编译 Tex 文档 ?$^{[转]}$&lt;/h1&gt;
 &lt;blockquote&gt;
   &lt;p&gt;导语：Tex（.tex） 文档本质上是一个文本文件，因此，要在手机上编辑 Tex 文档并不算什么难事，只要安装一个文本编辑器就可以了。不过，如果想在手机上本地编译 Tex 文档输出 PDF 文件，则需要一定的折腾精神。 针对安卓系统，小编推荐的解决方案是：Termux + TexLive。`
@@ -2530,9 +2572,9 @@ xelatex 文档名称.tex
  
  <entry>
    <title>关于Termux的一些链接</title>
-   <link href="http:///termux/termux-links.html"/>
+   <link href="http:///cs/termux-links.html"/>
    <updated>2019-10-25T00:00:00+08:00</updated>
-   <id>/termux/termux-links</id>
+   <id>/cs/termux-links</id>
    <content type="html">&lt;h1 id=&quot;有用的链接&quot;&gt;有用的链接，&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.sqlsec.com/2018/05/termux.html&quot; title=&quot;Termux 高级终端安装使用配置教程&quot;&gt;Termux 高级终端安装使用配置教程&lt;/a&gt;&lt;/li&gt;
@@ -2542,9 +2584,9 @@ xelatex 文档名称.tex
  
  <entry>
    <title>有用资源</title>
-   <link href="http:///resources/you-yong-zi-yuan.html"/>
+   <link href="http:///sch/you-yong-zi-yuan.html"/>
    <updated>2019-10-24T00:00:00+08:00</updated>
-   <id>/resources/you-yong-zi-yuan</id>
+   <id>/sch/you-yong-zi-yuan</id>
    <content type="html">&lt;h1 id=&quot;有用的链接&quot;&gt;有用的链接，&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;/pub/books/math/math/tj_math.html&quot; title=&quot;数学基础知识库&quot;&gt;数学基础知识库&lt;/a&gt;&lt;/li&gt;

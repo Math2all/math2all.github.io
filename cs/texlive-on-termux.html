@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="关于 - zzj666's Little Site - 作者:zzj666"/> 
+    <meta name="description" content="如何在安卓系统中编译 Tex 文档 - zzj666's Little Site - 作者:zzj666"/> 
 	
-    <title>关于 - zzj666's Little Site</title>
+    <title>如何在安卓系统中编译 Tex 文档 - zzj666's Little Site</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
@@ -96,21 +96,134 @@
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          <!-- Navi -->
-<div class="post_frame">
-  <div class="post_navi">
-    <a href="/">首页</a>&nbsp;>&nbsp;
-    <span class="post_navi_span">关于</span>
-  </div>
-  
-  <div style="padding:10px">
-    <h2 id="关于小站">关于小站</h2>
-<h3 id="好吧很简单">好吧，很简单</h3>
+          
 
-  </div>
 
+
+<div  class="post_frame">
+<!-- Navi -->
+<div class="post_navi">
+	<a href="/">首页</a>&nbsp;>&nbsp;
+	<a href=""></a>&nbsp;>&nbsp;
+	<span class="post_navi_span">正文</span>
+</div>
+
+<!-- Title -->
+<div class="post_titlearea">
+	<h1>如何在安卓系统中编译 Tex 文档</h1>
+	<hr class="hrline"/>
+	<div class="post_titledate"/>
+		&nbsp;&nbsp;&nbsp;
+		栏目：<a href=""></a>&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		日期：2019-10-31&nbsp;&nbsp;&nbsp;		
+	</div>
+</div>
+
+<div style="text-indent:2em;padding:10px">
+<h1 id="如何在安卓系统中编译-tex-文档-转">如何在安卓系统中编译 Tex 文档 ?$^{[转]}$</h1>
+<blockquote>
+  <p>导语：Tex（.tex） 文档本质上是一个文本文件，因此，要在手机上编辑 Tex 文档并不算什么难事，只要安装一个文本编辑器就可以了。不过，如果想在手机上本地编译 Tex 文档输出 PDF 文件，则需要一定的折腾精神。 针对安卓系统，小编推荐的解决方案是：Termux + TexLive。`
+<!-- more -->
+Tex（.tex） 文档本质上是一个文本文件，因此，要在手机上编辑 Tex 文档并不算什么难事，只要安装一个文本编辑器就可以了。不过，如果想在手机上本地编译 Tex 文档输出 PDF 文件，则需要一定的折腾精神。 针对安卓系统，小编推荐的解决方案是：Termux + TexLive。 Termux 是安卓系统下的一款 Linux 终端模拟器，其最大特点是不需要对系统进行 root 操作。更多介绍可以访问 Termux 的官网：termux.com。</p>
+  <h1 id="第一步安装-termux">第一步：安装 Termux</h1>
+  <p>在应用商店里面搜索 Termux，然后下载、安装即可。 目前，Google Play 上的最新版本为 0.60。不过，国内的几大应用商店要么是搜不到，要么就是版本比较老旧。 有想法的小伙伴可以到 Google Play 上去下载，具体链接为：https://play.google.com/store/apps/details?id=com.termux。</p>
+  <h1 id="第二步安装-texlive">第二步：安装 TexLive</h1>
+  <p>TexLive 的安装方法也比较简单，打开 Termux，输入以下命令即可：</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkg install texLive
+</code></pre></div>  </div>
+</blockquote>
+
+<h1 id="第三步配置-texlive">第三步：配置 TexLive</h1>
+<p>理论上，TexLive 安装完成后，就可以使用了。但是要想进行复杂的写作（比如中文支持、中文字体、参考文献等），还需要一些必要的设置。 如果你十分清楚自己需要哪些宏包，可以通过 tlmgr install 命令一个一个地安装，比如：</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tlmgr install ctex
+</code></pre></div>  </div>
+</blockquote>
+
+<p>如果空间允许，可以像小编一样把所有宏包都安装了，省得以后烦心：</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tlmgr install scheme-full
+</code></pre></div>  </div>
+</blockquote>
+
+<p>另外，可以用 tlmgr info 命令来查询已安装宏包的版本信息，比如：</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tlmgr info ctex
+</code></pre></div>  </div>
+</blockquote>
+
+<p>对于命令 tlmgr 的详细用法查阅 http://tug.org/texlive/tlmgr.html。</p>
+<h1 id="第四步编译方式与字体设置">第四步：编译方式与字体设置</h1>
+<p>由于安卓系统本身的限制，在完成 Tex 编译环境的配置之后，还需要解决一下字体的问题。 
+如果安卓系统已经 root，可以把一些常用的字体拷贝到对应的文件夹下，此时选用何种编译命令只要看 Tex 文档的要求。如果系统没有 root，就需要在 Tex 文档中设置一下字体，此时只能使用 <strong>xelatex</strong> 命令。 
+这里推荐使用 fandol 字体，可以通过 <strong>tlmgr install fandol</strong> 命令直接安装，无需系统 root。在文档中引用 xeCJK 宏包，具体如下：</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\usepackag{xeCJK} 
+\newCJKfontfamily
+\hei{FandolHei-Regular.otf} 
+\newCJKfontfamily\song{FandolSong-Regular.otf}
+\newCJKfontfamily\kaiti{FandolKai-Regular.otf}
+\newCJKfontfamily\fang{FandolFang-Regular.otf}
+</code></pre></div>  </div>
+</blockquote>
+
+<h1 id="第五步文档编译">第五步：文档编译</h1>
+<p>打开 Termux，切换至文档目录，即可使用命令进行编译。</p>
+<blockquote>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /storage/emulated/0/.../文档目录
+xelatex 文档名称.tex
+</code></pre></div>  </div>
+</blockquote>
+
+<p>开始在安卓系统中畅快使用 Tex 吧！ 
+其他问题 如果出现类似 “I can’t write on file ‘xxx.log’” 的错误，把文件夹拷贝到内置存储卡即可。</p>
+
+<ol>
+  <li>原文：<a href="http://www.hijtr.com/android-latex/" title="如何在安卓系统中编译 Tex 文档">如何在安卓系统中编译 Tex 文档？</a></li>
+</ol>
 
 </div>
+
+<div style="text-align:center">
+	<div>
+		<b>本文位置：</b><a href="https://zzj666.github.com">zzj666's Little Site</a> » <a href="https://zzj666.github.com/cs/texlive-on-termux.html" title="">如何在安卓系统中编译 Tex 文档</a>
+	</div>
+</div>
+
+
+<!-- next and previous -->
+<div style="margin:10px">
+  <span class="next">
+		
+			<a href="">
+				
+			</a>
+		 
+  </span>
+  
+  <div style="float:right">
+  <span class="prev" >
+		
+			<a href="">
+				
+			</a>
+		
+  </span>
+  </div>
+  
+</div>
+
+<hr>
+
+</div>
+
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
