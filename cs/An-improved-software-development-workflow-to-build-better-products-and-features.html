@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="An improved software development workflow to build better products and features - zzj666's Little Site - 作者:zzj666"/> 
+	
+    <title>An improved software development workflow to build better products and features - zzj666's Little Site</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tongji.js"></script>
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
+
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/sch/index.html">
+					学术交流
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/eng/index.html">
+					工程技术
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/cs/index.html">
+					信息技术
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/other/index.html">
+					杂记
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/read/index.html">
+					书摘
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/about.html">
+					关于
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          
+
+
+
+<div  class="post_frame">
+<!-- Navi -->
+<div class="post_navi">
+	<a href="/">首页</a>&nbsp;>&nbsp;
+	<a href=""></a>&nbsp;>&nbsp;
+	<span class="post_navi_span">正文</span>
+</div>
+
+<!-- Title -->
+<div class="post_titlearea">
+	<h1>An improved software development workflow to build better products and features</h1>
+	<hr class="hrline"/>
+	<div class="post_titledate"/>
+		&nbsp;&nbsp;&nbsp;
+		栏目：<a href=""></a>&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		日期：2020-08-07&nbsp;&nbsp;&nbsp;		
+	</div>
+</div>
+
+<div style="text-indent:2em;padding:10px">
+<h1 id="an-improved-software-development-workflow-to-build-better-products-and-features转">An improved software development workflow to build better products and features<script type="math/tex">^{[转]}</script></h1>
+
+<p><img src="https://zepel.io/blog/content/images/size/w2000/2020/04/simple-development-workflow.jpeg" alt="An improved software development workflow to build better products and features" /></p>
+
+<p>The need to improve the development workflow is on top of every software team’s mind.</p>
+
+<p>“<em>Is there a way to get my team to ship features faster? How to build features with fewer bugs?</em>”</p>
+
+<p>And since you’re reading this guide, I’m sure you’re asking these questions too!
+<!-- more --></p>
+
+<p>We’ll cover in this guide:</p>
+
+<ol>
+  <li><a href="https://zepel.io/blog/simple-software-development-workflow/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=git-workflow#what">What software development workflow looks like in most organizations</a></li>
+  <li><a href="https://zepel.io/blog/simple-software-development-workflow/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=git-workflow#causes">What causes inefficiencies in the workflow</a></li>
+  <li><a href="https://zepel.io/blog/simple-software-development-workflow/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=git-workflow#better">A better software development workflow</a></li>
+</ol>
+
+<h2 id="what-software-development-workflow-looks-like-in-most-teams">What software development workflow looks like in most teams</h2>
+
+<p>For most teams, software development looks like this:</p>
+
+<p><em>The product manager, along with customer-facing teams, spends time talking to existing customers and potential customers to understand about the market.</em></p>
+
+<p><em>Depending on the business needs and customer requirements derived from the previous step, the product manager prioritizes features the team needs to focus on.</em></p>
+
+<p><em>Using the information gathered, the prioritized features are spec’d with User Stories, Tasks, and Enhancements.</em></p>
+
+<p><em>These actionable items are then shared with a cross-functional team to estimate, further prioritize, and then tracked using either Scrum or a Kanban to ship the feature within a deadline.</em></p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/04/product-development-1.png" alt="How software development happens in most organizations" />What software development looks like in most organizations</p>
+
+<p>Looks pretty simple, right?</p>
+
+<p>However, every step from market research to feature deploy has invisible inefficiencies within them. According to market research firm IDC, companies end up <a href="https://www.dummies.com/business/human-resources/workplace/how-inefficiency-negatively-impacts-your-business/">losing 20 to 30 percent in revenue every year due to inefficiencies</a>. And that, of course, is a lot!</p>
+
+<blockquote>
+  <p>Seemingly small and invisible inefficiencies within your development workflow compound over time, cause a dip in productivity, and ultimately lead to unhappy customers.</p>
+</blockquote>
+
+<p>Issues in your workflow may seem small at first, but without special attention, they add up, and become extremely apparent over time.</p>
+
+<p>Over the past couple of years, we’ve built a collaborative workflow that brings together members from across functions and ship quality features and make customers happy. This guide will walk you through our development workflow and how we think about it at Zepel.</p>
+
+<hr />
+
+<h2 id="what-causes-inefficiencies-in-the-software-development-workflow">What causes inefficiencies in the software development workflow?</h2>
+
+<p><em>Because how can you improve your workflow if you don’t know what to improve upon in the first place?</em></p>
+
+<p>Like many teams, we made the mistake of thinking, “<em>Setting a workflow is about moving tasks and user stories from one column to another”</em>. And boy, we couldn’t have been more wrong.</p>
+
+<blockquote>
+  <p>A software development workflow isn’t about moving cards from one column to another. It’s all the invisible flow of information too!</p>
+</blockquote>
+
+<p>Let’s look at the 3 causes for a broken software development workflow:</p>
+
+<h3 id="1-laser-focussed-on-a-specific-task">1. Laser focussed on a specific task</h3>
+
+<p>In the last 10 years, far too many project management tools have been pushing the notion that you need to focus on just the things you care about.</p>
+
+<p>Sure, that’s important. But software development isn’t just about checking off tasks. After all, the best developers are the ones who can focus on the fine implementation details while still having a picture of the broader purposes of the feature as a whole.</p>
+
+<p>By being laser focussed on just the tasks assigned to themselves, development teams miss the forest for the trees.</p>
+
+<p><img src="https://lh4.googleusercontent.com/C9QalsL2dWHcIS4pt-wUcs-PabXPLgiEK9a2s44cC04GbF850a7p119smKglGDo6dkVr4yHSg5E-Ru6ZZXoA6f4jPvedEKVOKCrXsCM8H-HfO23x2YukjSRp6Ke5x5mQx4jQbvsH" alt="The multiple challenges and needs of project management" />The pyramid of development tracking needs</p>
+
+<h3 id="2-greater-emphasis-on-the-process-than-productivity">2. Greater emphasis on the process than productivity</h3>
+
+<p>While processes are great, we must understand they’re put in place to help your team stay productive and produce a desirable outcome. A mistake many teams make is overemphasizing teams to follow a process when it isn’t helping.</p>
+
+<p>A good example of this can be seen when teams implement agile processes by the book in the hope of making their team <em>agile</em>. It’s important to keep in mind that processes need to be built with people in mind. And not with rules.</p>
+
+<p>What good is a process if it hinders your team from being nimble and moving fast anyway?</p>
+
+<h3 id="3-building-complex-rigid-workflows-to-get-updates-at-every-step">3. Building complex, rigid workflows to get updates at every step</h3>
+
+<p>Workflows are simple when a team is small. As teams grow, the first thing that gets introduced is complexity. Developers and designers work in silos, without any awareness of what the other team was working on.</p>
+
+<p>As each phase of the software development occurs in different tools and key pieces of information is lost when teams handoff.</p>
+
+<p>To keep the development workflow in motion, you need a seamless hand-over between teams. And this needs to happen while each of them focuses on the task at hand without losing sight of the big picture.</p>
+
+<hr />
+
+<h2 id="an-improved-development-workflow">An improved development workflow</h2>
+
+<p>Contrary to common misunderstanding, software development is a dynamic structure and is rarely static. A considerable effort is needed as new functionalities or constraints are added to the system.</p>
+
+<p>This means, there are far too many moving parts to consider that simple task and issue tracking tools just don’t fall short.</p>
+
+<p>The development workflow when building software needs to allow teams to achieve three things:</p>
+
+<ol>
+  <li><strong>Get visibility at a specific task and the broader picture.</strong></li>
+  <li><strong>Reduce complexity by not having to set up configurations and stitched processes.</strong></li>
+  <li><strong>Reduce tools to streamline the process, so team members don’t have to be clueless about where to look for the most recent information.</strong></li>
+</ol>
+
+<p>The aim was to connect a deeper, connected workflow that allowed the team to do deep work by collaborating cross-functionally and get all the context they needed.</p>
+
+<p>Naturally, we use <a href="https://zepel.io/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">Zepel</a> to improve our development workflow and here’s how we did it. Let’s dive in and look at it step-by-step.</p>
+
+<h3 id="eliminate-ambiguity-by-creating-alignment">Eliminate ambiguity by creating alignment.</h3>
+
+<p>Delivering quality features at every interaction requires alignment from multiple teams and it shouldn’t be a passive process. At Zepel, everything starts with bringing everyone up to speed on the priorities. That means, sharing with the team on the features we need to be working on in the coming weeks and months.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/03/sprint-planning-roadmap.png" alt="Get a quick overview of the roadmap and track progress with Kanban view of all features" />Get a quick overview of the roadmap and track its progress</p>
+
+<p>Based on the conversations our product team has with the customers and the business needs, the most important features are moved to the top of the todo column. A duration and an owner are set later on after the feature is spec’d and we have an estimate from the development team.</p>
+
+<p><strong>This gives every single member a complete picture of what our priorities are, even when things change due to unforeseen circumstances.</strong></p>
+
+<h3 id="think-big-start-small">Think big, start small.</h3>
+
+<p>Once the top priority features are prioritized, the product manager jumps in to drill into the specifics of all the functionalities of the feature by writing detailed user stories, tasks, and enhancements. And how each functionality should behave by writing detailed acceptance criteria as descriptions.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/03/updated-list-of-user-stories-for-sprint-planning.png" alt="A list of user stories, tasks, subtasks, bugs, and enhancements" />A list of user stories, bugs, enhancements, tasks, and subtasks</p>
+
+<p>We group and categorize user stories and tasks under Sections to make it easier to understand for anyone new whom we might collaborate.</p>
+
+<p><strong>This view makes it easy for the product manager to plan features. And gives them (and anyone who’s collaborated later on) a neat document-like view of what the feature is really about.</strong></p>
+
+<h3 id="putting-an-end-to-countless-whats-the-update">Putting an end to countless “What’s the update?”</h3>
+
+<p>After the feature is spec’d and all user stories are written, we plan and add prioritized items into the <a href="https://zepel.io/features/sprints/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">Sprint</a>. By now, all the planning is complete and we’re in the execution mode. At this stage, we assign specific user stories and tasks.</p>
+
+<p>One thing we’re still learning and trying to understand is if it’s okay to add an item to a sprint after it has begun. There are tons of opinions on this one on the internet and we’re still figuring what works for us in this aspect. :)</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/03/sprint-planning-template.png" alt="Tracking the development using Sprint" />Tracking the progress of a sprint</p>
+
+<p>Since Zepel has a dedicated Sprint view, our team gets all the updates about that specific Sprint in one place — burndown charts, burnup charts, sprint overview, scrum board, and sprint backlog.</p>
+
+<p>Before the Sprint begins, the development team makes sure they’ve configured Zepel’s GitHub integration to automate their work based on their <a href="https://zepel.io/blog/5-git-workflows-to-improve-development/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">Git Workflows</a>. This allows them to just focus on their work, so they don’t have to come back to the app every time they need to provide an update.</p>
+
+<p><em>Note: If you’re not a GitHub user, <a href="https://zepel.io/guide/integrations/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">Zepel also integrates with Bitbucket and GitLab</a>.</em></p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/01/zepel-git-workflow-automation.png" alt="GitHub, Bitbucket, and GitLab integration in Zepel" />Automating Zepel to update statuses based on Git development workflow.</p>
+
+<p>As the Sprint progresses and the development team makes progress, our product person and engineering head can quickly open up specific items to see all their Git activity inside Zepel. This gives them a snapshot of the progress at a specific item.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/01/Screen-Shot-2020-01-13-at-10.58.06-AM.png" alt="Zepel integration with GitHub, BitBucket, and GitLab" />Real-time updates on every commit, pull request, and branch changes.</p>
+
+<p>Since we’ve already enabled Slack integration, every time a developer adds a commit, merges a branch, or opens a PR, statuses are automatically updated in Zepel and everyone is automatically notified through Slack.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/04/zepel-git-developer-workflow.png" alt="Developer Workflow with GitHub, Zepel, and Slack Integrations" />A simple flowchart of how developer workflow is automated with GitHub, Zepel, and Slack</p>
+
+<p><strong>This gives our development team the freedom to work from within their code editor and GitHub, and not worry about updating progress.</strong></p>
+
+<h3 id="collaboration-alone-isnt-enough-enable-seamless-handoff">Collaboration alone isn’t enough. Enable seamless handoff.</h3>
+
+<p>In software development, collaborating within a dev team isn’t enough. You need to be able to collaborate cross-functionally and hand-over information. This is critical because, without the right information and context, everyone will be working with different assumptions, leading to a delay in the feature release.</p>
+
+<p>For small teams, this could be a single <a href="https://zepel.io/kanban-software/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">Kanban board</a> with four or five statuses. In this case, the team composition is primarily the developers with probably one designer or a QA person in the mix.</p>
+
+<p>However, if you’re a bigger team and have more members involved in building the feature, having a single board with ten status columns to accommodate every function will not be efficient.</p>
+
+<p>To combat this, we add a board for each team. Like in any board, we move each user story from one column to another. Unlike other tools, Zepel’s <a href="https://zepel.io/kanban-software/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=development-workflow">kanban board software</a> also allows us to move a <a href="https://zepel.io/agile/user-stories/">user story</a> from one board to another when we want to collaborate cross-functionally.</p>
+
+<p><strong>This allows our designer to move a user story from Design board to Dev board’s Todo column once the designer has the final version of the design ready.</strong></p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/04/multiple-boards.png" alt="Boards in Zepel" />Adding a board for each team involved in the project</p>
+
+<p>This is automatically reflected everywhere in the app, so everyone knows which board a user story is currently in and gives them a clear picture of what’s happening. <strong>This lets us see progress at a specific team and manage workload with filters without having to set up messy configurations.</strong></p>
+
+<hr />
+
+<p>A development workflow isn’t just about the columns in your Kanban board. It’s also about all the other details that get missed out in between the two columns.</p>
+
+<p>As teams grow, there will be a lack of visibility in the day-to-day activities, additional communication overhead between teams will creep in, and general confusion around responsibilities will begin to come up.</p>
+
+<p>An even bigger problem is being able to take all the micro-level progress from multiple teams and understanding how it impacts the progress at the feature level.</p>
+
+<p>This workflow has allowed us to build complex features while staying nimble enough to fix major issues and address customer requests. Of course, this workflow is a work in progress. I hope this peek into our development workflow helps inspire you and your team to identify and streamline your workflow, so you can ship quality software all the time.</p>
+
+</div>
+
+<div style="text-align:center">
+	<div>
+		<b>本文位置：</b><a href="https://zzj666.github.com">zzj666's Little Site</a> » <a href="https://zzj666.github.com/cs/An-improved-software-development-workflow-to-build-better-products-and-features.html" title="">An improved software development workflow to build better products and features</a>
+	</div>
+</div>
+
+
+<!-- next and previous -->
+<div style="margin:10px">
+  <span class="next">
+		
+			<a href="">
+				
+			</a>
+		 
+  </span>
+  
+  <div style="float:right">
+  <span class="prev" >
+		
+			<a href="">
+				
+			</a>
+		
+  </span>
+  </div>
+  
+</div>
+
+<hr>
+
+</div>
+
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Side Widget Well -->
+          <div class="well">
+            <h4>
+              资源
+            </h4>
+			      <div class="row">
+                        <div class="col-lg-12">
+              <ul class="list-unstyled">
+			  	<li>
+                <a href="/pub/app/ariang/index.html" target="_blank" rel="nofollow">
+                  AriaNg
+                </a>
+			  	<li>
+                <a href="/pub/app/webui-aria2/docs/index.html" target="_blank" rel="nofollow">
+                  Webui-Aria2
+                </a>
+				</li>
+				<li>
+                <a href="https://www.matheditor.cn/" target="_blank" rel="nofollow">
+                  LaTeX公式编辑器1
+                </a>
+				</li>
+				<li>
+                <a href="http://www.math.org.cn/tex/index.html" target="_blank" rel="nofollow">
+                  LaTeX公式编辑器2
+                </a>
+				</li>
+                <li>
+                <a href="/pub/books/math/math/tj_math.html" target="_blank" rel="nofollow">
+                  数学基础知识
+                </a>
+				</li>
+				<li>
+                <a href="/pub/books/math/fortran/Index.htm" target="_blank" rel="nofollow">
+                  Fortran77和90/95编程入门
+                </a><br /><i><font size="2">（中国科技大学天文与应用物理系，丁泽军编）</font></i>
+				</li>
+                <li>
+                <a href="/pub/books/gits/git-guide/index.html" target="_blank" rel="nofollow">
+                  git - 简易指南
+                </a>
+				</li>
+				<a href="/pub/books/gits/simplegit/index.htm" target="_blank" rel="nofollow">
+                  深入浅出Git教程
+                </a>（转载）
+				</li>
+			  </ul>
+          </div>
+ 
+            </div>
+          </div>
+
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogRightB -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:336px;height:280px"
+	 data-ad-client="ca-pub-3557776493079475"
+	 data-ad-slot="4042604803"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+          </div>
+
+		      <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+            <div class="row">
+                                  
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                     
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div style="text-align:center;margin-top:15px;">
+	<a href="https://math2all.github.io">zzj666</a> 小站，由 Jekyll 生成。
+	<br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+	<br />除非单独声明。
+</div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ -->
+  </body>
+
+</html>

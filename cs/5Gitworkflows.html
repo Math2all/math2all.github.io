@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="5 Git workflows you can use to deliver better code and improve your development process - zzj666's Little Site - 作者:zzj666"/> 
+	
+    <title>5 Git workflows you can use to deliver better code and improve your development process - zzj666's Little Site</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet"/>
+
+    <script src="/js/jquery-1.11.0.js"> </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/tongji.js"></script>
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
+
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/">
+            首页
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          		<ul class="nav navbar-nav">
+			
+				<li>
+				  <a href="/sch/index.html">
+					学术交流
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/eng/index.html">
+					工程技术
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/cs/index.html">
+					信息技术
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/other/index.html">
+					杂记
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/read/index.html">
+					书摘
+				  </a>
+				</li>
+			
+				<li>
+				  <a href="/about.html">
+					关于
+				  </a>
+				</li>
+			
+		</ul>  
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          
+
+
+
+<div  class="post_frame">
+<!-- Navi -->
+<div class="post_navi">
+	<a href="/">首页</a>&nbsp;>&nbsp;
+	<a href=""></a>&nbsp;>&nbsp;
+	<span class="post_navi_span">正文</span>
+</div>
+
+<!-- Title -->
+<div class="post_titlearea">
+	<h1>5 Git workflows you can use to deliver better code and improve your development process</h1>
+	<hr class="hrline"/>
+	<div class="post_titledate"/>
+		&nbsp;&nbsp;&nbsp;
+		栏目：<a href=""></a>&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		日期：2020-08-07&nbsp;&nbsp;&nbsp;		
+	</div>
+</div>
+
+<div style="text-indent:2em;padding:10px">
+<h1 id="5-git-workflows-you-can-use-to-deliver-better-code-and-improve-your-development-process转">5 Git workflows you can use to deliver better code and improve your development process$^{[转]}$</h1>
+
+<p>I haven’t met a developer who looked at a conflict message and did not pull their hair strands with frustration.</p>
+
+<p>Trying to resolve each merge conflict is one of those things that every developer hates. Especially if it hits you when you’re gearing up for a production deploy!</p>
+
+<!-- more -->
+<p><img src="https://zepel.io/blog/content/images/size/w2000/2020/05/git-workflow.png" alt="img" /></p>
+
+<ol>
+  <li>This is where having the right Git workflow set up can do a world of good for your <a href="https://zepel.io/blog/simple-software-development-workflow/?utm_source=zepelblog&amp;utm_medium=text&amp;utm_campaign=git-workflow">development workflow</a>.</li>
+</ol>
+
+<p>Of course, having the right git workflow will not solve all your problems. But it’s a step in the right direction. After all, with every team working remotely, the need to build features together without having your codebase getting disrupted is critical.</p>
+
+<p>How you set it up depends on the project you’re working on, the release schedules your team has, the size of the team, and more!</p>
+
+<p>In this article, we’ll walk you through 5 different git workflows, their benefits, their cons, and when you should use them. Let’s jump in!</p>
+
+<p>## 1. Basic Git Workflow</p>
+
+<p>The most basic git workflow is the one where there is only one branch — the master branch. Developers commit directly into it and use it to deploy to the staging and production environment.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/05/Basic-git-workflow-3.png" alt="Basic Git Workflow with all commits getting added directly to master branch" /></p>
+
+<p>This workflow isn’t usually recommended unless you’re working on a side project and you’re looking to get started quickly.</p>
+
+<p>Since there is only one branch, there really is no process over here. This makes it effortless to get started with Git. However, some cons you need to keep in mind when using this workflow are:</p>
+
+<ol>
+  <li>Collaborating on code will lead to multiple conflicts.</li>
+  <li>Chances of shipping buggy software to production is higher.</li>
+  <li>Maintaining clean code is harder.</li>
+</ol>
+
+<h2 id="2-git-feature-branch-workflow">2. Git Feature Branch Workflow</h2>
+
+<p>The Git Feature Branch workflow becomes a must have when you have more than one developer working on the same codebase.</p>
+
+<p>Imagine you have one developer who is working on a new feature. And another developer working on a second feature. Now, if both the developers work from the same branch and add commits to them, it would make the codebase a huge mess with plenty of conflicts.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/05/Feature-Branch-git-workflow-4.png" alt="Git feature branch workflow" /></p>
+
+<p>To avoid this, the two developers can create two separate branches from the master branch and work on their features individually. When they’re done with their feature, they can then merge their respective branch to the master branch, and deploy without having to wait for the second feature to be completed.</p>
+
+<p>The Pros of using this workflow is, the git feature branch workflow allows you to collaborate on code without having to worry about code conflicts.</p>
+
+<h2 id="3-git-feature-workflow-with-develop-branch">3. Git Feature Workflow with Develop Branch</h2>
+
+<p>This workflow is one of the more popular workflows among developer teams. It’s similar to the Git Feature Branch workflow with a develop branch that is added in parallel to the master branch.</p>
+
+<p>In this workflow, the master branch always reflects a production-ready state. Whenever the team wants to deploy to production they deploy it from the master branch.</p>
+
+<p>The develop branch reflects the state with the latest delivered development changes for the next release. Developers create branches from the develop branch and work on new features. Once the feature is ready, it is tested, merged with develop branch, tested with the develop branch’s code in case there was a prior merge, and then merged with master.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/05/feature-branch-with-develop-git-workflow-2.png" alt="Git workflow with feature and develop branches" /></p>
+
+<p>The advantage of this workflow is, it allows teams to consistently merge new features, test them in staging, and deploy to production. While maintaining code is easier, it can get a little tiresome for some teams since it can feel like going through a tedious process.</p>
+
+<h2 id="4-gitflow-workflow">4. Gitflow Workflow</h2>
+
+<p>The gitflow workflow is very similar to the previous workflow we discussed combined with two other branches — the release branch and the hot-fix branch.</p>
+
+<h3 id="the-hot-fix-branch">The hot-fix branch</h3>
+
+<p>The hot-fix branch is the only branch that is created from the master branch and directly merged to the master branch instead of the develop branch. It is used only when you have to quickly patch a production issue. An advantage of this branch is, it allows you to quickly deploy a production issue without disrupting others’ workflow or without having to wait for the next release cycle.</p>
+
+<p>Once the fix is merged into the master branch and deployed, it should be merged into both develop and the current release branch. This is done to ensure that anyone who forks off develop to create a new feature branch has the latest code.</p>
+
+<h3 id="the-release-branch">The release branch</h3>
+
+<p>The release branch is forked off of develop branch after the develop branch has all the features planned for the release merged into it successfully.</p>
+
+<p>No code related to new features is added into the release branch. Only code that relates the release is added to the release branch. For example, documentation, bug fixes, and other tasks related to this release are added to this branch.</p>
+
+<p>Once this branch is merged with master and deployed to production, it’s also merged back into the develop branch, so that when a new feature is forked off of develop, it has the latest code.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/05/GitFlow-git-workflow-2.png" alt="Gitflow workflow" /></p>
+
+<p>This workflow was first published and made popular by <a href="http://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen</a> and since then it has been widely used by organizations that have a scheduled release cycle.</p>
+
+<p>Since the git-flow is a wrapper around Git, you can install git-flow in your current repository. It’s a straightforward process and it doesn’t change anything in your repository other than creating branches for you.</p>
+
+<p>To install on a Mac machine, execute <code class="highlighter-rouge">brew install git-flow</code> in your terminal.</p>
+
+<p>To install on a Windows machine, you’ll need to <a href="https://git-scm.com/download/win">download and install the git-flow</a>. After the installation is done, run <code class="highlighter-rouge">git flow init</code> to use it in your project.</p>
+
+<h2 id="5-git-fork-workflow">5. Git Fork Workflow</h2>
+
+<p>The Fork workflow is popular among teams who use open-source software.</p>
+
+<p>The flow usually looks like this:</p>
+
+<ol>
+  <li>The developer forks the open-source software’s official repository. A copy of this repository is created in their account.</li>
+  <li>The developer then clones the repository from their account to their local system.</li>
+  <li>A remote path for the official repository is added to the repository that is cloned to the local system.</li>
+  <li>The developer creates a new feature branch is created in their local system, makes changes, and commits them.</li>
+  <li>These changes along with the branch are pushed to the developer’s copy of the repository on their account.</li>
+  <li>A pull request from the branch is opened to the official repository.</li>
+  <li>The official repository’s manager checks the changes and approves the changes to get merged into the official repository.</li>
+</ol>
+
+<hr />
+
+<h2 id="automating-your-git-workflows-for-better-productivity">Automating your Git Workflows for better productivity</h2>
+
+<p>One of the things that developers have to constantly juggle with is updating their project management tool to keep their teammates updated. That’s why, at Zepel, our developers automate their workflow, so they can spend more of their time building the software.</p>
+
+<p>Here’s how we automate our git workflow to keep everyone in sync:</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/04/zepel-git-developer-workflow.png" alt="Developer Workflow with GitHub, Zepel, and Slack Integrations" /></p>
+
+<p>While Zepel integrates deeply with <a href="https://zepel.io/guide/integrations/github/">GitHub</a>, <a href="https://zepel.io/guide/integrations/bitbucket/">Bitbucket</a>, and <a href="https://zepel.io/guide/integrations/gitlab/">GitLab</a>, we use GitHub internally. So, once we’ve integrated GitHub with Zepel, our development team sets up the git workflow automation within Zepel. Here’s how it looks today:</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/01/zepel-git-workflow-automation.png" alt="Git workflow automation" /></p>
+
+<p>As developers continue to make progress, our team automatically gets a Slack notification and their changes are recorded within the user story.</p>
+
+<p><img src="https://zepel.io/blog/content/images/2020/05/image.png" alt="Git workflow updates to user story in real-time" /></p>
+
+<p>The git workflows I’ve shown in this article are examples of some of the popular and best working workflows for the development team. Some teams create a branch for Staging and it works perfectly for them.</p>
+
+</div>
+
+<div style="text-align:center">
+	<div>
+		<b>本文位置：</b><a href="https://zzj666.github.com">zzj666's Little Site</a> » <a href="https://zzj666.github.com/cs/5Gitworkflows.html" title="">5 Git workflows you can use to deliver better code and improve your development process</a>
+	</div>
+</div>
+
+
+<!-- next and previous -->
+<div style="margin:10px">
+  <span class="next">
+		
+			<a href="">
+				
+			</a>
+		 
+  </span>
+  
+  <div style="float:right">
+  <span class="prev" >
+		
+			<a href="">
+				
+			</a>
+		
+  </span>
+  </div>
+  
+</div>
+
+<hr>
+
+</div>
+
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Side Widget Well -->
+          <div class="well">
+            <h4>
+              资源
+            </h4>
+			      <div class="row">
+                        <div class="col-lg-12">
+              <ul class="list-unstyled">
+			  	<li>
+                <a href="/pub/app/ariang/index.html" target="_blank" rel="nofollow">
+                  AriaNg
+                </a>
+			  	<li>
+                <a href="/pub/app/webui-aria2/docs/index.html" target="_blank" rel="nofollow">
+                  Webui-Aria2
+                </a>
+				</li>
+				<li>
+                <a href="https://www.matheditor.cn/" target="_blank" rel="nofollow">
+                  LaTeX公式编辑器1
+                </a>
+				</li>
+				<li>
+                <a href="http://www.math.org.cn/tex/index.html" target="_blank" rel="nofollow">
+                  LaTeX公式编辑器2
+                </a>
+				</li>
+                <li>
+                <a href="/pub/books/math/math/tj_math.html" target="_blank" rel="nofollow">
+                  数学基础知识
+                </a>
+				</li>
+				<li>
+                <a href="/pub/books/math/fortran/Index.htm" target="_blank" rel="nofollow">
+                  Fortran77和90/95编程入门
+                </a><br /><i><font size="2">（中国科技大学天文与应用物理系，丁泽军编）</font></i>
+				</li>
+                <li>
+                <a href="/pub/books/gits/git-guide/index.html" target="_blank" rel="nofollow">
+                  git - 简易指南
+                </a>
+				</li>
+				<a href="/pub/books/gits/simplegit/index.htm" target="_blank" rel="nofollow">
+                  深入浅出Git教程
+                </a>（转载）
+				</li>
+			  </ul>
+          </div>
+ 
+            </div>
+          </div>
+
+          <!-- Side Widget Well -->
+          <div class="well-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogRightB -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:336px;height:280px"
+	 data-ad-client="ca-pub-3557776493079475"
+	 data-ad-slot="4042604803"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+          </div>
+
+		      <!-- Blog Recent Well -->
+          <div class="well">
+            <h4>
+              最新文章
+            </h4>
+            <div class="row">
+                                  
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                     
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div style="text-align:center;margin-top:15px;">
+	<a href="https://math2all.github.io">zzj666</a> 小站，由 Jekyll 生成。
+	<br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+	<br />除非单独声明。
+</div>
+ 
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ -->
+  </body>
+
+</html>
